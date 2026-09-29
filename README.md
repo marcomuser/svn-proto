@@ -1,8 +1,11 @@
-```
+# User management prototype
+
+Requires Node.js 24 or newer.
+
+```sh
 npm install
-npm run dev
+npm run build
+npm start
 ```
 
-```
-open http://localhost:3000
-```
+Open http://localhost:3000. The app creates and seeds `data/users.sqlite` on first start. Changes to users persist across restarts.
