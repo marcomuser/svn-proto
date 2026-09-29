@@ -8,7 +8,7 @@ const speculationRules = JSON.stringify({ prefetch: [{ where: { href_matches: '/
 export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
   <>
     {raw('<!doctype html>')}
-    <html lang="en" class="wa-theme-default wa-palette-default wa-light">
+    <html lang="en" class="wa-theme-default wa-palette-default wa-light wa-cloak">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
