@@ -3,7 +3,7 @@ import { raw } from 'hono/html'
 
 type LayoutProps = PropsWithChildren<{ title: string; active: 'dashboard' | 'users' }>
 
-const speculationRules = JSON.stringify({ prefetch: [{ where: { href_matches: '/users' }, eagerness: 'moderate' }] })
+const speculationRules = JSON.stringify({ prefetch: [{ where: { href_matches: ['/', '/users', '/users/:id', '/users/:id/edit'] }, eagerness: 'moderate' }] })
 
 export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
   <>
