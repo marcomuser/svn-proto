@@ -6,7 +6,17 @@ export function StatusBadge({ status }: { status: User['status'] }) {
 }
 
 export function UserTable({ users }: { users: User[] }) {
-  return <div class="table-wrap"><table>
+  return <div class="table-wrap">
+    <style>{`@scope {
+      :scope { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; text-align: left; }
+      th, td { padding: var(--wa-space-s) var(--wa-space-m); border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border); }
+      th { color: var(--wa-color-text-quiet); font-size: var(--wa-font-size-s); font-weight: var(--wa-font-weight-semibold); }
+      tbody tr:last-child td { border-bottom: 0; }
+      td a { color: var(--wa-color-text-link); font-weight: var(--wa-font-weight-semibold); }
+      @media (max-width: 40em) { .hide-small { display: none; } }
+    }`}</style>
+    <table>
     <thead><tr><th scope="col">User</th><th scope="col">Role</th><th scope="col">Status</th><th scope="col" class="hide-small">Joined</th></tr></thead>
     <tbody>{users.map(user => <tr>
       <td><a href={`/users/${user.id}`}>{user.name}</a><br /><span class="wa-caption-s">{user.email}</span></td>
@@ -14,5 +24,6 @@ export function UserTable({ users }: { users: User[] }) {
       <td><StatusBadge status={user.status} /></td>
       <td class="hide-small"><time dateTime={user.joined_at}>{formatDate(user.joined_at)}</time></td>
     </tr>)}</tbody>
-  </table></div>
+    </table>
+  </div>
 }

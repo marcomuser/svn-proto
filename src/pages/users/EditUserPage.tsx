@@ -11,7 +11,12 @@ export function EditUserPage({ user, values, errors = {} }: EditUserPageProps) {
   return <Layout title={`Edit ${user.name}`} active="users">
     <a href={`/users/${user.id}`}>← {user.name}</a>
     <PageHeader title="Edit user" intro="Update the profile and account access details." />
-    <form class="panel form-shell wa-stack wa-gap-xl" method="post" action={`/users/${user.id}`}>
+    <form class="wa-stack wa-gap-xl" method="post" action={`/users/${user.id}`}>
+      <style>{`@scope {
+        :scope { max-width: 70ch; padding: var(--wa-space-l); border: var(--wa-border-width-s) solid var(--wa-color-surface-border); border-radius: var(--wa-border-radius-l); background: var(--wa-color-surface-raised); }
+        .form-grid { --min-column-size: 30ch; }
+        .field-error { margin: var(--wa-space-2xs) 0 0; color: var(--wa-color-danger-on-quiet); font-size: var(--wa-font-size-s); }
+      }`}</style>
       <div class="wa-grid wa-gap-l form-grid">
         <div><wa-input label="Full name" name="name" value={values.name} required maxlength="100"></wa-input>{errors.name && <p class="field-error" role="alert">{errors.name}</p>}</div>
         <div><wa-input label="Email address" name="email" type="email" value={values.email} required maxlength="254"></wa-input>{errors.email && <p class="field-error" role="alert">{errors.email}</p>}</div>
@@ -22,7 +27,7 @@ export function EditUserPage({ user, values, errors = {} }: EditUserPageProps) {
           <wa-option value="active">Active</wa-option><wa-option value="inactive">Inactive</wa-option>
         </wa-select>{errors.status && <p class="field-error" role="alert">{errors.status}</p>}</div>
       </div>
-      <p class="page-intro">Joined {formatDate(user.joined_at)} · Join date cannot be changed.</p>
+      <p class="wa-color-text-quiet">Joined {formatDate(user.joined_at)} · Join date cannot be changed.</p>
       <div class="wa-cluster wa-gap-s"><wa-button type="submit" variant="brand">Save changes</wa-button><wa-button href={`/users/${user.id}`} appearance="outlined">Cancel</wa-button></div>
     </form>
   </Layout>

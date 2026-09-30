@@ -20,6 +20,19 @@ export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
       </head>
       <body>
         <wa-page>
+          <style>{`
+            @scope {
+              :scope { --menu-width: 30ch; }
+              :scope[view=mobile] { --menu-width: auto; }
+              .brand { font-weight: var(--wa-font-weight-bold); font-size: var(--wa-font-size-l); }
+              .app-header { padding-inline: var(--wa-space-l); }
+              .app-nav { padding: var(--wa-space-l); }
+              .app-nav a { display: block; padding: var(--wa-space-s) var(--wa-space-m); border-radius: var(--wa-border-radius-m); color: var(--wa-color-text-normal); text-decoration: none; }
+              .app-nav a[aria-current=page] { color: var(--wa-color-brand-on-quiet); background: var(--wa-color-brand-fill-quiet); font-weight: var(--wa-font-weight-semibold); }
+              .app-main { width: min(100%, 110ch); margin-inline: auto; padding: var(--wa-space-xl); box-sizing: border-box; }
+              @media (max-width: 40em) { .app-main { padding: var(--wa-space-l); } }
+            }
+          `}</style>
           <header slot="header" class="app-header wa-split wa-align-items-center">
             <span class="brand">Northstar Admin</span>
             <span class="wa-caption-m">User management</span>

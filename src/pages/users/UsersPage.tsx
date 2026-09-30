@@ -1,6 +1,7 @@
 import type { User } from '../../db.js'
 import { Layout } from '../../components/Layout.js'
 import { PageHeader } from '../../components/PageHeader.js'
+import { Panel } from '../../components/Panel.js'
 import { UserTable } from '../../components/UserComponents.js'
 
 type UsersPageProps = { search: string; status: string; users: User[]; count: number; page: number; totalPages: number }
@@ -16,7 +17,12 @@ function userUrl(search: string, status: string, page: number) {
 export function UsersPage({ search, status, users, count, page, totalPages }: UsersPageProps) {
   return <Layout title="Users" active="users">
     <PageHeader title="Users" intro={`${count} ${count === 1 ? 'person' : 'people'} found`} />
-    <form method="get" action="/users" class="filters wa-cluster wa-gap-m">
+    <form method="get" action="/users" class="wa-cluster wa-gap-m">
+      <style>{`@scope {
+        :scope { align-items: end; }
+        wa-input { min-width: 16ch; flex: 2; }
+        wa-select { min-width: 12ch; flex: 1; }
+      }`}</style>
       <wa-input type="search" label="Search users" name="q" value={search} placeholder="Name or email"></wa-input>
       <wa-select label="Status" name="status" value={status}>
         <wa-option value="">All statuses</wa-option>
@@ -26,10 +32,11 @@ export function UsersPage({ search, status, users, count, page, totalPages }: Us
       <wa-button type="submit" variant="brand">Apply filters</wa-button>
       <wa-button href="/users" appearance="plain">Clear</wa-button>
     </form>
-    <section class="panel wa-stack wa-gap-m" aria-label="User list">
+    <Panel label="User list">
       {users.length ? <UserTable users={users} /> : <p>No users match your search. Try another name, email, or status.</p>}
-    </section>
-    {totalPages > 1 && <nav class="pagination wa-cluster wa-gap-m" aria-label="Pagination">
+    </Panel>
+    {totalPages > 1 && <nav class="wa-cluster wa-gap-m" aria-label="Pagination">
+      <style>{`@scope { :scope { justify-content: space-between; align-items: center; } }`}</style>
       <span>Page {page} of {totalPages}</span>
       <div class="wa-cluster wa-gap-s">
         {page > 1 && <wa-button href={userUrl(search, status, page - 1)} appearance="outlined">Previous</wa-button>}
