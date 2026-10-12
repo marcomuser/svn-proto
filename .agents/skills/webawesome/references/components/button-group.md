@@ -28,7 +28,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/button-group/button-group.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/button-group/button-group.js";
 ```
 
 \*\*npm\*\*
@@ -36,7 +36,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/button-group/bu
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/button-group/button-group.js';
+import "@awesome.me/webawesome/dist/components/button-group/button-group.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -44,7 +44,7 @@ import '@awesome.me/webawesome/dist/components/button-group/button-group.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/button-group/button-group.js';
+import "./webawesome/dist/components/button-group/button-group.js";
 ```
 
 \*\*React\*\*
@@ -52,26 +52,26 @@ import './webawesome/dist/components/button-group/button-group.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaButtonGroup from '@awesome.me/webawesome/dist/react/button-group/index.js';
+import WaButtonGroup from "@awesome.me/webawesome/dist/react/button-group/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                               |
+| --------- | --------------------------------------------------------- |
 | (default) | \`\` One or more elements to display in the button group. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`label\` label | \`string\` A label to use for the button group. This won't be displayed on the screen, but it will be announced by assistive devices when interacting with the control and is strongly recommended. Type Default '' | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` The button group's orientation. Type Default 'horizontal' | |
+| Name                        | Description                                                                                                                                                                                                         | Reflects                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| \`label\` label             | \`string\` A label to use for the button group. This won't be displayed on the screen, but it will be announced by assistive devices when interacting with the control and is strongly recommended. Type Default '' |                                                                        |
+| \`orientation\` orientation | \`'horizontal' \\                                                                                                                                                                                                   | 'vertical'\` The button group's orientation. Type Default 'horizontal' |     |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name     | Description                                 | CSS selector     |
+| -------- | ------------------------------------------- | ---------------- |
 | \`base\` | Deprecated. Style the host element instead. | \`::part(base)\` |
 
 ## Examples
@@ -183,7 +183,11 @@ Combine several button groups into a toolbar of related action sets. Use icon-on
       ><wa-icon name="align-left" variant="solid" label="Align left"></wa-icon
     ></wa-button>
     <wa-button appearance="filled" id="button-align-center"
-      ><wa-icon name="align-center" variant="solid" label="Align center"></wa-icon
+      ><wa-icon
+        name="align-center"
+        variant="solid"
+        label="Align center"
+      ></wa-icon
     ></wa-button>
     <wa-button appearance="filled" id="button-align-right"
       ><wa-icon name="align-right" variant="solid" label="Align right"></wa-icon

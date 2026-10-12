@@ -17,7 +17,11 @@ Selects let users choose one or more values from a dropdown list of predefined o
 ```
 
 ```html
-<wa-select label="Coffee order" hint="We'll grind it fresh to order." value="latte">
+<wa-select
+  label="Coffee order"
+  hint="We'll grind it fresh to order."
+  value="latte"
+>
   <wa-icon slot="start" name="mug-hot"></wa-icon>
   <wa-option value="espresso">Espresso</wa-option>
   <wa-option value="latte">Latte</wa-option>
@@ -40,7 +44,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/select/select.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/select/select.js";
 ```
 
 \*\*npm\*\*
@@ -48,7 +52,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/select/select.j
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/select/select.js';
+import "@awesome.me/webawesome/dist/components/select/select.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -56,7 +60,7 @@ import '@awesome.me/webawesome/dist/components/select/select.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/select/select.js';
+import "./webawesome/dist/components/select/select.js";
 ```
 
 \*\*React\*\*
@@ -64,24 +68,24 @@ import './webawesome/dist/components/select/select.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaSelect from '@awesome.me/webawesome/dist/react/select/index.js';
+import WaSelect from "@awesome.me/webawesome/dist/react/select/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The listbox options. Must be elements. You can use to group items visually. |
-| \`clear-icon\` | An icon to use in lieu of the default clear icon. |
-| \`end\` | \`\` An element, such as , placed at the start of the combobox. |
+| Name           | Description                                                                      |
+| -------------- | -------------------------------------------------------------------------------- |
+| (default)      | \`\` The listbox options. Must be elements. You can use to group items visually. |
+| \`clear-icon\` | An icon to use in lieu of the default clear icon.                                |
+| \`end\`        | \`\` An element, such as , placed at the start of the combobox.                  |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'filled' \\| 'outlined' \\| 'filled-outlined'\` The select's visual appearance. Type Default 'outlined' | |
-| \`disabled\` disabled | \`boolean\` Disables the select control. Type Default false | |
-| \`form\` | \`
+| Name                      | Description                                                 | Reflects      |
+| ------------------------- | ----------------------------------------------------------- | ------------- |
+| \`appearance\` appearance | \`'filled' \\                                               | 'outlined' \\ | 'filled-outlined'\` The select's visual appearance. Type Default 'outlined' |     |
+| \`disabled\` disabled     | \`boolean\` Disables the select control. Type Default false |               |
+| \`form\`                  | \`                                                          |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`getTag\` | \`(option: WaOption, index: number) => TemplateResult \\| string \\| HTMLElement\` A function that customizes the tags to be rendered when multiple=true. The first argument is the option, the second is the current tag's index. The function should return either a Lit TemplateResult or a string containing trusted HTML of the symbol to render at the specified value. Type | |
@@ -105,77 +109,77 @@ import WaSelect from '@awesome.me/webawesome/dist/react/select/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the control. | |
-| \`focus()\` | Sets focus on the control. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`hide()\` | Hides the listbox. | |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`show()\` | Shows the listbox. | |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| \`blur()\`                     | Removes focus from the control.                                                                                                                                                                                                                                                                                                                   |                           |
+| \`focus()\`                    | Sets focus on the control.                                                                                                                                                                                                                                                                                                                        | \`options: FocusOptions\` |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\        | File \\ | FormData \\ | null, reason: 'autocomplete' \\ | 'restore'\` |
+| \`hide()\`                     | Hides the listbox.                                                                                                                                                                                                                                                                                                                                |                           |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                           |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`       |
+| \`show()\`                     | Shows the listbox.                                                                                                                                                                                                                                                                                                                                |                           |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when the control's value changes. |
-| \`focus\` | Emitted when the control gains focus. |
-| \`input\` | Emitted when the control receives input. |
-| \`wa-after-hide\` | Emitted after the select's menu closes and all animations are complete. |
-| \`wa-after-show\` | Emitted after the select's menu opens and all animations are complete. |
-| \`wa-clear\` | Emitted when the control's value is cleared. |
-| \`wa-hide\` | Emitted when the select's menu closes. |
-| \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-| \`wa-show\` | Emitted when the select's menu opens. |
+| Name              | Description                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`          | Emitted when the control loses focus.                                                             |
+| \`change\`        | Emitted when the control's value changes.                                                         |
+| \`focus\`         | Emitted when the control gains focus.                                                             |
+| \`input\`         | Emitted when the control receives input.                                                          |
+| \`wa-after-hide\` | Emitted after the select's menu closes and all animations are complete.                           |
+| \`wa-after-show\` | Emitted after the select's menu opens and all animations are complete.                            |
+| \`wa-clear\`      | Emitted when the control's value is cleared.                                                      |
+| \`wa-hide\`       | Emitted when the select's menu closes.                                                            |
+| \`wa-invalid\`    | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
+| \`wa-show\`       | Emitted when the select's menu opens.                                                             |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--hide-duration\` | \`var(--wa-transition-fast)\` The duration of the hide animation. Default |
-| \`--show-duration\` | \`var(--wa-transition-fast)\` The duration of the show animation. Default |
-| \`--tag-max-size\` | \`multiple\` When using , the max size of tags before their content is truncated. Default 10ch |
+| Name                | Description                                                                                    |
+| ------------------- | ---------------------------------------------------------------------------------------------- |
+| \`--hide-duration\` | \`var(--wa-transition-fast)\` The duration of the hide animation. Default                      |
+| \`--show-duration\` | \`var(--wa-transition-fast)\` The duration of the show animation. Default                      |
+| \`--tag-max-size\`  | \`multiple\` When using , the max size of tags before their content is truncated. Default 10ch |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name      | Description          | CSS selector      |
+| --------- | -------------------- | ----------------- |
 | \`blank\` | The select is empty. | \`:state(blank)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`clear-button\` | The clear button. | \`::part(clear-button)\` |
-| \`combobox\` | The container the wraps the start, end, value, clear icon, and expand button. | \`::part(combobox)\` |
-| \`display-input\` | \`\` The element that displays the selected option's label, an element. | \`::part(display-input)\` |
-| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
-| \`expand-icon\` | The container that wraps the expand icon. | \`::part(expand-icon)\` |
-| \`form-control\` | The form control that wraps the label, input, and hint. | \`::part(form-control)\` |
-| \`form-control-input\` | The select's wrapper. | \`::part(form-control-input)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`listbox\` | The listbox container where options are slotted. | \`::part(listbox)\` |
-| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
-| \`tag\` | The individual tags that represent each multiselect option. | \`::part(tag)\` |
-| \`tag\_\_content\` | The tag's content part. | \`::part(tag\_\_content)\` |
-| \`tag\_\_remove-button\` | The tag's remove button. | \`::part(tag\_\_remove-button)\` |
-| \`tag\_\_remove-button\_\_base\` | The tag's remove button base part. | \`::part(tag\_\_remove-button\_\_base)\` |
-| \`tags\` | \`multiselect\` The container that houses option tags when is used. | \`::part(tags)\` |
-| \`label\` | \`form-control-label\` Deprecated. Use the part instead. | \`::part(label)\` |
+| Name                             | Description                                                                   | CSS selector                             |
+| -------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------- |
+| \`clear-button\`                 | The clear button.                                                             | \`::part(clear-button)\`                 |
+| \`combobox\`                     | The container the wraps the start, end, value, clear icon, and expand button. | \`::part(combobox)\`                     |
+| \`display-input\`                | \`\` The element that displays the selected option's label, an element.       | \`::part(display-input)\`                |
+| \`end\`                          | \`end\` The container that wraps the slot.                                    | \`::part(end)\`                          |
+| \`expand-icon\`                  | The container that wraps the expand icon.                                     | \`::part(expand-icon)\`                  |
+| \`form-control\`                 | The form control that wraps the label, input, and hint.                       | \`::part(form-control)\`                 |
+| \`form-control-input\`           | The select's wrapper.                                                         | \`::part(form-control-input)\`           |
+| \`form-control-label\`           | The label.                                                                    | \`::part(form-control-label)\`           |
+| \`hint\`                         | The hint's wrapper.                                                           | \`::part(hint)\`                         |
+| \`listbox\`                      | The listbox container where options are slotted.                              | \`::part(listbox)\`                      |
+| \`start\`                        | \`start\` The container that wraps the slot.                                  | \`::part(start)\`                        |
+| \`tag\`                          | The individual tags that represent each multiselect option.                   | \`::part(tag)\`                          |
+| \`tag\_\_content\`               | The tag's content part.                                                       | \`::part(tag\_\_content)\`               |
+| \`tag\_\_remove-button\`         | The tag's remove button.                                                      | \`::part(tag\_\_remove-button)\`         |
+| \`tag\_\_remove-button\_\_base\` | The tag's remove button base part.                                            | \`::part(tag\_\_remove-button\_\_base)\` |
+| \`tags\`                         | \`multiselect\` The container that houses option tags when is used.           | \`::part(tags)\`                         |
+| \`label\`                        | \`form-control-label\` Deprecated. Use the part instead.                      | \`::part(label)\`                        |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-option>`](https://webawesome.com/docs/components/option)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
--   [`<wa-tag>`](https://webawesome.com/docs/components/tag)
+- [`<wa-button>`](https://webawesome.com/docs/components/button)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-option>`](https://webawesome.com/docs/components/option)
+- [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+- [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
+- [`<wa-tag>`](https://webawesome.com/docs/components/tag)
 
 ## Examples
 
@@ -196,7 +200,10 @@ Use the `label` attribute to give the select an accessible label. For labels tha
 Add a descriptive hint with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
-<wa-select label="Experience" hint="Tell us how comfortable you are with the command line.">
+<wa-select
+  label="Experience"
+  hint="Tell us how comfortable you are with the command line."
+>
   <wa-option value="1">Novice</wa-option>
   <wa-option value="2">Intermediate</wa-option>
   <wa-option value="3">Advanced</wa-option>
@@ -405,8 +412,8 @@ Because custom tags render in a shadow root, style them with the `style` attribu
 </wa-select>
 
 <script type="module">
-  await customElements.whenDefined('wa-select');
-  const select = document.querySelector('.custom-tag');
+  await customElements.whenDefined("wa-select");
+  const select = document.querySelector(".custom-tag");
   await select.updateComplete;
 
   select.getTag = (option, index) => {
@@ -434,13 +441,17 @@ When using custom tags with `with-remove`, include the `data-value` attribute se
 
 The select handles options that arrive after the initial render, similar to a native `<select>`:
 
--   **Empty select with a value:** a `<wa-select>` created without options but given a `value` starts with an empty value. When an option whose value matches is added later, the select updates to match.
--   **Multiple select with partial options:** a `<wa-select multiple>` with an initial value respects only the options present in the DOM. When the remaining selected options load later — and the user hasn't changed the selection — they're added automatically.
+- **Empty select with a value:** a `<wa-select>` created without options but given a `value` starts with an empty value. When an option whose value matches is added later, the select updates to match.
+- **Multiple select with partial options:** a `<wa-select multiple>` with an initial value respects only the options present in the DOM. When the remaining selected options load later — and the user hasn't changed the selection — they're added automatically.
 
 ```html
 <form id="lazy-options-example">
   <div>
-    <wa-select name="select-1" value="foo" label="Single select (with existing options)">
+    <wa-select
+      name="select-1"
+      value="foo"
+      label="Single select (with existing options)"
+    >
       <wa-option value="bar">Bar</wa-option>
       <wa-option value="baz">Baz</wa-option>
     </wa-select>
@@ -453,7 +464,12 @@ The select handles options that arrive after the initial render, similar to a na
   <br />
 
   <div>
-    <wa-select name="select-2" value="foo" label="Single select (with no existing options)"> </wa-select>
+    <wa-select
+      name="select-2"
+      value="foo"
+      label="Single select (with no existing options)"
+    >
+    </wa-select>
 
     <wa-divider></wa-divider>
 
@@ -463,20 +479,32 @@ The select handles options that arrive after the initial render, similar to a na
   <br />
 
   <div>
-    <wa-select name="select-3" multiple label="Multiple select (with existing selected options)">
+    <wa-select
+      name="select-3"
+      multiple
+      label="Multiple select (with existing selected options)"
+    >
       <wa-option value="bar" selected>Bar</wa-option>
       <wa-option value="baz" selected>Baz</wa-option>
     </wa-select>
 
     <wa-divider></wa-divider>
 
-    <wa-button appearance="filled" type="button">Add "foo" option (selected)</wa-button>
+    <wa-button appearance="filled" type="button"
+      >Add "foo" option (selected)</wa-button
+    >
   </div>
 
   <br />
 
   <div>
-    <wa-select name="select-4" value="foo" multiple label="Multiple select (with no existing options)"> </wa-select>
+    <wa-select
+      name="select-4"
+      value="foo"
+      multiple
+      label="Multiple select (with no existing options)"
+    >
+    </wa-select>
 
     <wa-divider></wa-divider>
 
@@ -487,7 +515,9 @@ The select handles options that arrive after the initial render, similar to a na
 
   <div style="display: flex; gap: 16px;">
     <wa-button appearance="filled" type="reset">Reset</wa-button>
-    <wa-button appearance="filled" type="submit" variant="neutral">Show FormData</wa-button>
+    <wa-button appearance="filled" type="submit" variant="neutral"
+      >Show FormData</wa-button
+    >
   </div>
 
   <br />
@@ -503,20 +533,20 @@ The select handles options that arrive after the initial render, similar to a na
     if (!addFooButton) {
       return;
     }
-    const select = addFooButton.parentElement.querySelector('wa-select');
+    const select = addFooButton.parentElement.querySelector("wa-select");
 
     if (select.querySelector("wa-option[value='foo']")) {
       // Foo already exists. no-op.
       return;
     }
 
-    const option = document.createElement('wa-option');
-    option.setAttribute('value', 'foo');
+    const option = document.createElement("wa-option");
+    option.setAttribute("value", "foo");
     option.selected = true;
-    option.innerText = 'Foo';
+    option.innerText = "Foo";
 
     // For the multiple select with existing selected options, make the new option selected
-    if (select.getAttribute('name') === 'select-3') {
+    if (select.getAttribute("name") === "select-3") {
       option.selected = true;
     }
 
@@ -527,23 +557,28 @@ The select handles options that arrive after the initial render, similar to a na
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const codeElement = document.querySelector('#lazy-options-example-form-data');
+    const codeElement = document.querySelector(
+      "#lazy-options-example-form-data",
+    );
 
     const obj = {};
     for (const key of formData.keys()) {
-      const val = formData.getAll(key).length > 1 ? formData.getAll(key) : formData.get(key);
+      const val =
+        formData.getAll(key).length > 1
+          ? formData.getAll(key)
+          : formData.get(key);
       obj[key] = val;
     }
 
     codeElement.textContent = JSON.stringify(obj, null, 2);
 
     const preElement = codeElement.parentElement;
-    preElement.removeAttribute('hidden');
+    preElement.removeAttribute("hidden");
   }
 
-  const container = document.querySelector('#lazy-options-example');
-  container.addEventListener('click', addFooOption);
-  container.addEventListener('submit', handleLazySubmit);
+  const container = document.querySelector("#lazy-options-example");
+  container.addEventListener("click", addFooOption);
+  container.addEventListener("submit", handleLazySubmit);
 </script>
 ```
 

@@ -35,7 +35,11 @@ Randomly picks and displays one or more of its slotted children, hiding the rest
 
   <wa-divider></wa-divider>
 
-  <wa-button appearance="filled" onclick="document.getElementById('rc-overview').randomize()">Shuffle</wa-button>
+  <wa-button
+    appearance="filled"
+    onclick="document.getElementById('rc-overview').randomize()"
+    >Shuffle</wa-button
+  >
 </div>
 ```
 
@@ -50,7 +54,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/random-content/random-content.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/random-content/random-content.js";
 ```
 
 \*\*npm\*\*
@@ -58,7 +62,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/random-content/
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/random-content/random-content.js';
+import "@awesome.me/webawesome/dist/components/random-content/random-content.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -66,7 +70,7 @@ import '@awesome.me/webawesome/dist/components/random-content/random-content.js'
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/random-content/random-content.js';
+import "./webawesome/dist/components/random-content/random-content.js";
 ```
 
 \*\*React\*\*
@@ -74,43 +78,43 @@ import './webawesome/dist/components/random-content/random-content.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaRandomContent from '@awesome.me/webawesome/dist/react/random-content/index.js';
+import WaRandomContent from "@awesome.me/webawesome/dist/react/random-content/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                                                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | (default) | \`hidden\` The pool of children to choose from. Only direct element children are eligible; unselected children are with the hidden attribute. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`animation\` animation | \`'none' \\| 'fade' \\| 'fade-up' \\| 'fade-down' \\| 'fade-left' \\| 'fade-right'\` Entrance animation for newly shown children. Type Default 'none' | |
-| \`autoplay\` autoplay | \`autoplay-interval\` Rotate the content automatically. Set the cadence with . Type boolean Default false | |
-| \`autoplayInterval\` autoplay-interval | \`number\` Autoplay cadence in milliseconds. Type Default 3000 | |
-| \`items\` items | \`number\` Number of children to show simultaneously. Clamped to \[1, childCount\]. Type Default 1 | |
-| \`mode\` mode | \`unique\` Selection strategy: (default), random, or sequence. Type 'random' \\| 'unique' \\| 'sequence' Default 'unique' | |
+| Name                                   | Description                                                                                               | Reflects    |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| \`animation\` animation                | \`'none' \\                                                                                               | 'fade' \\   | 'fade-up' \\                | 'fade-down' \\ | 'fade-left' \\ | 'fade-right'\` Entrance animation for newly shown children. Type Default 'none' |     |
+| \`autoplay\` autoplay                  | \`autoplay-interval\` Rotate the content automatically. Set the cadence with . Type boolean Default false |             |
+| \`autoplayInterval\` autoplay-interval | \`number\` Autoplay cadence in milliseconds. Type Default 3000                                            |             |
+| \`items\` items                        | \`number\` Number of children to show simultaneously. Clamped to \[1, childCount\]. Type Default 1        |             |
+| \`mode\` mode                          | \`unique\` Selection strategy: (default), random, or sequence. Type 'random' \\                           | 'unique' \\ | 'sequence' Default 'unique' |                |
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`randomize()\` | Selects a new set of children using the current mode. Returns the elements now shown. | |
+| Name            | Description                                                                           | Arguments |
+| --------------- | ------------------------------------------------------------------------------------- | --------- |
+| \`randomize()\` | Selects a new set of children using the current mode. Returns the elements now shown. |           |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name                  | Description                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | \`wa-content-change\` | \`randomize()\` Emitted whenever the displayed selection changes, including on first render, on , and on each autoplay tick. |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--animation-duration\` | \`300ms\` Duration of the entrance animation. Default is . |
-| \`--animation-easing\` | \`ease\` Easing function for the entrance animation. Default is . |
+| Name                      | Description                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| \`--animation-duration\`  | \`300ms\` Duration of the entrance animation. Default is .                                                          |
+| \`--animation-easing\`    | \`ease\` Easing function for the entrance animation. Default is .                                                   |
 | \`--animation-translate\` | \`fade-up\` Translation distance for directional animations (, fade-down, fade-left, fade-right). Default is 0.5em. |
 
 ## Examples
@@ -131,7 +135,11 @@ Slot virtually any HTML — text, badges, cards, images, or other components —
 
   <wa-divider></wa-divider>
 
-  <wa-button appearance="filled" onclick="document.getElementById('rc-providing').randomize()">Shuffle</wa-button>
+  <wa-button
+    appearance="filled"
+    onclick="document.getElementById('rc-providing').randomize()"
+    >Shuffle</wa-button
+  >
 </div>
 ```
 
@@ -158,14 +166,20 @@ Set `items` to show more than one child at a time. The value is clamped to the n
       <wa-option value="3">3</wa-option>
       <wa-option value="4">4</wa-option>
     </wa-select>
-    <wa-button appearance="filled" onclick="document.getElementById('rc-items').randomize()">Shuffle</wa-button>
+    <wa-button
+      appearance="filled"
+      onclick="document.getElementById('rc-items').randomize()"
+      >Shuffle</wa-button
+    >
   </div>
 </div>
 
 <script>
-  document.getElementById('rc-items-count').addEventListener('change', event => {
-    document.getElementById('rc-items').items = Number(event.target.value);
-  });
+  document
+    .getElementById("rc-items-count")
+    .addEventListener("change", (event) => {
+      document.getElementById("rc-items").items = Number(event.target.value);
+    });
 </script>
 ```
 
@@ -173,11 +187,11 @@ Set `items` to show more than one child at a time. The value is clamped to the n
 
 The `mode` attribute controls how the next selection is chosen. Switch modes and shuffle a few times to feel the difference — the recent picks are listed underneath.
 
-| Mode | Behavior | Best for |
-| --- | --- | --- |
-| \`unique\` default | Never repeats the previous selection. | Tip rotators and timed loops. |
-| \`random\` | Picks at complete random, so the same item can appear twice in a row. | A one-time shuffle on load. |
-| \`sequence\` | \`items\` Steps through children in DOM order, wrapping at the end (advances by ). | Stepping through content in order. |
+| Mode               | Behavior                                                                           | Best for                           |
+| ------------------ | ---------------------------------------------------------------------------------- | ---------------------------------- |
+| \`unique\` default | Never repeats the previous selection.                                              | Tip rotators and timed loops.      |
+| \`random\`         | Picks at complete random, so the same item can appear twice in a row.              | A one-time shuffle on load.        |
+| \`sequence\`       | \`items\` Steps through children in DOM order, wrapping at the end (advances by ). | Stepping through content in order. |
 
 ```html
 <div class="rc-modes-demo">
@@ -191,12 +205,21 @@ The `mode` attribute controls how the next selection is chosen. Switch modes and
   <wa-divider></wa-divider>
 
   <div class="wa-cluster" style="align-items: flex-end">
-    <wa-select id="rc-modes-mode" label="Mode" value="unique" style="width: 10rem">
+    <wa-select
+      id="rc-modes-mode"
+      label="Mode"
+      value="unique"
+      style="width: 10rem"
+    >
       <wa-option value="unique">unique</wa-option>
       <wa-option value="random">random</wa-option>
       <wa-option value="sequence">sequence</wa-option>
     </wa-select>
-    <wa-button appearance="filled" onclick="document.getElementById('rc-modes').randomize()">Shuffle</wa-button>
+    <wa-button
+      appearance="filled"
+      onclick="document.getElementById('rc-modes').randomize()"
+      >Shuffle</wa-button
+    >
   </div>
 
   <small style="display: block; margin-block-start: var(--wa-space-s)">
@@ -205,17 +228,24 @@ The `mode` attribute controls how the next selection is chosen. Switch modes and
 </div>
 
 <script>
-  const rcModes = document.getElementById('rc-modes');
-  const rcModesHistory = document.getElementById('rc-modes-history');
+  const rcModes = document.getElementById("rc-modes");
+  const rcModesHistory = document.getElementById("rc-modes-history");
 
-  document.getElementById('rc-modes-mode').addEventListener('change', event => {
-    rcModes.mode = event.target.value;
-  });
+  document
+    .getElementById("rc-modes-mode")
+    .addEventListener("change", (event) => {
+      rcModes.mode = event.target.value;
+    });
 
-  rcModes.addEventListener('wa-content-change', event => {
-    const labels = event.detail.items.map(item => item.textContent.trim()).join('');
-    const picks = (rcModesHistory.textContent + ' ' + labels).trim().split(/\s+/).slice(-16);
-    rcModesHistory.textContent = picks.join(' ');
+  rcModes.addEventListener("wa-content-change", (event) => {
+    const labels = event.detail.items
+      .map((item) => item.textContent.trim())
+      .join("");
+    const picks = (rcModesHistory.textContent + " " + labels)
+      .trim()
+      .split(/\s+/)
+      .slice(-16);
+    rcModesHistory.textContent = picks.join(" ");
   });
 </script>
 ```
@@ -235,7 +265,12 @@ Use the `animation` attribute to play an entrance transition when new content is
   <wa-divider></wa-divider>
 
   <div class="wa-cluster" style="align-items: flex-end">
-    <wa-select id="rc-animation-select" label="Animation" value="fade-up" style="width: 10rem">
+    <wa-select
+      id="rc-animation-select"
+      label="Animation"
+      value="fade-up"
+      style="width: 10rem"
+    >
       <wa-option value="none">none</wa-option>
       <wa-option value="fade">fade</wa-option>
       <wa-option value="fade-up">fade-up</wa-option>
@@ -243,14 +278,20 @@ Use the `animation` attribute to play an entrance transition when new content is
       <wa-option value="fade-left">fade-left</wa-option>
       <wa-option value="fade-right">fade-right</wa-option>
     </wa-select>
-    <wa-button appearance="filled" onclick="document.getElementById('rc-animation').randomize()">Next</wa-button>
+    <wa-button
+      appearance="filled"
+      onclick="document.getElementById('rc-animation').randomize()"
+      >Next</wa-button
+    >
   </div>
 </div>
 
 <script>
-  document.getElementById('rc-animation-select').addEventListener('change', event => {
-    document.getElementById('rc-animation').animation = event.target.value;
-  });
+  document
+    .getElementById("rc-animation-select")
+    .addEventListener("change", (event) => {
+      document.getElementById("rc-animation").animation = event.target.value;
+    });
 </script>
 ```
 
@@ -266,11 +307,22 @@ Add the `autoplay` attribute to rotate content on a timer, and set the cadence w
 <div class="rc-autoplay-demo">
   <dl>
     <dt>Did you know?</dt>
-    <wa-random-content id="rc-autoplay" mode="unique" animation="fade-up" autoplay autoplay-interval="3000">
+    <wa-random-content
+      id="rc-autoplay"
+      mode="unique"
+      animation="fade-up"
+      autoplay
+      autoplay-interval="3000"
+    >
       <dd><wa-icon name="octopus"></wa-icon> Octopuses have three hearts.</dd>
       <dd><wa-icon name="bee"></wa-icon> Honey never spoils.</dd>
-      <dd><wa-icon name="feather"></wa-icon> A group of flamingos is called a flamboyance.</dd>
-      <dd><wa-icon name="banana"></wa-icon> Bananas are botanically berries.</dd>
+      <dd>
+        <wa-icon name="feather"></wa-icon> A group of flamingos is called a
+        flamboyance.
+      </dd>
+      <dd>
+        <wa-icon name="banana"></wa-icon> Bananas are botanically berries.
+      </dd>
       <dd><wa-icon name="cat"></wa-icon> Cheetahs meow rather than roar.</dd>
     </wa-random-content>
   </dl>
@@ -298,12 +350,12 @@ Add the `autoplay` attribute to rotate content on a timer, and set the cadence w
 </style>
 
 <script>
-  const rcAutoplay = document.getElementById('rc-autoplay');
-  const rcAutoplayToggle = document.getElementById('rc-autoplay-toggle');
+  const rcAutoplay = document.getElementById("rc-autoplay");
+  const rcAutoplayToggle = document.getElementById("rc-autoplay-toggle");
 
-  rcAutoplayToggle.addEventListener('click', () => {
+  rcAutoplayToggle.addEventListener("click", () => {
     rcAutoplay.autoplay = !rcAutoplay.autoplay;
-    rcAutoplayToggle.textContent = rcAutoplay.autoplay ? 'Pause' : 'Play';
+    rcAutoplayToggle.textContent = rcAutoplay.autoplay ? "Pause" : "Play";
   });
 </script>
 ```
@@ -317,7 +369,11 @@ The host is `display: contents` by default, so it adds no box of its own. To lay
 
 ```html
 <div>
-  <wa-random-content id="rc-layout" items="3" style="display: flex; gap: var(--wa-space-m); flex-wrap: wrap">
+  <wa-random-content
+    id="rc-layout"
+    items="3"
+    style="display: flex; gap: var(--wa-space-m); flex-wrap: wrap"
+  >
     <wa-avatar label="Jordan Hayes" initials="JH"></wa-avatar>
     <wa-avatar label="Mara Goldberg" initials="MG"></wa-avatar>
     <wa-avatar label="Beck Watts" initials="BW"></wa-avatar>
@@ -328,7 +384,11 @@ The host is `display: contents` by default, so it adds no box of its own. To lay
 
   <wa-divider></wa-divider>
 
-  <wa-button appearance="filled" onclick="document.getElementById('rc-layout').randomize()">Shuffle</wa-button>
+  <wa-button
+    appearance="filled"
+    onclick="document.getElementById('rc-layout').randomize()"
+    >Shuffle</wa-button
+  >
 </div>
 ```
 
@@ -349,7 +409,11 @@ Because the host is transparent, the component also works inline within a senten
 
   <wa-divider></wa-divider>
 
-  <wa-button appearance="filled" onclick="document.getElementById('rc-inline').randomize()">Shuffle</wa-button>
+  <wa-button
+    appearance="filled"
+    onclick="document.getElementById('rc-inline').randomize()"
+    >Shuffle</wa-button
+  >
 </div>
 ```
 
@@ -366,10 +430,10 @@ wa-random-content > :not([hidden]) {
 The component emits a `wa-content-change` event whenever the displayed selection changes — on first render, on `randomize()`, and on each autoplay tick. `event.detail.items` is the array of elements now shown.
 
 ```javascript
-const rc = document.querySelector('wa-random-content');
+const rc = document.querySelector("wa-random-content");
 
-rc.addEventListener('wa-content-change', event => {
-  console.log('Now showing:', event.detail.items);
+rc.addEventListener("wa-content-change", (event) => {
+  console.log("Now showing:", event.detail.items);
 });
 ```
 

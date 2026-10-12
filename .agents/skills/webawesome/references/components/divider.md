@@ -33,7 +33,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/divider/divider.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/divider/divider.js";
 ```
 
 \*\*npm\*\*
@@ -41,7 +41,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/divider/divider
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/divider/divider.js';
+import "@awesome.me/webawesome/dist/components/divider/divider.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -49,7 +49,7 @@ import '@awesome.me/webawesome/dist/components/divider/divider.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/divider/divider.js';
+import "./webawesome/dist/components/divider/divider.js";
 ```
 
 \*\*React\*\*
@@ -57,37 +57,37 @@ import './webawesome/dist/components/divider/divider.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaDivider from '@awesome.me/webawesome/dist/react/divider/index.js';
+import WaDivider from "@awesome.me/webawesome/dist/react/divider/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                             |
+| --------- | ------------------------------------------------------- |
 | (default) | An optional label to show in the center of the divider. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`labelPlacement\` label-placement | \`'start' \\| 'center' \\| 'end'\` Where the label sits along the divider. Type Default 'center' | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` Sets the divider's orientation. Type Default 'horizontal' | |
-| \`withLabel\` with-label | \`true\` Only required for SSR. Set to if you're slotting in a label so the server-rendered markup includes the label's layout before the component hydrates on the client. Type boolean Default false | |
+| Name                               | Description                                                                                                                                                                                            | Reflects                                                               |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| \`labelPlacement\` label-placement | \`'start' \\                                                                                                                                                                                           | 'center' \\                                                            | 'end'\` Where the label sits along the divider. Type Default 'center' |     |
+| \`orientation\` orientation        | \`'horizontal' \\                                                                                                                                                                                      | 'vertical'\` Sets the divider's orientation. Type Default 'horizontal' |                                                                       |
+| \`withLabel\` with-label           | \`true\` Only required for SSR. Set to if you're slotting in a label so the server-rendered markup includes the label's layout before the component hydrates on the client. Type boolean Default false |                                                                        |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--color\` | The color of the divider. |
-| \`--label-offset\` | \`start\` The length of the line between the divider's edge and a label placed at the or end. |
-| \`--label-spacing\` | The amount of space between the label and the divider's lines. |
-| \`--spacing\` | The spacing of the divider. |
-| \`--width\` | The width of the divider. |
+| Name                | Description                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------- |
+| \`--color\`         | The color of the divider.                                                                     |
+| \`--label-offset\`  | \`start\` The length of the line between the divider's edge and a label placed at the or end. |
+| \`--label-spacing\` | The amount of space between the label and the divider's lines.                                |
+| \`--spacing\`       | The spacing of the divider.                                                                   |
+| \`--width\`         | The width of the divider.                                                                     |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name      | Description                                   | CSS selector      |
+| --------- | --------------------------------------------- | ----------------- |
 | \`label\` | The container that wraps the divider's label. | \`::part(label)\` |
 
 ### SSR
@@ -183,11 +183,11 @@ The label is centered once the component hydrates; `with-label` lays it out in t
 
 Use the `label-placement` attribute to move the label toward either end of the divider.
 
-| Placement | Best for |
-| --- | --- |
-| \`start\` | Section labels that read like a heading on the line. |
-| \`center\` default | Alternatives, such as "or" between two options. |
-| \`end\` | Markers that trail content, such as a "new" line. |
+| Placement          | Best for                                             |
+| ------------------ | ---------------------------------------------------- |
+| \`start\`          | Section labels that read like a heading on the line. |
+| \`center\` default | Alternatives, such as "or" between two options.      |
+| \`end\`            | Markers that trail content, such as a "new" line.    |
 
 The `--label-offset` custom property adds a line between the divider's edge and a `start` or `end` label. It's `0` by default, so the label sits `--label-spacing` from the edge.
 
@@ -195,7 +195,9 @@ The `--label-offset` custom property adds a line between the divider's edge and 
 <wa-divider label-placement="start">Start</wa-divider>
 <wa-divider label-placement="center">Center</wa-divider>
 <wa-divider label-placement="end">End</wa-divider>
-<wa-divider label-placement="start" style="--label-offset: 4rem;">Start, offset 4rem</wa-divider>
+<wa-divider label-placement="start" style="--label-offset: 4rem;"
+  >Start, offset 4rem</wa-divider
+>
 ```
 
 ### Label Spacing
@@ -204,7 +206,9 @@ Use the `--label-spacing` custom property to change the amount of space between 
 
 ```html
 <wa-divider>Default</wa-divider>
-<wa-divider style="--label-spacing: var(--wa-space-xl);">Custom --label-spacing (xl)</wa-divider>
+<wa-divider style="--label-spacing: var(--wa-space-xl);"
+  >Custom --label-spacing (xl)</wa-divider
+>
 ```
 
 ### Decorative Labels

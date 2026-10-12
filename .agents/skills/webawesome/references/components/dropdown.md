@@ -29,7 +29,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/dropdown/dropdown.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/dropdown/dropdown.js";
 ```
 
 \*\*npm\*\*
@@ -37,7 +37,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/dropdown/dropdo
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/dropdown/dropdown.js';
+import "@awesome.me/webawesome/dist/components/dropdown/dropdown.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -45,7 +45,7 @@ import '@awesome.me/webawesome/dist/components/dropdown/dropdown.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/dropdown/dropdown.js';
+import "./webawesome/dist/components/dropdown/dropdown.js";
 ```
 
 \*\*React\*\*
@@ -53,57 +53,57 @@ import './webawesome/dist/components/dropdown/dropdown.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaDropdown from '@awesome.me/webawesome/dist/react/dropdown/index.js';
+import WaDropdown from "@awesome.me/webawesome/dist/react/dropdown/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The dropdown's items, typically elements. |
+| Name        | Description                                                 |
+| ----------- | ----------------------------------------------------------- |
+| (default)   | \`\` The dropdown's items, typically elements.              |
 | \`trigger\` | \`\` The element that triggers the dropdown, such as a or . |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`distance\` distance | \`number\` The distance of the dropdown menu from its trigger. Type Default 0 | |
-| \`open\` open | \`boolean\` Opens or closes the dropdown. Type Default false | |
-| \`placement\` placement | \`'top' \\| 'top-start' \\| 'top-end' \\| 'bottom' \\| 'bottom-start' \\| 'bottom-end' \\| 'right' \\| 'right-start' \\| 'right-end' \\| 'left' \\| 'left-start' \\| 'left-end'\` The placement of the dropdown menu in reference to the trigger. The menu will shift to a more optimal location if the preferred placement doesn't have enough room. Type Default 'bottom-start' | |
-| \`size\` size | \`'xs' \\| 's' \\| 'm' \\| 'l' \\| 'xl' \\| 'small' \\| 'medium' \\| 'large'\` The dropdown's size. Type Default 'm' | |
-| \`skidding\` skidding | \`number\` The offset of the dropdown menu along its trigger. Type Default 0 | |
+| Name                    | Description                                                                   | Reflects       |
+| ----------------------- | ----------------------------------------------------------------------------- | -------------- |
+| \`distance\` distance   | \`number\` The distance of the dropdown menu from its trigger. Type Default 0 |                |
+| \`open\` open           | \`boolean\` Opens or closes the dropdown. Type Default false                  |                |
+| \`placement\` placement | \`'top' \\                                                                    | 'top-start' \\ | 'top-end' \\ | 'bottom' \\ | 'bottom-start' \\ | 'bottom-end' \\ | 'right' \\  | 'right-start' \\                                | 'right-end' \\ | 'left' \\ | 'left-start' \\ | 'left-end'\` The placement of the dropdown menu in reference to the trigger. The menu will shift to a more optimal location if the preferred placement doesn't have enough room. Type Default 'bottom-start' |     |
+| \`size\` size           | \`'xs' \\                                                                     | 's' \\         | 'm' \\       | 'l' \\      | 'xl' \\           | 'small' \\      | 'medium' \\ | 'large'\` The dropdown's size. Type Default 'm' |                |
+| \`skidding\` skidding   | \`number\` The offset of the dropdown menu along its trigger. Type Default 0  |                |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`wa-after-hide\` | Emitted after the dropdown has been hidden. |
-| \`wa-after-show\` | Emitted after the dropdown has been shown. |
-| \`wa-hide\` | Emitted when the dropdown is about to hide. |
-| \`wa-select\` | Emitted when an item in the dropdown is selected. |
-| \`wa-show\` | Emitted when the dropdown is about to show. |
+| Name              | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| \`wa-after-hide\` | Emitted after the dropdown has been hidden.       |
+| \`wa-after-show\` | Emitted after the dropdown has been shown.        |
+| \`wa-hide\`       | Emitted when the dropdown is about to hide.       |
+| \`wa-select\`     | Emitted when an item in the dropdown is selected. |
+| \`wa-show\`       | Emitted when the dropdown is about to show.       |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name                | Description                         |
+| ------------------- | ----------------------------------- |
 | \`--hide-duration\` | The duration of the hide animation. |
 | \`--show-duration\` | The duration of the show animation. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`menu\` | The dropdown menu container. | \`::part(menu)\` |
+| Name     | Description                                 | CSS selector     |
+| -------- | ------------------------------------------- | ---------------- |
+| \`menu\` | The dropdown menu container.                | \`::part(menu)\` |
 | \`base\` | Deprecated. Style the host element instead. | \`::part(base)\` |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-dropdown-item>`](https://webawesome.com/docs/components/dropdown-item)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+- [`<wa-dropdown-item>`](https://webawesome.com/docs/components/dropdown-item)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-popup>`](https://webawesome.com/docs/components/popup)
 
 ## Examples
 
@@ -202,9 +202,15 @@ Set `type="checkbox"` to turn a [dropdown item](https://webawesome.com/docs/comp
   <wa-dropdown>
     <wa-button appearance="filled" slot="trigger" with-caret>View</wa-button>
 
-    <wa-dropdown-item type="checkbox" value="canvas" checked>Show canvas</wa-dropdown-item>
-    <wa-dropdown-item type="checkbox" value="grid" checked>Show grid</wa-dropdown-item>
-    <wa-dropdown-item type="checkbox" value="source">Show source</wa-dropdown-item>
+    <wa-dropdown-item type="checkbox" value="canvas" checked
+      >Show canvas</wa-dropdown-item
+    >
+    <wa-dropdown-item type="checkbox" value="grid" checked
+      >Show grid</wa-dropdown-item
+    >
+    <wa-dropdown-item type="checkbox" value="source"
+      >Show source</wa-dropdown-item
+    >
 
     <wa-divider></wa-divider>
 
@@ -213,12 +219,15 @@ Set `type="checkbox"` to turn a [dropdown item](https://webawesome.com/docs/comp
 </div>
 
 <script>
-  const container = document.querySelector('.dropdown-checkboxes');
-  const dropdown = container.querySelector('wa-dropdown');
+  const container = document.querySelector(".dropdown-checkboxes");
+  const dropdown = container.querySelector("wa-dropdown");
 
-  dropdown.addEventListener('wa-select', event => {
-    if (event.detail.item.type === 'checkbox') {
-      console.log(event.detail.item.value, event.detail.item.checked ? 'checked' : 'unchecked');
+  dropdown.addEventListener("wa-select", (event) => {
+    if (event.detail.item.type === "checkbox") {
+      console.log(
+        event.detail.item.value,
+        event.detail.item.checked ? "checked" : "unchecked",
+      );
     } else {
       console.log(event.detail.item.value);
     }
@@ -243,7 +252,11 @@ Link items still emit `wa-select`, so you can react to them like any other item.
     Documentation
   </wa-dropdown-item>
 
-  <wa-dropdown-item href="https://github.com/shoelace-style/webawesome" target="_blank" rel="noreferrer">
+  <wa-dropdown-item
+    href="https://github.com/shoelace-style/webawesome"
+    target="_blank"
+    rel="noreferrer"
+  >
     <wa-icon slot="icon" name="github" family="brands"></wa-icon>
     GitHub
     <wa-icon slot="details" name="arrow-up-right-from-square"></wa-icon>
@@ -314,25 +327,35 @@ To nest a menu, place [dropdown items](https://webawesome.com/docs/components/dr
     <wa-dropdown-item>
       Export
       <wa-dropdown-item slot="submenu" value="pdf">PDF</wa-dropdown-item>
-      <wa-dropdown-item slot="submenu" value="docx">Word document</wa-dropdown-item>
-      <wa-dropdown-item slot="submenu" value="xlsx">Excel spreadsheet</wa-dropdown-item>
+      <wa-dropdown-item slot="submenu" value="docx"
+        >Word document</wa-dropdown-item
+      >
+      <wa-dropdown-item slot="submenu" value="xlsx"
+        >Excel spreadsheet</wa-dropdown-item
+      >
       <wa-dropdown-item slot="submenu" value="csv">CSV</wa-dropdown-item>
     </wa-dropdown-item>
 
     <wa-dropdown-item>
       Options
-      <wa-dropdown-item slot="submenu" type="checkbox" value="compress">Compress files</wa-dropdown-item>
-      <wa-dropdown-item slot="submenu" type="checkbox" checked value="metadata">Include metadata</wa-dropdown-item>
-      <wa-dropdown-item slot="submenu" type="checkbox" value="password">Password protect</wa-dropdown-item>
+      <wa-dropdown-item slot="submenu" type="checkbox" value="compress"
+        >Compress files</wa-dropdown-item
+      >
+      <wa-dropdown-item slot="submenu" type="checkbox" checked value="metadata"
+        >Include metadata</wa-dropdown-item
+      >
+      <wa-dropdown-item slot="submenu" type="checkbox" value="password"
+        >Password protect</wa-dropdown-item
+      >
     </wa-dropdown-item>
   </wa-dropdown>
 </div>
 
 <script>
-  const container = document.querySelector('.dropdown-submenus');
-  const dropdown = container.querySelector('wa-dropdown');
+  const container = document.querySelector(".dropdown-submenus");
+  const dropdown = container.querySelector("wa-dropdown");
 
-  dropdown.addEventListener('wa-select', event => {
+  dropdown.addEventListener("wa-select", (event) => {
     console.log(event.detail.item.value);
   });
 </script>
@@ -349,7 +372,9 @@ Add `disabled` to any [dropdown item](https://webawesome.com/docs/components/dro
 
 ```html
 <wa-dropdown>
-  <wa-button appearance="filled" slot="trigger" with-caret>Payment method</wa-button>
+  <wa-button appearance="filled" slot="trigger" with-caret
+    >Payment method</wa-button
+  >
 
   <wa-dropdown-item value="cash">Cash</wa-dropdown-item>
   <wa-dropdown-item value="check" disabled>Personal check</wa-dropdown-item>
@@ -362,13 +387,13 @@ Add `disabled` to any [dropdown item](https://webawesome.com/docs/components/dro
 
 Set the `placement` attribute to control where the panel opens relative to the trigger. The panel shifts to a more optimal spot when the preferred placement doesn't have room.
 
-| Placement | Opens |
-| --- | --- |
-| \`bottom-start\` default | Below the trigger, aligned to its start edge |
-| \`bottom\` , bottom-end | Below the trigger, centered or aligned to the end edge |
-| \`top\` , top-start, top-end | Above the trigger |
-| \`right\` , right-start, right-end | To the right of the trigger |
-| \`left\` , left-start, left-end | To the left of the trigger |
+| Placement                          | Opens                                                  |
+| ---------------------------------- | ------------------------------------------------------ |
+| \`bottom-start\` default           | Below the trigger, aligned to its start edge           |
+| \`bottom\` , bottom-end            | Below the trigger, centered or aligned to the end edge |
+| \`top\` , top-start, top-end       | Above the trigger                                      |
+| \`right\` , right-start, right-end | To the right of the trigger                            |
+| \`left\` , left-start, left-end    | To the left of the trigger                             |
 
 ```html
 <wa-dropdown placement="right-start">
@@ -447,18 +472,18 @@ When an item is selected, the dropdown emits the `wa-select` event. Inspect `eve
 </div>
 
 <script>
-  const demo = document.querySelector('.dropdown-zoom-demo');
-  const content = demo.querySelector('.dropdown-zoom-content');
-  const level = demo.querySelector('.dropdown-zoom-level');
-  const dropdown = demo.querySelector('wa-dropdown');
+  const demo = document.querySelector(".dropdown-zoom-demo");
+  const content = demo.querySelector(".dropdown-zoom-content");
+  const level = demo.querySelector(".dropdown-zoom-level");
+  const dropdown = demo.querySelector("wa-dropdown");
   let zoom = 1;
 
-  dropdown.addEventListener('wa-select', event => {
+  dropdown.addEventListener("wa-select", (event) => {
     const action = event.detail.item.value;
 
-    if (action === 'zoom-in') zoom = Math.min(zoom + 0.25, 2);
-    if (action === 'zoom-out') zoom = Math.max(zoom - 0.25, 0.5);
-    if (action === 'actual') zoom = 1;
+    if (action === "zoom-in") zoom = Math.min(zoom + 0.25, 2);
+    if (action === "zoom-out") zoom = Math.max(zoom - 0.25, 0.5);
+    if (action === "actual") zoom = 1;
 
     content.style.transform = `scale(${zoom})`;
     level.textContent = `${Math.round(zoom * 100)}%`;
@@ -473,7 +498,11 @@ When an item is selected, the dropdown emits the `wa-select` event. Inspect `eve
     margin-block-end: 1rem;
     overflow: hidden;
     border-radius: var(--wa-border-radius-l);
-    background-color: color-mix(in srgb, var(--wa-color-brand-fill-loud) 8%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--wa-color-brand-fill-loud) 8%,
+      transparent
+    );
   }
 
   .dropdown-zoom-demo .dropdown-zoom-content {

@@ -19,7 +19,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tab/tab.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/tab/tab.js";
 ```
 
 \*\*npm\*\*
@@ -27,7 +27,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tab/tab.js';
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/tab/tab.js';
+import "@awesome.me/webawesome/dist/components/tab/tab.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -35,7 +35,7 @@ import '@awesome.me/webawesome/dist/components/tab/tab.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/tab/tab.js';
+import "./webawesome/dist/components/tab/tab.js";
 ```
 
 \*\*React\*\*
@@ -43,25 +43,25 @@ import './webawesome/dist/components/tab/tab.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaTab from '@awesome.me/webawesome/dist/react/tab/index.js';
+import WaTab from "@awesome.me/webawesome/dist/react/tab/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description      |
+| --------- | ---------------- |
 | (default) | The tab's label. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`disabled\` disabled | \`boolean\` Disables the tab and prevents selection. Type Default false | |
-| \`panel\` panel | \`string\` The name of the tab panel this tab is associated with. The panel must be located in the same tab group. Type Default '' | |
+| Name                  | Description                                                                                                                        | Reflects |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| \`disabled\` disabled | \`boolean\` Disables the tab and prevents selection. Type Default false                                                            |          |
+| \`panel\` panel       | \`string\` The name of the tab panel this tab is associated with. The panel must be located in the same tab group. Type Default '' |          |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`tab\` | The component's outer wrapper. | \`::part(tab)\` |
+| Name     | Description                               | CSS selector     |
+| -------- | ----------------------------------------- | ---------------- |
+| \`tab\`  | The component's outer wrapper.            | \`::part(tab)\`  |
 | \`base\` | \`tab\` Deprecated. Use the part instead. | \`::part(base)\` |

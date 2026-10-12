@@ -38,7 +38,7 @@ find rather than resetting the theme.
       wa-page {
         --menu-width: 16rem;
       }
-      wa-page[view='mobile'] {
+      wa-page[view="mobile"] {
         --menu-width: auto;
       }
     </style>

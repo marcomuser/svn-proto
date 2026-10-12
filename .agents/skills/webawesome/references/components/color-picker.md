@@ -23,7 +23,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/color-picker/color-picker.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/color-picker/color-picker.js";
 ```
 
 \*\*npm\*\*
@@ -31,7 +31,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/color-picker/co
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/color-picker/color-picker.js';
+import "@awesome.me/webawesome/dist/components/color-picker/color-picker.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -39,7 +39,7 @@ import '@awesome.me/webawesome/dist/components/color-picker/color-picker.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/color-picker/color-picker.js';
+import "./webawesome/dist/components/color-picker/color-picker.js";
 ```
 
 \*\*React\*\*
@@ -47,23 +47,23 @@ import './webawesome/dist/components/color-picker/color-picker.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaColorPicker from '@awesome.me/webawesome/dist/react/color-picker/index.js';
+import WaColorPicker from "@awesome.me/webawesome/dist/react/color-picker/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`hint\` | \`hint\` The color picker's form . Alternatively, you can use the hint attribute. |
+| Name      | Description                                                                         |
+| --------- | ----------------------------------------------------------------------------------- |
+| \`hint\`  | \`hint\` The color picker's form . Alternatively, you can use the hint attribute.   |
 | \`label\` | \`label\` The color picker's form . Alternatively, you can use the label attribute. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`defaultValue\` value | \`string \\| null\` The default value of the form control. Primarily used for resetting the form control. Type | |
-| \`disabled\` disabled | \`boolean\` Disables the color picker. Type Default false | |
-| \`form\` | \`
+| Name                   | Description                                               | Reflects                                                                                          |
+| ---------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| \`defaultValue\` value | \`string \\                                               | null\` The default value of the form control. Primarily used for resetting the form control. Type |     |
+| \`disabled\` disabled  | \`boolean\` Disables the color picker. Type Default false |                                                                                                   |
+| \`form\`               | \`                                                        |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`format\` format | \`'hex' \\| 'rgb' \\| 'hsl' \\| 'hsv'\` The format to use. If opacity is enabled, these will translate to HEXA, RGBA, HSLA, and HSVA respectively. The color picker will accept user input in any format (including CSS color names) and convert it to the desired format. Type Default 'hex' | |
@@ -86,91 +86,91 @@ import WaColorPicker from '@awesome.me/webawesome/dist/react/color-picker/index.
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the color picker. | |
-| \`focus()\` | Sets focus on the color picker. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`getFormattedValue()\` | Returns the current value as a string in the specified format. | \`format: 'hex' \\| 'hexa' \\| 'rgb' \\| 'rgba' \\| 'hsl' \\| 'hsla' \\| 'hsv' \\| 'hsva'\` |
-| \`getHexString()\` | Generates a hex string from HSV values. Hue must be 0-360. All other arguments must be 0-100. | \`hue: number, saturation: number, brightness: number, alpha:\` |
-| \`hide()\` | Hides the color picker panel | |
-| \`reportValidity()\` | Checks for validity and shows the browser's validation message if the control is invalid. | |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`show()\` | Shows the color picker panel. | |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| \`blur()\`                     | Removes focus from the color picker.                                                                                                                                                                                                                                                                                                              |                                                                 |
+| \`focus()\`                    | Sets focus on the color picker.                                                                                                                                                                                                                                                                                                                   | \`options: FocusOptions\`                                       |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\                                              | File \\   | FormData \\ | null, reason: 'autocomplete' \\ | 'restore'\` |
+| \`getFormattedValue()\`        | Returns the current value as a string in the specified format.                                                                                                                                                                                                                                                                                    | \`format: 'hex' \\                                              | 'hexa' \\ | 'rgb' \\    | 'rgba' \\                       | 'hsl' \\    | 'hsla' \\ | 'hsv' \\ | 'hsva'\` |
+| \`getHexString()\`             | Generates a hex string from HSV values. Hue must be 0-360. All other arguments must be 0-100.                                                                                                                                                                                                                                                     | \`hue: number, saturation: number, brightness: number, alpha:\` |
+| \`hide()\`                     | Hides the color picker panel                                                                                                                                                                                                                                                                                                                      |                                                                 |
+| \`reportValidity()\`           | Checks for validity and shows the browser's validation message if the control is invalid.                                                                                                                                                                                                                                                         |                                                                 |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                                                                 |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`                                             |
+| \`show()\`                     | Shows the color picker panel.                                                                                                                                                                                                                                                                                                                     |                                                                 |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the color picker loses focus. |
-| \`change\` | Emitted when the color picker's value changes. |
-| \`focus\` | Emitted when the color picker receives focus. |
-| \`input\` | Emitted when the color picker receives input. |
-| \`wa-after-hide\` | |
-| \`wa-after-show\` | |
-| \`wa-hide\` | |
-| \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-| \`wa-show\` | |
+| Name              | Description                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`          | Emitted when the color picker loses focus.                                                        |
+| \`change\`        | Emitted when the color picker's value changes.                                                    |
+| \`focus\`         | Emitted when the color picker receives focus.                                                     |
+| \`input\`         | Emitted when the color picker receives input.                                                     |
+| \`wa-after-hide\` |                                                                                                   |
+| \`wa-after-show\` |                                                                                                   |
+| \`wa-hide\`       |                                                                                                   |
+| \`wa-invalid\`    | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
+| \`wa-show\`       |                                                                                                   |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--grid-handle-size\` | The size of the color grid's handle. |
-| \`--grid-height\` | The height of the color grid. |
-| \`--grid-width\` | The width of the color grid. |
-| \`--slider-handle-size\` | The diameter of the slider's handle. |
-| \`--slider-height\` | The height of the hue and alpha sliders. |
+| Name                     | Description                              |
+| ------------------------ | ---------------------------------------- |
+| \`--grid-handle-size\`   | The size of the color grid's handle.     |
+| \`--grid-height\`        | The height of the color grid.            |
+| \`--grid-width\`         | The width of the color grid.             |
+| \`--slider-handle-size\` | The diameter of the slider's handle.     |
+| \`--slider-height\`      | The height of the hue and alpha sliders. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`color-picker\` | The dropdown panel that holds the grid, sliders, and swatches. | \`::part(color-picker)\` |
-| \`eyedropper-button\` | The eye dropper button. | \`::part(eyedropper-button)\` |
-| \`eyedropper-button\_\_base\` | \`button\` The eye dropper 's exported button part. | \`::part(eyedropper-button\_\_base)\` |
-| \`eyedropper-button\_\_caret\` | \`caret\` The eye dropper button's exported part. | \`::part(eyedropper-button\_\_caret)\` |
-| \`eyedropper-button\_\_end\` | \`end\` The eye dropper button's exported part. | \`::part(eyedropper-button\_\_end)\` |
-| \`eyedropper-button\_\_label\` | \`label\` The eye dropper button's exported part. | \`::part(eyedropper-button\_\_label)\` |
-| \`eyedropper-button\_\_start\` | \`start\` The eye dropper button's exported part. | \`::part(eyedropper-button\_\_start)\` |
-| \`form-control\` | The form control that wraps the label, input, and hint. | \`::part(form-control)\` |
-| \`form-control-input\` | The color picker's trigger button. | \`::part(form-control-input)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`format-button\` | The format button. | \`::part(format-button)\` |
-| \`format-button\_\_base\` | \`button\` The format 's exported button part. | \`::part(format-button\_\_base)\` |
-| \`format-button\_\_caret\` | \`caret\` The format button's exported part. | \`::part(format-button\_\_caret)\` |
-| \`format-button\_\_end\` | \`end\` The format button's exported part. | \`::part(format-button\_\_end)\` |
-| \`format-button\_\_label\` | \`label\` The format button's exported part. | \`::part(format-button\_\_label)\` |
-| \`format-button\_\_start\` | \`start\` The format button's exported part. | \`::part(format-button\_\_start)\` |
-| \`grid\` | The color grid. | \`::part(grid)\` |
-| \`grid-handle\` | The color grid's handle. | \`::part(grid-handle)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`hue-slider\` | The hue slider. | \`::part(hue-slider)\` |
-| \`hue-slider-handle\` | The hue slider's handle. | \`::part(hue-slider-handle)\` |
-| \`input\` | The text input. | \`::part(input)\` |
-| \`opacity-slider\` | The opacity slider. | \`::part(opacity-slider)\` |
-| \`opacity-slider-handle\` | The opacity slider's handle. | \`::part(opacity-slider-handle)\` |
-| \`preview\` | The preview color. | \`::part(preview)\` |
-| \`slider\` | Hue and opacity sliders. | \`::part(slider)\` |
-| \`slider-handle\` | Hue and opacity slider handles. | \`::part(slider-handle)\` |
-| \`swatch\` | Each individual swatch. | \`::part(swatch)\` |
-| \`swatches\` | The container that holds the swatches. | \`::part(swatches)\` |
-| \`trigger\` | The color picker's dropdown trigger. | \`::part(trigger)\` |
-| \`trigger-container\` | The container that wraps the color picker's trigger. | \`::part(trigger-container)\` |
-| \`base\` | \`color-picker\` Deprecated. Use the part instead. | \`::part(base)\` |
+| Name                           | Description                                                    | CSS selector                           |
+| ------------------------------ | -------------------------------------------------------------- | -------------------------------------- |
+| \`color-picker\`               | The dropdown panel that holds the grid, sliders, and swatches. | \`::part(color-picker)\`               |
+| \`eyedropper-button\`          | The eye dropper button.                                        | \`::part(eyedropper-button)\`          |
+| \`eyedropper-button\_\_base\`  | \`button\` The eye dropper 's exported button part.            | \`::part(eyedropper-button\_\_base)\`  |
+| \`eyedropper-button\_\_caret\` | \`caret\` The eye dropper button's exported part.              | \`::part(eyedropper-button\_\_caret)\` |
+| \`eyedropper-button\_\_end\`   | \`end\` The eye dropper button's exported part.                | \`::part(eyedropper-button\_\_end)\`   |
+| \`eyedropper-button\_\_label\` | \`label\` The eye dropper button's exported part.              | \`::part(eyedropper-button\_\_label)\` |
+| \`eyedropper-button\_\_start\` | \`start\` The eye dropper button's exported part.              | \`::part(eyedropper-button\_\_start)\` |
+| \`form-control\`               | The form control that wraps the label, input, and hint.        | \`::part(form-control)\`               |
+| \`form-control-input\`         | The color picker's trigger button.                             | \`::part(form-control-input)\`         |
+| \`form-control-label\`         | The label.                                                     | \`::part(form-control-label)\`         |
+| \`format-button\`              | The format button.                                             | \`::part(format-button)\`              |
+| \`format-button\_\_base\`      | \`button\` The format 's exported button part.                 | \`::part(format-button\_\_base)\`      |
+| \`format-button\_\_caret\`     | \`caret\` The format button's exported part.                   | \`::part(format-button\_\_caret)\`     |
+| \`format-button\_\_end\`       | \`end\` The format button's exported part.                     | \`::part(format-button\_\_end)\`       |
+| \`format-button\_\_label\`     | \`label\` The format button's exported part.                   | \`::part(format-button\_\_label)\`     |
+| \`format-button\_\_start\`     | \`start\` The format button's exported part.                   | \`::part(format-button\_\_start)\`     |
+| \`grid\`                       | The color grid.                                                | \`::part(grid)\`                       |
+| \`grid-handle\`                | The color grid's handle.                                       | \`::part(grid-handle)\`                |
+| \`hint\`                       | The hint's wrapper.                                            | \`::part(hint)\`                       |
+| \`hue-slider\`                 | The hue slider.                                                | \`::part(hue-slider)\`                 |
+| \`hue-slider-handle\`          | The hue slider's handle.                                       | \`::part(hue-slider-handle)\`          |
+| \`input\`                      | The text input.                                                | \`::part(input)\`                      |
+| \`opacity-slider\`             | The opacity slider.                                            | \`::part(opacity-slider)\`             |
+| \`opacity-slider-handle\`      | The opacity slider's handle.                                   | \`::part(opacity-slider-handle)\`      |
+| \`preview\`                    | The preview color.                                             | \`::part(preview)\`                    |
+| \`slider\`                     | Hue and opacity sliders.                                       | \`::part(slider)\`                     |
+| \`slider-handle\`              | Hue and opacity slider handles.                                | \`::part(slider-handle)\`              |
+| \`swatch\`                     | Each individual swatch.                                        | \`::part(swatch)\`                     |
+| \`swatches\`                   | The container that holds the swatches.                         | \`::part(swatches)\`                   |
+| \`trigger\`                    | The color picker's dropdown trigger.                           | \`::part(trigger)\`                    |
+| \`trigger-container\`          | The container that wraps the color picker's trigger.           | \`::part(trigger-container)\`          |
+| \`base\`                       | \`color-picker\` Deprecated. Use the part instead.             | \`::part(base)\`                       |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-button-group>`](https://webawesome.com/docs/components/button-group)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-input>`](https://webawesome.com/docs/components/input)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
--   [`<wa-visually-hidden>`](https://webawesome.com/docs/components/visually-hidden)
+- [`<wa-button>`](https://webawesome.com/docs/components/button)
+- [`<wa-button-group>`](https://webawesome.com/docs/components/button-group)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-input>`](https://webawesome.com/docs/components/input)
+- [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+- [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
+- [`<wa-visually-hidden>`](https://webawesome.com/docs/components/visually-hidden)
 
 ## Examples
 
@@ -187,7 +187,10 @@ Use the `label` attribute to give the color picker an accessible label. For labe
 Add a descriptive hint with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
-<wa-color-picker label="Accent" hint="Pick something with enough contrast to read against white."></wa-color-picker>
+<wa-color-picker
+  label="Accent"
+  hint="Pick something with enough contrast to read against white."
+></wa-color-picker>
 ```
 
 ### Initial Value
@@ -206,10 +209,26 @@ To stop people from cycling through formats themselves, add the `without-format-
 
 ```html
 <div class="wa-grid" style="--min-column-size: 12ch;">
-  <wa-color-picker format="hex" value="#4a90e2" label="Pick a hex color"></wa-color-picker>
-  <wa-color-picker format="rgb" value="rgb(80, 227, 194)" label="Pick an RGB color"></wa-color-picker>
-  <wa-color-picker format="hsl" value="hsl(290, 87%, 47%)" label="Pick an HSL color"></wa-color-picker>
-  <wa-color-picker format="hsv" value="hsv(55, 89%, 97%)" label="Pick an HSV color"></wa-color-picker>
+  <wa-color-picker
+    format="hex"
+    value="#4a90e2"
+    label="Pick a hex color"
+  ></wa-color-picker>
+  <wa-color-picker
+    format="rgb"
+    value="rgb(80, 227, 194)"
+    label="Pick an RGB color"
+  ></wa-color-picker>
+  <wa-color-picker
+    format="hsl"
+    value="hsl(290, 87%, 47%)"
+    label="Pick an HSL color"
+  ></wa-color-picker>
+  <wa-color-picker
+    format="hsv"
+    value="hsv(55, 89%, 97%)"
+    label="Pick an HSV color"
+  ></wa-color-picker>
 </div>
 ```
 
@@ -218,7 +237,11 @@ To stop people from cycling through formats themselves, add the `without-format-
 Use the `opacity` attribute to add an opacity slider. With opacity enabled, the value is shown as HEXA, RGBA, HSLA, or HSVA to match the `format`.
 
 ```html
-<wa-color-picker value="#f5a623ff" opacity label="Select a color"></wa-color-picker>
+<wa-color-picker
+  value="#f5a623ff"
+  opacity
+  label="Select a color"
+></wa-color-picker>
 ```
 
 ### Uppercase Values
@@ -226,7 +249,11 @@ Use the `opacity` attribute to add an opacity slider. With opacity enabled, the 
 By default, values are lowercase. Add the `uppercase` attribute to display them in uppercase instead.
 
 ```html
-<wa-color-picker value="#4a90e2" uppercase label="Select a color"></wa-color-picker>
+<wa-color-picker
+  value="#4a90e2"
+  uppercase
+  label="Select a color"
+></wa-color-picker>
 ```
 
 ### Swatches
@@ -246,12 +273,12 @@ Use the `swatches` attribute to offer preset colors. Any format the picker can p
 To give swatches accessible names, set the `swatches` property in JavaScript to an array of `{ color, label }` objects — each `label` becomes that swatch's accessible name instead of the raw color value. (Their appearance is identical, so this isn't a live example.)
 
 ```js
-const picker = document.querySelector('wa-color-picker');
+const picker = document.querySelector("wa-color-picker");
 picker.swatches = [
-  { color: '#d0021b', label: 'Red' },
-  { color: '#f5a623', label: 'Orange' },
-  { color: '#417505', label: 'Green' },
-  { color: '#4a90e2', label: 'Blue' },
+  { color: "#d0021b", label: "Red" },
+  { color: "#f5a623", label: "Orange" },
+  { color: "#417505", label: "Green" },
+  { color: "#4a90e2", label: "Blue" },
 ];
 ```
 
@@ -273,8 +300,14 @@ Set the `placement` attribute to control where the dropdown opens. The actual po
 
 ```html
 <div class="wa-cluster wa-align-items-baseline">
-  <wa-color-picker placement="top-start" label="Select a color"></wa-color-picker>
-  <wa-color-picker placement="bottom-end" label="Select a color"></wa-color-picker>
+  <wa-color-picker
+    placement="top-start"
+    label="Select a color"
+  ></wa-color-picker>
+  <wa-color-picker
+    placement="bottom-end"
+    label="Select a color"
+  ></wa-color-picker>
   <wa-color-picker placement="right" label="Select a color"></wa-color-picker>
   <wa-color-picker placement="left" label="Select a color"></wa-color-picker>
 </div>
@@ -322,12 +355,12 @@ The color picker emits an `input` event as the user picks, so you can apply the 
 </div>
 
 <script>
-  const demo = document.querySelector('.color-apply-demo');
-  const picker = demo.querySelector('wa-color-picker');
-  const preview = demo.querySelector('.color-apply-preview');
+  const demo = document.querySelector(".color-apply-demo");
+  const picker = demo.querySelector("wa-color-picker");
+  const preview = demo.querySelector(".color-apply-preview");
 
-  picker.addEventListener('input', () => {
-    preview.style.setProperty('--accent', picker.value);
+  picker.addEventListener("input", () => {
+    preview.style.setProperty("--accent", picker.value);
   });
 </script>
 

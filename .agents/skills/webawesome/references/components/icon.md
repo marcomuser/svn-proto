@@ -42,16 +42,19 @@ Not sure which icon to use? [Find the perfect icon over at Font Awesome!](https:
 Custom icons can be loaded individually with the `src` attribute. Only SVGs on a local or CORS-enabled endpoint are supported. If you're using more than one custom icon, it might make sense to register a [custom icon library](#third-party-icon-libraries).
 
 ```html
-<wa-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 4rem;"></wa-icon>
+<wa-icon
+  src="https://shoelace.style/assets/images/shoe.svg"
+  style="font-size: 4rem;"
+></wa-icon>
 ```
 
 ## Icon Libraries
 
 An icon library is a named set of icons with a resolver that maps each name to an SVG URL. Web Awesome ships with two built-in libraries and lets you register any number of your own.
 
-| Library | Contains | Resolves from | Customize it to… |
-| --- | --- | --- | --- |
-| \`default\` | \`
+| Library     | Contains | Resolves from | Customize it to… |
+| ----------- | -------- | ------------- | ---------------- |
+| \`default\` | \`       |
 
 [sizing](#size), [color](#color), [the canvas](#canvas), [rotating and flipping](#rotating-and-flipping), and [animations](#animating) work with icons from any library — they're applied to the `<wa-icon>` host, so they don't depend on where the icon comes from. (Only the duotone color properties are specific to Font Awesome's duotone icons.)
 
@@ -63,11 +66,11 @@ For example, this will change the default icon library to use [Bootstrap Icons](
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('default', {
+  registerIconLibrary("default", {
     resolver: (name, family) => {
-      const suffix = family === 'filled' ? '-fill' : '';
+      const suffix = family === "filled" ? "-fill" : "";
       return `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/${name}${suffix}.svg`;
     },
   });
@@ -82,10 +85,10 @@ When you download Font Awesome, the archive will contain an `svgs` directory wit
 
 ```html
 <script type="module">
-  import { setIconPath } from '/dist/webawesome.js';
+  import { setIconPath } from "/dist/webawesome.js";
 
   // Point to the `svgs` directory from your Font Awesome download
-  setIconPath('/assets/fontawesome/svgs');
+  setIconPath("/assets/fontawesome/svgs");
 </script>
 ```
 
@@ -95,9 +98,9 @@ For more control over how icon URLs are constructed, you can use the `getIconFol
 
 ```html
 <script type="module">
-  import { getIconFolder, registerIconLibrary } from '/dist/webawesome.js';
+  import { getIconFolder, registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('default', {
+  registerIconLibrary("default", {
     resolver: (name, family, variant) => {
       const folder = getIconFolder(name, family, variant);
       return `/assets/fontawesome/svgs/${folder}/${name}.svg?v=2`;
@@ -120,11 +123,11 @@ Browsers apply the same-origin policy to the `<use>` elements inside `<wa-icon>`
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('sprite', {
-    resolver: name => `/assets/images/sprite.svg#${name}`,
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+  registerIconLibrary("sprite", {
+    resolver: (name) => `/assets/images/sprite.svg#${name}`,
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
     spriteSheet: true,
   });
 </script>
@@ -136,10 +139,10 @@ To change the icons Web Awesome uses internally, register a library using the `s
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('system', {
-    resolver: name => `/path/to/custom/icons/${name}.svg`,
+  registerIconLibrary("system", {
+    resolver: (name) => `/path/to/custom/icons/${name}.svg`,
   });
 </script>
 ```
@@ -152,11 +155,11 @@ Some libraries need a **mutator** to adjust each SVG on load, most often setting
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('my-icons', {
+  registerIconLibrary("my-icons", {
     resolver: (name, family, variant) => `/assets/icons/${name}.svg`,
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 ```
@@ -178,11 +181,11 @@ Icons in this library are licensed under the [MIT License](https://github.com/tw
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('bootstrap', {
+  registerIconLibrary("bootstrap", {
     resolver: (name, family) => {
-      const suffix = family === 'filled' ? '-fill' : '';
+      const suffix = family === "filled" ? "-fill" : "";
       return `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/${name}${suffix}.svg`;
     },
   });
@@ -213,16 +216,16 @@ Icons in this library are licensed under the [Creative Commons 4.0 License](http
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('boxicons', {
-    resolver: name => {
-      let folder = 'regular';
-      if (name.substring(0, 4) === 'bxs-') folder = 'solid';
-      if (name.substring(0, 4) === 'bxl-') folder = 'logos';
+  registerIconLibrary("boxicons", {
+    resolver: (name) => {
+      let folder = "regular";
+      if (name.substring(0, 4) === "bxs-") folder = "solid";
+      if (name.substring(0, 4) === "bxl-") folder = "logos";
       return `https://cdn.jsdelivr.net/npm/boxicons@2.1.4/svg/${folder}/${name}.svg`;
     },
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 
@@ -258,14 +261,15 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('lucide', {
-    resolver: name => `https://cdn.jsdelivr.net/npm/lucide-static@1.8.0/icons/${name}.svg`,
-    mutator: svg =>
-      svg.querySelectorAll('path').forEach(path => {
-        path.setAttribute('fill', 'none');
-        path.setAttribute('stroke', 'currentColor');
+  registerIconLibrary("lucide", {
+    resolver: (name) =>
+      `https://cdn.jsdelivr.net/npm/lucide-static@1.8.0/icons/${name}.svg`,
+    mutator: (svg) =>
+      svg.querySelectorAll("path").forEach((path) => {
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", "currentColor");
       }),
   });
 </script>
@@ -288,14 +292,15 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('heroicons', {
-    resolver: name => `https://cdn.jsdelivr.net/npm/heroicons@2.2.0/24/outline/${name}.svg`,
-    mutator: svg =>
-      svg.querySelectorAll('path').forEach(path => {
-        path.setAttribute('fill', 'none');
-        path.setAttribute('stroke', 'currentColor');
+  registerIconLibrary("heroicons", {
+    resolver: (name) =>
+      `https://cdn.jsdelivr.net/npm/heroicons@2.2.0/24/outline/${name}.svg`,
+    mutator: (svg) =>
+      svg.querySelectorAll("path").forEach((path) => {
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", "currentColor");
       }),
   });
 </script>
@@ -318,16 +323,16 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('iconoir', {
+  registerIconLibrary("iconoir", {
     resolver: (name, family) => {
       return `https://cdn.jsdelivr.net/npm/iconoir@7.11.0/icons/regular/${name}.svg`;
     },
-    mutator: svg =>
-      svg.querySelectorAll('path').forEach(path => {
-        path.setAttribute('fill', 'none');
-        path.setAttribute('stroke', 'currentColor');
+    mutator: (svg) =>
+      svg.querySelectorAll("path").forEach((path) => {
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", "currentColor");
       }),
   });
 </script>
@@ -350,15 +355,20 @@ Icons in this library are licensed under the [MIT License](https://github.com/io
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('ionicons', {
-    resolver: name => `https://cdn.jsdelivr.net/npm/ionicons@8.0.13/dist/ionicons/svg/${name}.svg`,
-    mutator: svg => {
-      svg.setAttribute('fill', 'currentColor');
-      svg.setAttribute('stroke', 'currentColor');
-      [...svg.querySelectorAll('.ionicon-fill-none')].map(el => el.setAttribute('fill', 'none'));
-      [...svg.querySelectorAll('.ionicon-stroke-width')].map(el => el.setAttribute('stroke-width', '32px'));
+  registerIconLibrary("ionicons", {
+    resolver: (name) =>
+      `https://cdn.jsdelivr.net/npm/ionicons@8.0.13/dist/ionicons/svg/${name}.svg`,
+    mutator: (svg) => {
+      svg.setAttribute("fill", "currentColor");
+      svg.setAttribute("stroke", "currentColor");
+      [...svg.querySelectorAll(".ionicon-fill-none")].map((el) =>
+        el.setAttribute("fill", "none"),
+      );
+      [...svg.querySelectorAll(".ionicon-stroke-width")].map((el) =>
+        el.setAttribute("stroke-width", "32px"),
+      );
     },
   });
 </script>
@@ -395,11 +405,12 @@ Icons in this library are licensed under the [MIT License](https://github.com/mi
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('jam', {
-    resolver: name => `https://cdn.jsdelivr.net/npm/jam-icons@2.0.0/svg/${name}.svg`,
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+  registerIconLibrary("jam", {
+    resolver: (name) =>
+      `https://cdn.jsdelivr.net/npm/jam-icons@2.0.0/svg/${name}.svg`,
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 
@@ -428,14 +439,14 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('material', {
-    resolver: name => {
+  registerIconLibrary("material", {
+    resolver: (name) => {
       const match = name.match(/^(.*?)(_(round|sharp))?$/);
-      return `https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.33/svg/${match[1]}/${match[3] || 'outline'}.svg`;
+      return `https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.33/svg/${match[1]}/${match[3] || "outline"}.svg`;
     },
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 
@@ -471,15 +482,15 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('remixicon', {
-    resolver: name => {
+  registerIconLibrary("remixicon", {
+    resolver: (name) => {
       const match = name.match(/^(.*?)\/(.*?)?$/);
       match[1] = match[1].charAt(0).toUpperCase() + match[1].slice(1);
       return `https://cdn.jsdelivr.net/npm/remixicon@4.9.1/icons/${match[1]}/${match[2]}.svg`;
     },
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 
@@ -508,13 +519,14 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('tabler', {
-    resolver: name => `https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/${name}.svg`,
-    mutator: svg => {
-      svg.style.fill = 'none';
-      svg.setAttribute('stroke', 'currentColor');
+  registerIconLibrary("tabler", {
+    resolver: (name) =>
+      `https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/${name}.svg`,
+    mutator: (svg) => {
+      svg.style.fill = "none";
+      svg.setAttribute("stroke", "currentColor");
     },
   });
 </script>
@@ -544,16 +556,16 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/webawesome.js';
+  import { registerIconLibrary } from "/dist/webawesome.js";
 
-  registerIconLibrary('unicons', {
-    resolver: name => {
+  registerIconLibrary("unicons", {
+    resolver: (name) => {
       const match = name.match(/^(.*?)(-s)?$/);
-      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/svg/${match[2] === '-s' ? 'solid' : 'line'}/${
+      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/svg/${match[2] === "-s" ? "solid" : "line"}/${
         match[1]
       }.svg`;
     },
-    mutator: svg => svg.setAttribute('fill', 'currentColor'),
+    mutator: (svg) => svg.setAttribute("fill", "currentColor"),
   });
 </script>
 
@@ -582,18 +594,26 @@ Web Awesome hides an unlabeled `<wa-icon>` from assistive devices, so an icon is
 
 Give an icon a `label` when it carries meaning on its own — when it's the only content of a control, or conveys status. Omit it when nearby text already says the same; unlabeled icons are hidden from assistive devices.
 
-| Scenario | Label? | In Context | Why |
-| --- | --- | --- | --- |
-| Icon-only control | Yes | | \`label\` The icon is the button's only content, so the gives it an accessible name. |
-| Status icon | Yes | Invoice #1042 | The icon conveys status the nearby text doesn't. |
-| Icon beside its own text | No | Share | The visible “Share” text already names the action; a label would be announced twice. |
-| Decorative | No | Check your inbox | It only decorates text that already carries the meaning. |
+| Scenario                 | Label? | In Context       | Why                                                                                  |
+| ------------------------ | ------ | ---------------- | ------------------------------------------------------------------------------------ |
+| Icon-only control        | Yes    |                  | \`label\` The icon is the button's only content, so the gives it an accessible name. |
+| Status icon              | Yes    | Invoice #1042    | The icon conveys status the nearby text doesn't.                                     |
+| Icon beside its own text | No     | Share            | The visible “Share” text already names the action; a label would be announced twice. |
+| Decorative               | No     | Check your inbox | It only decorates text that already carries the meaning.                             |
 
 Set the `label` attribute to the text a screen reader should announce:
 
 ```html
-<wa-icon name="circle-check" label="Task complete" style="font-size: 2em;"></wa-icon>
-<wa-icon name="triangle-exclamation" label="Warning" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="circle-check"
+  label="Task complete"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="triangle-exclamation"
+  label="Warning"
+  style="font-size: 2em;"
+></wa-icon>
 <wa-icon name="trash" label="Delete" style="font-size: 2em;"></wa-icon>
 <wa-icon name="bell" label="Notifications" style="font-size: 2em;"></wa-icon>
 ```
@@ -613,7 +633,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/icon/icon.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/icon/icon.js";
 ```
 
 \*\*npm\*\*
@@ -621,7 +641,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/icon/icon.js';
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/icon/icon.js';
+import "@awesome.me/webawesome/dist/components/icon/icon.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -629,7 +649,7 @@ import '@awesome.me/webawesome/dist/components/icon/icon.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/icon/icon.js';
+import "./webawesome/dist/components/icon/icon.js";
 ```
 
 \*\*React\*\*
@@ -637,83 +657,83 @@ import './webawesome/dist/components/icon/icon.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaIcon from '@awesome.me/webawesome/dist/react/icon/index.js';
+import WaIcon from "@awesome.me/webawesome/dist/react/icon/index.js";
 ```
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`animation\` animation | \`IconAnimation \\| undefined\` Sets the animation for the icon Type | |
-| \`autoWidth\` auto-width | \`fa-width-auto\` Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font class. Type boolean Default false | |
-| \`canvas\` canvas | \`fixed\` Sets the icon canvas — the box the icon is centered within. Unset renders as (1.25em × 1em); auto hugs the icon's width; square is 1.25em × 1.25em; roomy is 1.5em × 1.5em. Mirrors Font Awesome's fa-fixed-width, fa-width-auto, fa-canvas-square, and fa-canvas-roomy. Scales with font-size. Type IconCanvas \\| undefined | |
-| \`family\` family | \`classic\` The family of icons to choose from. For Font Awesome Free, valid options include and brands. For Font Awesome Pro subscribers, valid options include, classic, sharp, duotone, sharp-duotone, and brands. A valid kit code must be present to show pro icons via CDN. You can set to provide one. Type string | |
-| \`flip\` flip | \`'x' \\| 'y' \\| 'both' \\| undefined\` Sets the flip direction of the icon along the 'x' (horizontal), 'y' (vertical), or 'both' axes. Type | |
-| \`label\` label | \`string\` An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and ignored by assistive devices. Type Default '' | |
-| \`library\` library | \`string\` The name of a registered custom icon library. Type Default 'default' | |
-| \`name\` name | \`string \\| undefined\` The name of the icon to draw. Available names depend on the icon library being used. Type | |
-| \`rotate\` rotate | \`number\` Sets the rotation degree of the icon Type Default 0 | |
-| \`src\` src | \`string \\| undefined\` An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and can result in XSS attacks. Type | |
-| \`swapOpacity\` swap-opacity | \`boolean\` Swaps the opacity of duotone icons. Type Default false | |
-| \`variant\` variant | \`thin\` The name of the icon's variant. For Font Awesome, valid options include , light, regular, and solid for the classic and sharp families. Some variants require a Font Awesome Pro subscription. Custom icon libraries may or may not use this property. Type string | |
+| Name                         | Description                                                                                                                                                                                                                                                                                                                  | Reflects                                                                                                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \`animation\` animation      | \`IconAnimation \\                                                                                                                                                                                                                                                                                                           | undefined\` Sets the animation for the icon Type                                                                                                                |           |
+| \`autoWidth\` auto-width     | \`fa-width-auto\` Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font class. Type boolean Default false                                                                                                                                                                                 |                                                                                                                                                                 |
+| \`canvas\` canvas            | \`fixed\` Sets the icon canvas — the box the icon is centered within. Unset renders as (1.25em × 1em); auto hugs the icon's width; square is 1.25em × 1.25em; roomy is 1.5em × 1.5em. Mirrors Font Awesome's fa-fixed-width, fa-width-auto, fa-canvas-square, and fa-canvas-roomy. Scales with font-size. Type IconCanvas \\ | undefined                                                                                                                                                       |           |
+| \`family\` family            | \`classic\` The family of icons to choose from. For Font Awesome Free, valid options include and brands. For Font Awesome Pro subscribers, valid options include, classic, sharp, duotone, sharp-duotone, and brands. A valid kit code must be present to show pro icons via CDN. You can set to provide one. Type string    |                                                                                                                                                                 |
+| \`flip\` flip                | \`'x' \\                                                                                                                                                                                                                                                                                                                     | 'y' \\                                                                                                                                                          | 'both' \\ | undefined\` Sets the flip direction of the icon along the 'x' (horizontal), 'y' (vertical), or 'both' axes. Type |     |
+| \`label\` label              | \`string\` An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and ignored by assistive devices. Type Default ''                                                                                                                                                   |                                                                                                                                                                 |
+| \`library\` library          | \`string\` The name of a registered custom icon library. Type Default 'default'                                                                                                                                                                                                                                              |                                                                                                                                                                 |
+| \`name\` name                | \`string \\                                                                                                                                                                                                                                                                                                                  | undefined\` The name of the icon to draw. Available names depend on the icon library being used. Type                                                           |           |
+| \`rotate\` rotate            | \`number\` Sets the rotation degree of the icon Type Default 0                                                                                                                                                                                                                                                               |                                                                                                                                                                 |
+| \`src\` src                  | \`string \\                                                                                                                                                                                                                                                                                                                  | undefined\` An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and can result in XSS attacks. Type |           |
+| \`swapOpacity\` swap-opacity | \`boolean\` Swaps the opacity of duotone icons. Type Default false                                                                                                                                                                                                                                                           |                                                                                                                                                                 |
+| \`variant\` variant          | \`thin\` The name of the icon's variant. For Font Awesome, valid options include , light, regular, and solid for the classic and sharp families. Some variants require a Font Awesome Pro subscription. Custom icon libraries may or may not use this property. Type string                                                  |                                                                                                                                                                 |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name         | Description                                                                                               |
+| ------------ | --------------------------------------------------------------------------------------------------------- |
 | \`wa-error\` | \`spriteSheet: true\` Emitted when the icon fails to load due to an error. When using this will not emit. |
-| \`wa-load\` | \`spriteSheet: true\` Emitted when the icon has loaded. When using this will not emit. |
+| \`wa-load\`  | \`spriteSheet: true\` Emitted when the icon has loaded. When using this will not emit.                    |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--animation-delay\` | \`0\` Sets when the animation will start. Default |
-| \`--animation-direction\` | \`normal\` Defines whether or not the animation should play in reverse on alternate cycles. Default |
-| \`--animation-duration\` | \`1s\` Defines the length of time that an animation takes to complete one cycle. Default |
-| \`--animation-iteration-count\` | \`infinite\` Defines the number of times an animation cycle is played. Default |
-| \`--animation-timing\` | Describes how the animation will progress over one cycle of its duration. |
-| \`--beat-fade-opacity\` | \`beat-fade\` Set lowest opacity value an icon with animation will fade to and from. |
-| \`--beat-fade-scale\` | \`beat-fade\` Set max value that an icon with animation will scale. |
-| \`--beat-scale\` | \`beat\` Set the scale multiplier for an icon with animation. This multiplies the animation's 1.25× base pulse, so the default 1.25 peaks at ~1.56× and 2 roughly doubles the pulse. |
-| \`--bounce-anticipation\` | \`bounce\` Set the downward squash distance before an icon with animation jumps. |
-| \`--bounce-height\` | \`bounce\` Set the max height an icon with animation will jump to when bouncing. |
-| \`--bounce-jump-scale-x\` | Set the icon’s horizontal distortion (“squish”) at the top of the jump. |
-| \`--bounce-jump-scale-y\` | Set the icon’s vertical distortion (“squish”) at the top of the jump. |
-| \`--bounce-land-scale-x\` | Set the icon’s horizontal distortion (“squish”) when landing after the jump. |
-| \`--bounce-land-scale-y\` | Set the icon’s vertical distortion (“squish”) when landing after the jump. |
-| \`--bounce-rebound\` | \`bounce\` Set the amount of rebound an icon with animation has when landing after the jump. |
-| \`--bounce-start-scale-x\` | Set the icon’s horizontal distortion (“squish”) when starting to bounce. |
-| \`--bounce-start-scale-y\` | Set the icon’s vertical distortion (“squish”) when starting to bounce. |
-| \`--buzz-distance\` | \`buzz\` Set the horizontal travel of an icon with animation. |
-| \`--fade-opacity\` | \`fade\` Set lowest opacity value an icon with animation will fade to and from. |
-| \`--flip-angle\` | \`flip\` Set rotation angle of for an icon with flip or flip-360 animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one. |
-| \`--flip-anticipation-scale\` | \`flip\` Set the scale of the wind-up before an icon with or flip-360 animation rotates. |
-| \`--flip-overshoot\` | \`flip\` Set how far past the final angle an icon with or flip-360 animation rotates before settling. |
-| \`--flip-x\` | \`flip\` Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation. |
-| \`--flip-y\` | \`flip\` Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation. |
-| \`--flip-z\` | \`flip\` Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation. |
-| \`--float-drift\` | \`float\` Set the horizontal drift of an icon with animation. |
-| \`--float-height\` | \`float\` Set the rise height of an icon with animation. |
-| \`--float-squash-x\` | \`float\` Set the horizontal squash of an icon with animation at rest. |
-| \`--float-squash-y\` | \`float\` Set the vertical squash of an icon with animation at rest. |
-| \`--float-stretch-x\` | \`float\` Set the horizontal stretch of an icon with animation at its peak. |
-| \`--float-stretch-y\` | \`float\` Set the vertical stretch of an icon with animation at its peak. |
-| \`--float-tilt\` | \`float\` Set the rotation of an icon with animation. |
-| \`--jello-scale-x\` | \`jello\` Set the horizontal stretch of an icon with animation. |
-| \`--jello-scale-y\` | \`jello\` Set the vertical stretch of an icon with animation. |
-| \`--primary-color\` | \`currentColor\` Sets a duotone icon's primary color. Default |
-| \`--primary-opacity\` | \`1\` Sets a duotone icon's primary opacity. Default |
-| \`--secondary-color\` | \`currentColor\` Sets a duotone icon's secondary color. Default |
-| \`--secondary-opacity\` | \`0.4\` Sets a duotone icon's secondary opacity. Default |
-| \`--swing-angle\` | \`swing\` Set the peak rotation of an icon with animation. |
-| \`--wag-angle\` | \`wag\` Set the peak rotation of an icon with animation. |
+| Name                            | Description                                                                                                                                                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| \`--animation-delay\`           | \`0\` Sets when the animation will start. Default                                                                                                                                    |
+| \`--animation-direction\`       | \`normal\` Defines whether or not the animation should play in reverse on alternate cycles. Default                                                                                  |
+| \`--animation-duration\`        | \`1s\` Defines the length of time that an animation takes to complete one cycle. Default                                                                                             |
+| \`--animation-iteration-count\` | \`infinite\` Defines the number of times an animation cycle is played. Default                                                                                                       |
+| \`--animation-timing\`          | Describes how the animation will progress over one cycle of its duration.                                                                                                            |
+| \`--beat-fade-opacity\`         | \`beat-fade\` Set lowest opacity value an icon with animation will fade to and from.                                                                                                 |
+| \`--beat-fade-scale\`           | \`beat-fade\` Set max value that an icon with animation will scale.                                                                                                                  |
+| \`--beat-scale\`                | \`beat\` Set the scale multiplier for an icon with animation. This multiplies the animation's 1.25× base pulse, so the default 1.25 peaks at ~1.56× and 2 roughly doubles the pulse. |
+| \`--bounce-anticipation\`       | \`bounce\` Set the downward squash distance before an icon with animation jumps.                                                                                                     |
+| \`--bounce-height\`             | \`bounce\` Set the max height an icon with animation will jump to when bouncing.                                                                                                     |
+| \`--bounce-jump-scale-x\`       | Set the icon’s horizontal distortion (“squish”) at the top of the jump.                                                                                                              |
+| \`--bounce-jump-scale-y\`       | Set the icon’s vertical distortion (“squish”) at the top of the jump.                                                                                                                |
+| \`--bounce-land-scale-x\`       | Set the icon’s horizontal distortion (“squish”) when landing after the jump.                                                                                                         |
+| \`--bounce-land-scale-y\`       | Set the icon’s vertical distortion (“squish”) when landing after the jump.                                                                                                           |
+| \`--bounce-rebound\`            | \`bounce\` Set the amount of rebound an icon with animation has when landing after the jump.                                                                                         |
+| \`--bounce-start-scale-x\`      | Set the icon’s horizontal distortion (“squish”) when starting to bounce.                                                                                                             |
+| \`--bounce-start-scale-y\`      | Set the icon’s vertical distortion (“squish”) when starting to bounce.                                                                                                               |
+| \`--buzz-distance\`             | \`buzz\` Set the horizontal travel of an icon with animation.                                                                                                                        |
+| \`--fade-opacity\`              | \`fade\` Set lowest opacity value an icon with animation will fade to and from.                                                                                                      |
+| \`--flip-angle\`                | \`flip\` Set rotation angle of for an icon with flip or flip-360 animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.                 |
+| \`--flip-anticipation-scale\`   | \`flip\` Set the scale of the wind-up before an icon with or flip-360 animation rotates.                                                                                             |
+| \`--flip-overshoot\`            | \`flip\` Set how far past the final angle an icon with or flip-360 animation rotates before settling.                                                                                |
+| \`--flip-x\`                    | \`flip\` Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation.                                                      |
+| \`--flip-y\`                    | \`flip\` Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation.                                                      |
+| \`--flip-z\`                    | \`flip\` Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with or flip-360 animation.                                                      |
+| \`--float-drift\`               | \`float\` Set the horizontal drift of an icon with animation.                                                                                                                        |
+| \`--float-height\`              | \`float\` Set the rise height of an icon with animation.                                                                                                                             |
+| \`--float-squash-x\`            | \`float\` Set the horizontal squash of an icon with animation at rest.                                                                                                               |
+| \`--float-squash-y\`            | \`float\` Set the vertical squash of an icon with animation at rest.                                                                                                                 |
+| \`--float-stretch-x\`           | \`float\` Set the horizontal stretch of an icon with animation at its peak.                                                                                                          |
+| \`--float-stretch-y\`           | \`float\` Set the vertical stretch of an icon with animation at its peak.                                                                                                            |
+| \`--float-tilt\`                | \`float\` Set the rotation of an icon with animation.                                                                                                                                |
+| \`--jello-scale-x\`             | \`jello\` Set the horizontal stretch of an icon with animation.                                                                                                                      |
+| \`--jello-scale-y\`             | \`jello\` Set the vertical stretch of an icon with animation.                                                                                                                        |
+| \`--primary-color\`             | \`currentColor\` Sets a duotone icon's primary color. Default                                                                                                                        |
+| \`--primary-opacity\`           | \`1\` Sets a duotone icon's primary opacity. Default                                                                                                                                 |
+| \`--secondary-color\`           | \`currentColor\` Sets a duotone icon's secondary color. Default                                                                                                                      |
+| \`--secondary-opacity\`         | \`0.4\` Sets a duotone icon's secondary opacity. Default                                                                                                                             |
+| \`--swing-angle\`               | \`swing\` Set the peak rotation of an icon with animation.                                                                                                                           |
+| \`--wag-angle\`                 | \`wag\` Set the peak rotation of an icon with animation.                                                                                                                             |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`svg\` | The internal SVG element. | \`::part(svg)\` |
+| Name    | Description                                             | CSS selector    |
+| ------- | ------------------------------------------------------- | --------------- |
+| \`svg\` | The internal SVG element.                               | \`::part(svg)\` |
 | \`use\` | \`\` The element generated when using spriteSheet: true | \`::part(use)\` |
 
 ## Examples
@@ -755,11 +775,14 @@ Icons are sized relative to the current font size. To change their size, set the
 
 <script>
   (() => {
-    const container = document.querySelector('.icon-sizing');
-    const preview = container.querySelector('.icon-sizing-preview');
-    const slider = container.querySelector('wa-slider');
-    const sizes = ['1rem', '1.5rem', '2rem', '3rem', '4rem'];
-    slider.addEventListener('input', () => (preview.style.fontSize = sizes[slider.value]));
+    const container = document.querySelector(".icon-sizing");
+    const preview = container.querySelector(".icon-sizing-preview");
+    const slider = container.querySelector("wa-slider");
+    const sizes = ["1rem", "1.5rem", "2rem", "3rem", "4rem"];
+    slider.addEventListener(
+      "input",
+      () => (preview.style.fontSize = sizes[slider.value]),
+    );
   })();
 </script>
 ```
@@ -783,24 +806,24 @@ Icons inherit their color from the current text color. Thus, you can set the `co
 
 A _family_ sets an icon's overall style; a _variant_ sets its weight. Set them with the `family` and `variant` attributes — `family` defaults to `classic` and `variant` to `solid`.
 
-| Family | Variants | Plan |
-| --- | --- | --- |
+| Family              | Variants                                | Plan |
+| ------------------- | --------------------------------------- | ---- |
 | \`classic\` default | \`solid\` default, regular, light, thin | Free |
-| \`brands\` | — | Free |
-| \`duotone\` | \`solid\` , regular, light, thin | Pro |
-| \`sharp\` | \`solid\` , regular, light, thin | Pro |
-| \`sharp-duotone\` | \`solid\` , regular, light, thin | Pro | The `light` and `thin` variants, the `sharp`, `duotone`, and `sharp-duotone` families, and the [Pro+ packs](#font-awesome-pro-icons) require a Font Awesome Pro plan. [Provide a Kit code](https://webawesome.com/docs/#using-font-awesome-kit-codes) to unlock them.
+| \`brands\`          | —                                       | Free |
+| \`duotone\`         | \`solid\` , regular, light, thin        | Pro  |
+| \`sharp\`           | \`solid\` , regular, light, thin        | Pro  |
+| \`sharp-duotone\`   | \`solid\` , regular, light, thin        | Pro  | The `light` and `thin` variants, the `sharp`, `duotone`, and `sharp-duotone` families, and the [Pro+ packs](#font-awesome-pro-icons) require a Font Awesome Pro plan. [Provide a Kit code](https://webawesome.com/docs/#using-font-awesome-kit-codes) to unlock them. |
 
 ### Canvas
 
 The _canvas_ is the box an icon sits in. Choose one of four mutually exclusive modes with the `canvas` attribute (the default is `fixed`). It mirrors [Font Awesome's icon canvas](https://docs.fontawesome.com/web/style/icon-canvas/) and scales with `font-size`, independent of [sizing](#size). The tinted box below shows each canvas's extent.
 
-| Canvas | Box | Best For | Example |
-| --- | --- | --- | --- |
-| \`fixed\` default | \`1.25 × 1em\` | Aligning icons in lists, menus, and toolbars | |
-| \`auto\` | \`auto × 1em\` | Matching the icon's natural width | |
-| \`square\` | \`1.25 × 1.25em\` | Standalone icons on a square footprint | |
-| \`roomy\` | \`1.5 × 1.5em\` | Standalone icons that need more breathing room | |
+| Canvas            | Box               | Best For                                       | Example |
+| ----------------- | ----------------- | ---------------------------------------------- | ------- |
+| \`fixed\` default | \`1.25 × 1em\`    | Aligning icons in lists, menus, and toolbars   |         |
+| \`auto\`          | \`auto × 1em\`    | Matching the icon's natural width              |         |
+| \`square\`        | \`1.25 × 1.25em\` | Standalone icons on a square footprint         |         |
+| \`roomy\`         | \`1.5 × 1.5em\`   | Standalone icons that need more breathing room |         |
 
 ```html
 <div class="canvas-demo">
@@ -836,7 +859,14 @@ The _canvas_ is the box an icon sits in. Choose one of four mutually exclusive m
       <wa-option value="square">square</wa-option>
       <wa-option value="roomy">roomy</wa-option>
     </wa-select>
-    <wa-slider label="Size" min="0" max="4" value="2" with-markers style="flex: 1 1 14rem;">
+    <wa-slider
+      label="Size"
+      min="0"
+      max="4"
+      value="2"
+      with-markers
+      style="flex: 1 1 14rem;"
+    >
       <span slot="reference">1.5rem</span>
       <span slot="reference">2rem</span>
       <span slot="reference">3rem</span>
@@ -855,15 +885,17 @@ The _canvas_ is the box an icon sits in. Choose one of four mutually exclusive m
 
 <script>
   (() => {
-    const demo = document.querySelector('.canvas-demo');
-    const preview = demo.querySelector('.canvas-demo-preview');
-    const icons = preview.querySelectorAll('wa-icon');
-    const sizes = ['1.5rem', '2rem', '3rem', '4rem', '5rem'];
+    const demo = document.querySelector(".canvas-demo");
+    const preview = demo.querySelector(".canvas-demo-preview");
+    const icons = preview.querySelectorAll("wa-icon");
+    const sizes = ["1.5rem", "2rem", "3rem", "4rem", "5rem"];
 
-    demo.querySelector('wa-select[name="canvas"]').addEventListener('change', event => {
-      icons.forEach(icon => (icon.canvas = event.target.value));
-    });
-    demo.querySelector('wa-slider').addEventListener('input', event => {
+    demo
+      .querySelector('wa-select[name="canvas"]')
+      .addEventListener("change", (event) => {
+        icons.forEach((icon) => (icon.canvas = event.target.value));
+      });
+    demo.querySelector("wa-slider").addEventListener("input", (event) => {
       preview.style.fontSize = sizes[event.target.value];
     });
   })();
@@ -876,14 +908,14 @@ The `auto-width` attribute still works but is deprecated — prefer `canvas="aut
 
 Web Awesome supports [Font Awesome's rotation and flip utilities](https://docs.fontawesome.com/web/style/rotate/) for adjusting icon orientation. Use the `rotate` attribute to turn an icon by **any** number of degrees — not just the quarter-turns below — and the `flip` attribute to mirror it across the `x`, `y`, or `both` axes.
 
-| Attribute | Value |
-| --- | --- |
-| \`rotate\` | \`90\` |
-| \`rotate\` | \`180\` |
-| \`rotate\` | \`270\` |
-| \`flip\` | \`x\` |
-| \`flip\` | \`y\` |
-| \`flip\` | \`both\` |
+| Attribute  | Value    |
+| ---------- | -------- |
+| \`rotate\` | \`90\`   |
+| \`rotate\` | \`180\`  |
+| \`rotate\` | \`270\`  |
+| \`flip\`   | \`x\`    |
+| \`flip\`   | \`y\`    |
+| \`flip\`   | \`both\` |
 
 Rotate by any angle — and combine `rotate` and `flip` on the same icon:
 
@@ -893,7 +925,12 @@ Rotate by any angle — and combine `rotate` and `flip` on the same icon:
 <wa-icon name="snowboarding" rotate="135" style="font-size: 2em;"></wa-icon>
 <wa-icon name="snowboarding" rotate="270" style="font-size: 2em;"></wa-icon>
 <wa-icon name="snowboarding" flip="both" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" rotate="45" flip="x" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="snowboarding"
+  rotate="45"
+  flip="x"
+  style="font-size: 2em;"
+></wa-icon>
 ```
 
 ### Animating
@@ -907,8 +944,18 @@ Every animation accepts the same timing controls — `--animation-delay`, `--ani
 Use the `beat` animation to scale an icon up or down. This is useful for grabbing attention or for use with health/heart-centric icons.
 
 ```html
-<wa-icon name="heart" animation="beat" label="Beating Heart" style="font-size: 2em;"></wa-icon>
-<wa-icon name="circle-plus" animation="beat" label="Beating Circle Plus" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="heart"
+  animation="beat"
+  label="Beating Heart"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="circle-plus"
+  animation="beat"
+  label="Beating Circle Plus"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --beat-scale to control how far it grows -->
 <wa-icon
   name="face-grin-hearts"
@@ -923,9 +970,24 @@ Use the `beat` animation to scale an icon up or down. This is useful for grabbin
 Use the `fade` animation to fade an icon in and out visually to grab attention in a subtle (or not so subtle) way.
 
 ```html
-<wa-icon name="triangle-exclamation" animation="fade" label="Fading Warning" style="font-size: 2em;"></wa-icon>
-<wa-icon name="skull-crossbones" animation="fade" label="Fading Danger" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cloud-arrow-down" animation="fade" label="Fading Download" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="triangle-exclamation"
+  animation="fade"
+  label="Fading Warning"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="skull-crossbones"
+  animation="fade"
+  label="Fading Danger"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="cloud-arrow-down"
+  animation="fade"
+  label="Fading Download"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --fade-opacity to set how faint it fades (and --animation-duration the pace) -->
 <wa-icon
   name="i-cursor"
@@ -940,8 +1002,18 @@ Use the `fade` animation to fade an icon in and out visually to grab attention i
 Use the `beat-fade` animation to grab attention by visually scaling and pulsing an icon in and out.
 
 ```html
-<wa-icon name="person-digging" animation="beat-fade" label="Beat-Fading Construction" style="font-size: 2em;"></wa-icon>
-<wa-icon name="circle-exclamation" animation="beat-fade" label="Beat-Fading Alert" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="person-digging"
+  animation="beat-fade"
+  label="Beat-Fading Construction"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="circle-exclamation"
+  animation="beat-fade"
+  label="Beat-Fading Alert"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Stronger pulse: lower --beat-fade-opacity, higher --beat-fade-scale -->
 <wa-icon
   name="square-exclamation"
@@ -963,7 +1035,12 @@ Use the `beat-fade` animation to grab attention by visually scaling and pulsing 
 Use the `bounce` animation to grab attention by visually bouncing an icon up and down.
 
 ```html
-<wa-icon name="volleyball" animation="bounce" label="Bouncing Volleyball" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="volleyball"
+  animation="bounce"
+  label="Bouncing Volleyball"
+  style="font-size: 2em;"
+></wa-icon>
 
 <!-- bounce with extra rebound and "squish" on landing -->
 <wa-icon
@@ -995,9 +1072,24 @@ Use the `bounce` animation to grab attention by visually bouncing an icon up and
 Use the `flip` animation to rotate an icon in 3D space. By default, flip rotates an icon about the Y axis 180 degrees. Flipping is helpful for transitions, processing states, or for using physical objects that one flips in the real world.
 
 ```html
-<wa-icon name="compact-disc" animation="flip" label="Flipping Compact Disc" style="font-size: 2em;"></wa-icon>
-<wa-icon name="camera-rotate" animation="flip" label="Flipping Camera Rotate" style="font-size: 2em;"></wa-icon>
-<wa-icon name="compact-disc" animation="flip" label="Flipping Disc" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="compact-disc"
+  animation="flip"
+  label="Flipping Compact Disc"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="camera-rotate"
+  animation="flip"
+  label="Flipping Camera Rotate"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="compact-disc"
+  animation="flip"
+  label="Flipping Disc"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Set the flip axis with --flip-x / --flip-y -->
 <wa-icon
   name="scroll"
@@ -1019,8 +1111,18 @@ Use the `flip` animation to rotate an icon in 3D space. By default, flip rotates
 Use the `flip-360` animation to flip an icon all the way around in one smooth rotation — an extension of `flip` that gives it some extra oomph. It shares the same `--flip-x`, `--flip-y`, and `--flip-z` axis properties, plus `--flip-angle`, `--flip-anticipation-scale`, and `--flip-overshoot`.
 
 ```html
-<wa-icon name="compact-disc" animation="flip-360" label="Flipping Compact Disc" style="font-size: 2em;"></wa-icon>
-<wa-icon name="camera-rotate" animation="flip-360" label="Flipping Camera Rotate" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="compact-disc"
+  animation="flip-360"
+  label="Flipping Compact Disc"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="camera-rotate"
+  animation="flip-360"
+  label="Flipping Camera Rotate"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Set the flip axis with --flip-x / --flip-y -->
 <wa-icon
   name="scroll"
@@ -1042,10 +1144,30 @@ Use the `flip-360` animation to flip an icon all the way around in one smooth ro
 Use the `shake` animation to grab attention or note that something is not allowed by shaking an icon back and forth.
 
 ```html
-<wa-icon name="bell" animation="shake" label="Shaking Bell" style="font-size: 2em;"></wa-icon>
-<wa-icon name="lock" animation="shake" label="Shaking Lock" style="font-size: 2em;"></wa-icon>
-<wa-icon name="stopwatch" animation="shake" label="Shaking Stopwatch" style="font-size: 2em;"></wa-icon>
-<wa-icon name="bomb" animation="shake" label="Shaking Bomb" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="bell"
+  animation="shake"
+  label="Shaking Bell"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="lock"
+  animation="shake"
+  label="Shaking Lock"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="stopwatch"
+  animation="shake"
+  label="Shaking Stopwatch"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="bomb"
+  animation="shake"
+  label="Shaking Bomb"
+  style="font-size: 2em;"
+></wa-icon>
 ```
 
 #### Spin
@@ -1053,11 +1175,36 @@ Use the `shake` animation to grab attention or note that something is not allowe
 Use the `spin` animation to get any icon to rotate, and use `spin-pulse` to have it rotate with eight steps. Use `spin-reverse` to rotate counter-clockwise. This works especially well with `spinner` and everything in the spinner icons category.
 
 ```html
-<wa-icon name="sync" animation="spin" label="Spinning Sync" style="font-size: 2em;"></wa-icon>
-<wa-icon name="circle-notch" animation="spin" label="Spinning Circle Notch" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cog" animation="spin" label="Spinning Cog" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cog" animation="spin-reverse" label="Reverse Spinning Cog" style="font-size: 2em;"></wa-icon>
-<wa-icon name="spinner" animation="spin-pulse" label="Pulse Spinning Spinner" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="sync"
+  animation="spin"
+  label="Spinning Sync"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="circle-notch"
+  animation="spin"
+  label="Spinning Circle Notch"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="cog"
+  animation="spin"
+  label="Spinning Cog"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="cog"
+  animation="spin-reverse"
+  label="Reverse Spinning Cog"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="spinner"
+  animation="spin-pulse"
+  label="Pulse Spinning Spinner"
+  style="font-size: 2em;"
+></wa-icon>
 <wa-icon
   name="spinner"
   animation="spin-pulse"
@@ -1079,9 +1226,24 @@ Use the `spin` animation to get any icon to rotate, and use `spin-pulse` to have
 Use `spin-snap` to rotate in distinct steps with a pause on each, like a clock's second hand. `spin-snap-4` stops at four positions and `spin-snap-8` at eight. Unlike `spin-pulse` — a continuous eight-step rotation — the snap animations ease into each stop. Add `--animation-direction: reverse` to any of them to run counter-clockwise.
 
 ```html
-<wa-icon name="gear" animation="spin-snap" label="Snapping Gear" style="font-size: 2em;"></wa-icon>
-<wa-icon name="gear" animation="spin-snap-4" label="Snapping Gear, four stops" style="font-size: 2em;"></wa-icon>
-<wa-icon name="gear" animation="spin-snap-8" label="Snapping Gear, eight stops" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="gear"
+  animation="spin-snap"
+  label="Snapping Gear"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="gear"
+  animation="spin-snap-4"
+  label="Snapping Gear, four stops"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="gear"
+  animation="spin-snap-8"
+  label="Snapping Gear, eight stops"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Add --animation-direction: reverse to run counter-clockwise -->
 <wa-icon
   name="gear"
@@ -1096,8 +1258,18 @@ Use `spin-snap` to rotate in distinct steps with a pause on each, like a clock's
 Use the `buzz` animation for a fast, tight vibration with rapid decay — quick attention without being loud, like a phone buzzing on a table or an expiring timer. Set `--buzz-distance` to control how far it travels.
 
 ```html
-<wa-icon name="bell" animation="buzz" label="Buzzing Bell" style="font-size: 2em;"></wa-icon>
-<wa-icon name="mobile" animation="buzz" label="Buzzing Phone" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="bell"
+  animation="buzz"
+  label="Buzzing Bell"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="mobile"
+  animation="buzz"
+  label="Buzzing Phone"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --buzz-distance to control how far it travels -->
 <wa-icon
   name="triangle-exclamation"
@@ -1112,8 +1284,18 @@ Use the `buzz` animation for a fast, tight vibration with rapid decay — quick 
 Use the `float` animation for a slow, drifting motion — great for empty states, subtle attention, and adding a bit of playful lightness. Adjust `--float-height`, `--float-drift`, and `--float-tilt` to shape the motion.
 
 ```html
-<wa-icon name="feather" animation="float" label="Floating Feather" style="font-size: 2em;"></wa-icon>
-<wa-icon name="ghost" animation="float" label="Floating Ghost" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="feather"
+  animation="float"
+  label="Floating Feather"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="ghost"
+  animation="float"
+  label="Floating Ghost"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --float-height to control the rise (and --animation-duration the pace) -->
 <wa-icon
   name="feather"
@@ -1128,8 +1310,18 @@ Use the `float` animation for a slow, drifting motion — great for empty states
 Use the `jello` animation for a playful jiggle — great for calling attention to something new, fun, or interactive. Set `--jello-scale-x` and `--jello-scale-y` to control how far it deforms.
 
 ```html
-<wa-icon name="cube" animation="jello" label="Jiggling Cube" style="font-size: 2em;"></wa-icon>
-<wa-icon name="droplet" animation="jello" label="Jiggling Droplet" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="cube"
+  animation="jello"
+  label="Jiggling Cube"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="droplet"
+  animation="jello"
+  label="Jiggling Droplet"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --jello-scale-x to control how far it stretches -->
 <wa-icon
   name="star"
@@ -1144,8 +1336,18 @@ Use the `jello` animation for a playful jiggle — great for calling attention t
 Use the `swing` animation for a subtle dangle with a slow decay — great for things that physically dangle, like keys or a price tag. Set `--swing-angle` to control the peak rotation.
 
 ```html
-<wa-icon name="bell" animation="swing" label="Swinging Bell" style="font-size: 2em;"></wa-icon>
-<wa-icon name="key" animation="swing" label="Swinging Key" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="bell"
+  animation="swing"
+  label="Swinging Bell"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="key"
+  animation="swing"
+  label="Swinging Key"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --swing-angle to control the peak rotation -->
 <wa-icon
   name="tag"
@@ -1160,8 +1362,18 @@ Use the `swing` animation for a subtle dangle with a slow decay — great for th
 Use the `wag` animation, a cousin of `swing`, for a bottom-anchored wag — the top of the icon sways back and forth with a slow decay. Set `--wag-angle` to control the peak rotation.
 
 ```html
-<wa-icon name="hand-pointer" animation="wag" label="Wagging Pointer" style="font-size: 2em;"></wa-icon>
-<wa-icon name="hand-point-up" animation="wag" label="Wagging Finger" style="font-size: 2em;"></wa-icon>
+<wa-icon
+  name="hand-pointer"
+  animation="wag"
+  label="Wagging Pointer"
+  style="font-size: 2em;"
+></wa-icon>
+<wa-icon
+  name="hand-point-up"
+  animation="wag"
+  label="Wagging Finger"
+  style="font-size: 2em;"
+></wa-icon>
 <!-- Use --wag-angle to control the peak rotation -->
 <wa-icon
   name="hand-point-right"
@@ -1175,13 +1387,13 @@ Use the `wag` animation, a cousin of `swing`, for a bottom-anchored wag — the 
 
 Duotone icons render on two layers — a primary and a secondary — that you can recolor and fade independently. By default both layers use `currentColor`, with the secondary layer at 40% opacity. These properties don't inherit, so set them directly on the icon.
 
-| Property | Description | Default |
-| --- | --- | --- |
-| \`--primary-color\` | Color of the primary (foreground) layer | \`currentColor\` |
-| \`--secondary-color\` | Color of the secondary (background) layer | \`currentColor\` |
-| \`--primary-opacity\` | Opacity of the primary layer | \`1\` |
-| \`--secondary-opacity\` | Opacity of the secondary layer | \`0.4\` |
-| \`swap-opacity\` | Attribute that swaps the primary and secondary opacities | \`false\` |
+| Property                | Description                                              | Default          |
+| ----------------------- | -------------------------------------------------------- | ---------------- |
+| \`--primary-color\`     | Color of the primary (foreground) layer                  | \`currentColor\` |
+| \`--secondary-color\`   | Color of the secondary (background) layer                | \`currentColor\` |
+| \`--primary-opacity\`   | Opacity of the primary layer                             | \`1\`            |
+| \`--secondary-opacity\` | Opacity of the secondary layer                           | \`0.4\`          |
+| \`swap-opacity\`        | Attribute that swaps the primary and secondary opacities | \`false\`        |
 
 ```html
 <div class="duotone-demo">
@@ -1198,8 +1410,20 @@ Duotone icons render on two layers — a primary and a secondary — that you ca
   <div class="wa-cluster wa-gap-xl duotone-demo-controls">
     <wa-color-picker label="Primary color"></wa-color-picker>
     <wa-color-picker label="Secondary color"></wa-color-picker>
-    <wa-slider label="Primary opacity" min="0" max="1" step="0.1" value="1"></wa-slider>
-    <wa-slider label="Secondary opacity" min="0" max="1" step="0.1" value="0.4"></wa-slider>
+    <wa-slider
+      label="Primary opacity"
+      min="0"
+      max="1"
+      step="0.1"
+      value="1"
+    ></wa-slider>
+    <wa-slider
+      label="Secondary opacity"
+      min="0"
+      max="1"
+      step="0.1"
+      value="0.4"
+    ></wa-slider>
   </div>
 </div>
 
@@ -1220,10 +1444,11 @@ Duotone icons render on two layers — a primary and a secondary — that you ca
 
 <script>
   (() => {
-    const demo = document.querySelector('.duotone-demo');
-    const icons = demo.querySelectorAll('.duotone-demo-preview wa-icon');
-    const [primary, secondary] = demo.querySelectorAll('wa-color-picker');
-    const [primaryOpacity, secondaryOpacity] = demo.querySelectorAll('wa-slider');
+    const demo = document.querySelector(".duotone-demo");
+    const icons = demo.querySelectorAll(".duotone-demo-preview wa-icon");
+    const [primary, secondary] = demo.querySelectorAll("wa-color-picker");
+    const [primaryOpacity, secondaryOpacity] =
+      demo.querySelectorAll("wa-slider");
 
     // Until the user picks a color, each layer stays on its default currentColor so it tracks
     // the color scheme. Opacity changes must not pin a color, or the icons freeze on toggle.
@@ -1231,27 +1456,31 @@ Duotone icons render on two layers — a primary and a secondary — that you ca
     let hasSecondaryColor = false;
 
     const applyOpacity = () => {
-      icons.forEach(icon => {
-        icon.style.setProperty('--primary-opacity', primaryOpacity.value);
-        icon.style.setProperty('--secondary-opacity', secondaryOpacity.value);
+      icons.forEach((icon) => {
+        icon.style.setProperty("--primary-opacity", primaryOpacity.value);
+        icon.style.setProperty("--secondary-opacity", secondaryOpacity.value);
       });
     };
 
-    primary.addEventListener('input', () => {
+    primary.addEventListener("input", () => {
       hasPrimaryColor = true;
-      icons.forEach(icon => icon.style.setProperty('--primary-color', primary.value));
+      icons.forEach((icon) =>
+        icon.style.setProperty("--primary-color", primary.value),
+      );
     });
-    secondary.addEventListener('input', () => {
+    secondary.addEventListener("input", () => {
       hasSecondaryColor = true;
-      icons.forEach(icon => icon.style.setProperty('--secondary-color', secondary.value));
+      icons.forEach((icon) =>
+        icon.style.setProperty("--secondary-color", secondary.value),
+      );
     });
-    primaryOpacity.addEventListener('input', applyOpacity);
-    secondaryOpacity.addEventListener('input', applyOpacity);
+    primaryOpacity.addEventListener("input", applyOpacity);
+    secondaryOpacity.addEventListener("input", applyOpacity);
 
     // Keep the unedited color pickers showing the page's text color so their swatches match the
     // icons' default currentColor — and re-probe when the scheme changes so they don't go stale.
     const syncColorDefaults = () => {
-      const probe = document.createElement('span');
+      const probe = document.createElement("span");
       demo.appendChild(probe);
       const textColor = getComputedStyle(probe).color;
       probe.remove();
@@ -1259,11 +1488,14 @@ Duotone icons render on two layers — a primary and a secondary — that you ca
       if (!hasSecondaryColor) secondary.value = textColor;
     };
 
-    customElements.whenDefined('wa-color-picker').then(syncColorDefaults);
-    document.addEventListener('color-scheme-settled', syncColorDefaults);
-    const preview = demo.closest('.code-example-preview');
+    customElements.whenDefined("wa-color-picker").then(syncColorDefaults);
+    document.addEventListener("color-scheme-settled", syncColorDefaults);
+    const preview = demo.closest(".code-example-preview");
     if (preview) {
-      new MutationObserver(syncColorDefaults).observe(preview, { attributes: true, attributeFilter: ['class'] });
+      new MutationObserver(syncColorDefaults).observe(preview, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
     }
   })();
 </script>
@@ -1298,17 +1530,17 @@ For duotone icons, you can swap the primary and secondary opacity values using t
 
 If you're a [Font Awesome Pro+ customer](https://fontawesome.com/), you have access to whole packs of distinctive icons. Set the pack's `family` and `variant` like any other icon.
 
-| Pack | Family | Variant |
-| --- | --- | --- |
-| Chisel | \`chisel\` | \`regular\` |
-| Etch | \`etch\` | \`solid\` |
-| Graphite | \`graphite\` | \`thin\` |
-| Jelly | \`jelly\` , jelly-duo, jelly-fill | \`regular\` |
-| Mosaic | \`mosaic\` | \`solid\` |
-| Notdog | \`notdog\` , notdog-duo | \`solid\` |
-| Pixel | \`pixel\` | \`regular\` |
-| Slab | \`slab\` , slab-press, slab-duo, slab-press-duo | \`regular\` |
-| Thumbprint | \`thumbprint\` | \`light\` |
-| Utility | \`utility\` , utility-duo, utility-fill | \`semibold\` |
-| Vellum | \`vellum\` | \`solid\` |
-| Whiteboard | \`whiteboard\` | \`semibold\` | Pro+ icons can be unlocked by [providing a valid Font Awesome Kit code](https://webawesome.com/docs/#using-font-awesome-kit-codes).
+| Pack       | Family                                          | Variant      |
+| ---------- | ----------------------------------------------- | ------------ |
+| Chisel     | \`chisel\`                                      | \`regular\`  |
+| Etch       | \`etch\`                                        | \`solid\`    |
+| Graphite   | \`graphite\`                                    | \`thin\`     |
+| Jelly      | \`jelly\` , jelly-duo, jelly-fill               | \`regular\`  |
+| Mosaic     | \`mosaic\`                                      | \`solid\`    |
+| Notdog     | \`notdog\` , notdog-duo                         | \`solid\`    |
+| Pixel      | \`pixel\`                                       | \`regular\`  |
+| Slab       | \`slab\` , slab-press, slab-duo, slab-press-duo | \`regular\`  |
+| Thumbprint | \`thumbprint\`                                  | \`light\`    |
+| Utility    | \`utility\` , utility-duo, utility-fill         | \`semibold\` |
+| Vellum     | \`vellum\`                                      | \`solid\`    |
+| Whiteboard | \`whiteboard\`                                  | \`semibold\` | Pro+ icons can be unlocked by [providing a valid Font Awesome Kit code](https://webawesome.com/docs/#using-font-awesome-kit-codes). |

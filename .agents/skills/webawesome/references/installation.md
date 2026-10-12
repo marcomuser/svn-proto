@@ -6,7 +6,7 @@ Welcome to Web Awesome! [Learn more](https://webawesome.com/) about this project
 
 You can load Web Awesome via CDN or by installing it locally. If you’re using a framework, make sure to check out the pages for [React](https://webawesome.com/docs/frameworks/react), [Vue](https://webawesome.com/docs/frameworks/vue), [Angular](https://webawesome.com/docs/frameworks/angular), and [Svelte](https://webawesome.com/docs/frameworks/svelte) for additional information.
 
-* * *
+---
 
 ## CDN (Easiest)
 
@@ -14,14 +14,26 @@ The CDN is the fastest way to get started with Web Awesome. Just copy and paste 
 
 ```html
 <!-- Required: default theme + autoloader -->
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/default.css" />
-<script type="module" src="https://ka-f.webawesome.com/webawesome@3.14.0/webawesome.loader.js"></script>
+<link
+  rel="stylesheet"
+  href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/default.css"
+/>
+<script
+  type="module"
+  src="https://ka-f.webawesome.com/webawesome@3.14.0/webawesome.loader.js"
+></script>
 
 <!-- Recommended: utility classes ("CSS Utilities") -->
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/utilities.css" />
+<link
+  rel="stylesheet"
+  href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/utilities.css"
+/>
 
 <!-- Optional: CSS reset ("Native Styles") -->
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/native.css" />
+<link
+  rel="stylesheet"
+  href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/native.css"
+/>
 ```
 
 Prefer one line? `styles/webawesome.css` pulls in the theme, utility classes, and native styles together.
@@ -46,11 +58,11 @@ Then, in your JavaScript files, import the default theme and any components you 
 
 ```js
 // Web Awesome styles
-import '@awesome.me/webawesome/dist/styles/webawesome.css';
+import "@awesome.me/webawesome/dist/styles/webawesome.css";
 
 // Import the components you want to use
-import '@awesome.me/webawesome/dist/components/button/button.js';
-import '@awesome.me/webawesome/dist/components/input/input.js';
+import "@awesome.me/webawesome/dist/components/button/button.js";
+import "@awesome.me/webawesome/dist/components/input/input.js";
 ```
 
 Once a component has been imported, you can use it in your HTML normally. Components are cherry picked to ensure you're getting the smallest possible bundle. You can find each component import in the "Importing" section of its documentation.
@@ -67,7 +79,7 @@ npm pack @awesome.me/webawesome
 
 This will download a `.tgz` archive containing all Web Awesome files. Extract it and host the files on your own server.
 
-* * *
+---
 
 ## Additional Setup
 
@@ -118,8 +130,8 @@ If you're using the CDN, you can skip this section. However, if you're using npm
 
 <!-- Option 2: the setBasePath() method -->
 <script type="module">
-  import { setBasePath } from '/path/to/webawesome/dist/webawesome.js';
-  setBasePath('/path/to/webawesome/dist');
+  import { setBasePath } from "/path/to/webawesome/dist/webawesome.js";
+  setBasePath("/path/to/webawesome/dist");
 </script>
 ```
 
@@ -129,9 +141,12 @@ Most of the magic behind assets is handled internally by Web Awesome, but if you
 
 ```html
 <script type="module">
-  import { getBasePath, setBasePath } from '/path/to/webawesome/dist/webawesome.js';
+  import {
+    getBasePath,
+    setBasePath,
+  } from "/path/to/webawesome/dist/webawesome.js";
 
-  setBasePath('/path/to/assets');
+  setBasePath("/path/to/assets");
 
   // ...
 
@@ -139,7 +154,7 @@ Most of the magic behind assets is handled internally by Web Awesome, but if you
   const basePath = getBasePath();
 
   // Get the path to an asset, e.g. /path/to/assets/file.ext
-  const assetPath = getBasePath('file.ext');
+  const assetPath = getBasePath("file.ext");
 </script>
 ```
 
@@ -153,8 +168,8 @@ Font Awesome users can provide their kit code to unlock Pro and Pro+ icon packs.
 
 <!-- Option 2: the setKitCode() method -->
 <script type="module">
-  import { setKitCode } from 'https://ka-f.webawesome.com/webawesome@3.14.0/webawesome.loader.js';
-  setKitCode('YOUR_KIT_CODE_HERE');
+  import { setKitCode } from "https://ka-f.webawesome.com/webawesome@3.14.0/webawesome.loader.js";
+  setKitCode("YOUR_KIT_CODE_HERE");
 </script>
 ```
 

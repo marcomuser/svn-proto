@@ -28,7 +28,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/breadcrumb/breadcrumb.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/breadcrumb/breadcrumb.js";
 ```
 
 \*\*npm\*\*
@@ -36,7 +36,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/breadcrumb/brea
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/breadcrumb/breadcrumb.js';
+import "@awesome.me/webawesome/dist/components/breadcrumb/breadcrumb.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -44,7 +44,7 @@ import '@awesome.me/webawesome/dist/components/breadcrumb/breadcrumb.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/breadcrumb/breadcrumb.js';
+import "./webawesome/dist/components/breadcrumb/breadcrumb.js";
 ```
 
 \*\*React\*\*
@@ -52,34 +52,34 @@ import './webawesome/dist/components/breadcrumb/breadcrumb.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaBreadcrumb from '@awesome.me/webawesome/dist/react/breadcrumb/index.js';
+import WaBreadcrumb from "@awesome.me/webawesome/dist/react/breadcrumb/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | One or more breadcrumb items to display. |
-| \`separator\` | \`
+| Name          | Description                              |
+| ------------- | ---------------------------------------- |
+| (default)     | One or more breadcrumb items to display. |
+| \`separator\` | \`                                       |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`label\` label | \`string\` The label to use for the breadcrumb control. This will not be shown on the screen, but it will be announced by screen readers and other assistive devices to provide more context for users. Type Default '' | |
+| Name            | Description                                                                                                                                                                                                             | Reflects |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| \`label\` label | \`string\` The label to use for the breadcrumb control. This will not be shown on the screen, but it will be announced by screen readers and other assistive devices to provide more context for users. Type Default '' |          |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`breadcrumb\` | The component's outer wrapper. | \`::part(breadcrumb)\` |
-| \`base\` | \`breadcrumb\` Deprecated. Use the part instead. | \`::part(base)\` |
+| Name           | Description                                      | CSS selector           |
+| -------------- | ------------------------------------------------ | ---------------------- |
+| \`breadcrumb\` | The component's outer wrapper.                   | \`::part(breadcrumb)\` |
+| \`base\`       | \`breadcrumb\` Deprecated. Use the part instead. | \`::part(base)\`       |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 
@@ -93,11 +93,17 @@ The last item represents the current page. Use `href=""` so it points at itself 
 
 ```html
 <wa-breadcrumb>
-  <wa-breadcrumb-item href="https://example.com/home">Homepage</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home"
+    >Homepage</wa-breadcrumb-item
+  >
 
-  <wa-breadcrumb-item href="https://example.com/home/services">Our Services</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home/services"
+    >Our Services</wa-breadcrumb-item
+  >
 
-  <wa-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home/services/digital"
+    >Digital Media</wa-breadcrumb-item
+  >
 
   <wa-breadcrumb-item href="">Web Design</wa-breadcrumb-item>
 </wa-breadcrumb>

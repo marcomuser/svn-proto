@@ -6,24 +6,36 @@ A server-rendered component can emit one root containing its markup and a child 
 <section data-density-panel>
   <style>
     @scope {
-      :scope { padding: 1rem; }
-      .item { padding-block: .75rem; }
-      :scope[data-compact] .item { padding-block: .25rem; }
+      :scope {
+        padding: 1rem;
+      }
+      .item {
+        padding-block: 0.75rem;
+      }
+      :scope[data-compact] .item {
+        padding-block: 0.25rem;
+      }
     }
   </style>
 
   <h2>Items</h2>
-  <button type="button" data-density-toggle aria-pressed="false" hidden>Compact view</button>
-  <ul><li class="item">An item</li></ul>
+  <button type="button" data-density-toggle aria-pressed="false" hidden>
+    Compact view
+  </button>
+  <ul>
+    <li class="item">An item</li>
+  </ul>
 
   <script type="module">
-    for (const root of document.querySelectorAll('[data-density-panel]:not([data-enhanced])')) {
-      root.dataset.enhanced = '';
-      const button = root.querySelector('[data-density-toggle]');
+    for (const root of document.querySelectorAll(
+      "[data-density-panel]:not([data-enhanced])",
+    )) {
+      root.dataset.enhanced = "";
+      const button = root.querySelector("[data-density-toggle]");
       button.hidden = false;
-      button.addEventListener('click', () => {
-        const compact = root.toggleAttribute('data-compact');
-        button.setAttribute('aria-pressed', String(compact));
+      button.addEventListener("click", () => {
+        const compact = root.toggleAttribute("data-compact");
+        button.setAttribute("aria-pressed", String(compact));
       });
     }
   </script>

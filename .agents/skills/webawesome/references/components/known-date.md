@@ -19,17 +19,24 @@ Use [`<wa-date-input>`](https://webawesome.com/docs/components/date-input) inste
 
 The hidden form value is canonical ISO 8601 (`YYYY-MM-DD`), regardless of the locale used to render the fields:
 
-| Entry | Form value |
-| --- | --- |
-| Complete, valid date | \`YYYY-MM-DD\` (e.g. 2007-03-27) |
-| Partial (one or two fields) | (empty) — omitted from form data |
-| Invalid date (e.g. 30 February) | (empty) |
+| Entry                           | Form value                       |
+| ------------------------------- | -------------------------------- |
+| Complete, valid date            | \`YYYY-MM-DD\` (e.g. 2007-03-27) |
+| Partial (one or two fields)     | (empty) — omitted from form data |
+| Invalid date (e.g. 30 February) | (empty)                          |
 
 ```html
 <form id="kd-form-demo">
-  <wa-known-date name="dob" label="Date of birth" required value="2007-03-27"></wa-known-date>
+  <wa-known-date
+    name="dob"
+    label="Date of birth"
+    required
+    value="2007-03-27"
+  ></wa-known-date>
   <br />
-  <wa-button type="submit" appearance="filled" variant="neutral">Submit</wa-button>
+  <wa-button type="submit" appearance="filled" variant="neutral"
+    >Submit</wa-button
+  >
 </form>
 
 <pre id="kd-form-demo-output"></pre>
@@ -50,15 +57,15 @@ The hidden form value is canonical ISO 8601 (`YYYY-MM-DD`), regardless of the lo
 </style>
 
 <script>
-  const form = document.getElementById('kd-form-demo');
-  const output = document.getElementById('kd-form-demo-output');
+  const form = document.getElementById("kd-form-demo");
+  const output = document.getElementById("kd-form-demo-output");
 
-  form.addEventListener('submit', event => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(form);
     const entries = Object.fromEntries(data.entries());
     const formatted = JSON.stringify(entries, null, 2);
-    output.textContent = 'Submitted FormData:\n' + formatted;
+    output.textContent = "Submitted FormData:\n" + formatted;
   });
 </script>
 ```
@@ -74,7 +81,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/known-date/known-date.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/known-date/known-date.js";
 ```
 
 \*\*npm\*\*
@@ -82,7 +89,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/known-date/know
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/known-date/known-date.js';
+import "@awesome.me/webawesome/dist/components/known-date/known-date.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -90,7 +97,7 @@ import '@awesome.me/webawesome/dist/components/known-date/known-date.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/known-date/known-date.js';
+import "./webawesome/dist/components/known-date/known-date.js";
 ```
 
 \*\*React\*\*
@@ -98,25 +105,25 @@ import './webawesome/dist/components/known-date/known-date.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaKnownDate from '@awesome.me/webawesome/dist/react/known-date/index.js';
+import WaKnownDate from "@awesome.me/webawesome/dist/react/known-date/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`hint\` | \`hint\` Text that describes how to use the known date. Alternatively, use the attribute. |
-| \`label\` | \`label\` The known date's group . Alternatively, use the label attribute. |
+| Name      | Description                                                                               |
+| --------- | ----------------------------------------------------------------------------------------- |
+| \`hint\`  | \`hint\` Text that describes how to use the known date. Alternatively, use the attribute. |
+| \`label\` | \`label\` The known date's group . Alternatively, use the label attribute.                |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`WaKnownDateAppearance\` The known date's visual appearance. Type Default 'outlined' | |
-| \`autocomplete\` autocomplete | \`bday\` Browser autofill family. When set to , the three fields receive bday-day, bday-month, and bday-year respectively. The field-agnostic directives off and on are applied to all three fields. Any other value is forwarded only to the year field. Type string Default '' | |
-| \`defaultValue\` value | \`string\` The default value used for form reset. Type | |
-| \`disabled\` disabled | \`boolean\` Disables the known date. Type Default false | |
-| \`form\` | \`
+| Name                          | Description                                                                                                                                                                                                                                                                      | Reflects |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| \`appearance\` appearance     | \`WaKnownDateAppearance\` The known date's visual appearance. Type Default 'outlined'                                                                                                                                                                                            |          |
+| \`autocomplete\` autocomplete | \`bday\` Browser autofill family. When set to , the three fields receive bday-day, bday-month, and bday-year respectively. The field-agnostic directives off and on are applied to all three fields. Any other value is forwarded only to the year field. Type string Default '' |          |
+| \`defaultValue\` value        | \`string\` The default value used for form reset. Type                                                                                                                                                                                                                           |          |
+| \`disabled\` disabled         | \`boolean\` Disables the known date. Type Default false                                                                                                                                                                                                                          |          |
+| \`form\`                      | \`                                                                                                                                                                                                                                                                               |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`hint\` hint | \`hint\` The known date's . If you need to display HTML, use the hint slot instead. Type string Default '' | |
@@ -140,43 +147,43 @@ import WaKnownDate from '@awesome.me/webawesome/dist/react/known-date/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the known date. | |
-| \`focus()\` | Focuses the first empty field, or the first field when all are filled. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null\` |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| \`blur()\`                     | Removes focus from the known date.                                                                                                                                                                                                                                                                                                                |                           |
+| \`focus()\`                    | Focuses the first empty field, or the first field when all are filled.                                                                                                                                                                                                                                                                            | \`options: FocusOptions\` |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\        | File \\ | FormData \\ | null\` |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                           |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`       |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when the committed value transitions to a new ISO date. |
-| \`focus\` | Emitted when the control gains focus. |
-| \`input\` | Emitted as the user types in any field. |
+| Name           | Description                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`       | Emitted when the control loses focus.                                                             |
+| \`change\`     | Emitted when the committed value transitions to a new ISO date.                                   |
+| \`focus\`      | Emitted when the control gains focus.                                                             |
+| \`input\`      | Emitted as the user types in any field.                                                           |
 | \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`blank\` | The known date has no committed value. | \`:state(blank)\` |
-| \`disabled\` | The known date is disabled. | \`:state(disabled)\` |
+| Name         | Description                            | CSS selector         |
+| ------------ | -------------------------------------- | -------------------- |
+| \`blank\`    | The known date has no committed value. | \`:state(blank)\`    |
+| \`disabled\` | The known date is disabled.            | \`:state(disabled)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`field\` | Each field block (label + input). | \`::part(field)\` |
-| \`field-day\` | Added to the day field block. | \`::part(field-day)\` |
-| \`field-input\` | \`\` The native inside a field. | \`::part(field-input)\` |
-| \`field-label\` | The text label above each field's input. | \`::part(field-label)\` |
-| \`field-month\` | Added to the month field block. | \`::part(field-month)\` |
-| \`field-year\` | Added to the year field block. | \`::part(field-year)\` |
-| \`fields\` | The flex row holding the three field blocks. | \`::part(fields)\` |
-| \`fieldset\` | \`
+| Name            | Description                                  | CSS selector            |
+| --------------- | -------------------------------------------- | ----------------------- |
+| \`field\`       | Each field block (label + input).            | \`::part(field)\`       |
+| \`field-day\`   | Added to the day field block.                | \`::part(field-day)\`   |
+| \`field-input\` | \`\` The native inside a field.              | \`::part(field-input)\` |
+| \`field-label\` | The text label above each field's input.     | \`::part(field-label)\` |
+| \`field-month\` | Added to the month field block.              | \`::part(field-month)\` |
+| \`field-year\`  | Added to the year field block.               | \`::part(field-year)\`  |
+| \`fields\`      | The flex row holding the three field blocks. | \`::part(fields)\`      |
+| \`fieldset\`    | \`                                           |
 
 \` The element grouping the three fields (or a role="group" div). | \`::part(fieldset)\` |
 | \`form-control\` | The form control's outer wrapper. | \`::part(form-control)\` |
@@ -203,7 +210,10 @@ Set the `value` attribute to an ISO date to pre-fill the three fields.
 Use the `hint` attribute (or slot) to show an example value. The hint is associated with each field via `aria-describedby`, so screen readers announce it when any field receives focus.
 
 ```html
-<wa-known-date label="When was your passport issued?" hint="For example, 27 3 2007"></wa-known-date>
+<wa-known-date
+  label="When was your passport issued?"
+  hint="For example, 27 3 2007"
+></wa-known-date>
 ```
 
 ### Locale-Aware Field Order
@@ -223,7 +233,11 @@ The three fields render in the natural order for the inherited `lang` (or the ex
 Constrain the accepted range with `min` and `max`. Values outside the range are reported as invalid.
 
 ```html
-<wa-known-date label="Birthday" min="1900-01-01" max="2099-12-31"></wa-known-date>
+<wa-known-date
+  label="Birthday"
+  min="1900-01-01"
+  max="2099-12-31"
+></wa-known-date>
 ```
 
 ### Required
@@ -234,7 +248,9 @@ Set `required` to make the date input required for form submission. Like other f
 <form>
   <wa-known-date label="Date of birth" required></wa-known-date>
   <br />
-  <wa-button type="submit" appearance="filled" variant="neutral">Submit</wa-button>
+  <wa-button type="submit" appearance="filled" variant="neutral"
+    >Submit</wa-button
+  >
 </form>
 ```
 
@@ -278,9 +294,15 @@ Set `autocomplete="bday"` to enable browser autofill for birthdays. The host exp
 
 ```html
 <div class="wa-stack">
-  <wa-known-date label="Outlined (default)" appearance="outlined"></wa-known-date>
+  <wa-known-date
+    label="Outlined (default)"
+    appearance="outlined"
+  ></wa-known-date>
   <wa-known-date label="Filled" appearance="filled"></wa-known-date>
-  <wa-known-date label="Filled outlined" appearance="filled-outlined"></wa-known-date>
+  <wa-known-date
+    label="Filled outlined"
+    appearance="filled-outlined"
+  ></wa-known-date>
 </div>
 ```
 

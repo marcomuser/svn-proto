@@ -68,7 +68,9 @@ The fastest way to re-brand: remap the **brand** role to a different hue with a 
 
 ```html
 <!-- A green-branded app -->
-<html class="wa-theme-default wa-palette-default wa-brand-green wa-light"></html>
+<html
+  class="wa-theme-default wa-palette-default wa-brand-green wa-light"
+></html>
 ```
 
 Available: `wa-brand-red`, `-orange`, `-yellow`, `-green`, `-cyan`, `-blue`, `-indigo`, `-purple`,
@@ -118,7 +120,7 @@ Any `--wa-*` token can be overridden at any scope. Common knobs:
   --wa-color-brand-fill-loud: var(--wa-color-purple-40); /* brand accent */
   --wa-border-radius-scale: 1.5; /* rounder corners everywhere */
   --wa-space-scale: 1.125; /* a touch more breathing room */
-  --wa-font-family-body: 'Inter', system-ui, sans-serif;
+  --wa-font-family-body: "Inter", system-ui, sans-serif;
 }
 ```
 

@@ -145,7 +145,12 @@ All four steps are required — steps 3 and 4 are what stop the nav from showing
     </nav>
     <!-- Your OWN toggle, last child so wa-split right-aligns it. Mobile-only; opens the drawer.
          Supplying this suppresses <wa-page>'s built-in hamburger (see note below). -->
-    <wa-button data-toggle-nav appearance="plain" class="wa-mobile-only" aria-label="Open menu">
+    <wa-button
+      data-toggle-nav
+      appearance="plain"
+      class="wa-mobile-only"
+      aria-label="Open menu"
+    >
       <wa-icon name="bars"></wa-icon>
     </wa-button>
   </header>
@@ -166,10 +171,10 @@ All four steps are required — steps 3 and 4 are what stop the nav from showing
 <style>
   /* No --menu-width here: in this recipe the desktop sidebar is hidden, so leave --menu-width at its
      `auto` default. Setting a fixed value (e.g. 14rem) reserves an empty left column — see note below. */
-  wa-page[view='mobile'] .header-nav {
+  wa-page[view="mobile"] .header-nav {
     display: none; /* hide desktop header links on mobile */
   }
-  wa-page[view='desktop']::part(navigation) {
+  wa-page[view="desktop"]::part(navigation) {
     display: none; /* hide the desktop sidebar; mobile drawer is unaffected */
   }
 </style>
@@ -252,7 +257,9 @@ utilities instead (see [layouts-inpage.md](layouts-inpage.md)).
      padding: 0;
    }
    .section {
-     padding-inline: var(--wa-space-xl); /* or wrap content in a centered max-width container */
+     padding-inline: var(
+       --wa-space-xl
+     ); /* or wrap content in a centered max-width container */
    }
    ```
 
@@ -286,11 +293,11 @@ utilities instead (see [layouts-inpage.md](layouts-inpage.md)).
      --menu-width: 16rem;
      --aside-width: 18rem;
    }
-   wa-page[view='mobile'] {
+   wa-page[view="mobile"] {
      --menu-width: auto;
      --aside-width: auto;
    }
-   wa-page[view='mobile'] [slot='aside'] {
+   wa-page[view="mobile"] [slot="aside"] {
      display: none; /* aside has no drawer; hide it explicitly on mobile */
    }
    ```
@@ -385,7 +392,7 @@ toggle wiring, no media queries** — the component handles all of it. This is t
   wa-page {
     --menu-width: 14rem;
   }
-  wa-page[view='mobile'] {
+  wa-page[view="mobile"] {
     --menu-width: auto; /* collapse the reserved sidebar space on mobile (Hard rule 5) */
   }
 </style>
@@ -471,7 +478,7 @@ navigation sidebar, main content, a sticky table-of-contents aside, and a footer
     --menu-width: 15rem;
     --aside-width: 16rem;
   }
-  wa-page[view='mobile'] {
+  wa-page[view="mobile"] {
     --menu-width: auto;
     --aside-width: auto;
   }

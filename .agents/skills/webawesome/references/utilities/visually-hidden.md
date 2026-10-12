@@ -123,7 +123,7 @@ There are cases where you want to _always_ visually hide certain content, even w
     margin-inline-end: var(--wa-space-xs);
 
     &::after {
-      content: '✓' / '';
+      content: "✓" / "";
       margin: auto;
       transition: opacity var(--wa-transition-slow) var(--wa-transition-easing);
     }

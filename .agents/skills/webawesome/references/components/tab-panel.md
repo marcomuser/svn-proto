@@ -19,7 +19,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tab-panel/tab-panel.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/tab-panel/tab-panel.js";
 ```
 
 \*\*npm\*\*
@@ -27,7 +27,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tab-panel/tab-p
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
+import "@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -35,7 +35,7 @@ import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/tab-panel/tab-panel.js';
+import "./webawesome/dist/components/tab-panel/tab-panel.js";
 ```
 
 \*\*React\*\*
@@ -43,30 +43,30 @@ import './webawesome/dist/components/tab-panel/tab-panel.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaTabPanel from '@awesome.me/webawesome/dist/react/tab-panel/index.js';
+import WaTabPanel from "@awesome.me/webawesome/dist/react/tab-panel/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description              |
+| --------- | ------------------------ |
 | (default) | The tab panel's content. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`active\` active | \`boolean\` When true, the tab panel will be shown. Type Default false | |
-| \`name\` name | \`string\` The tab panel's name. Type Default '' | |
+| Name              | Description                                                            | Reflects |
+| ----------------- | ---------------------------------------------------------------------- | -------- |
+| \`active\` active | \`boolean\` When true, the tab panel will be shown. Type Default false |          |
+| \`name\` name     | \`string\` The tab panel's name. Type Default ''                       |          |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name          | Description              |
+| ------------- | ------------------------ |
 | \`--padding\` | The tab panel's padding. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name     | Description                                 | CSS selector     |
+| -------- | ------------------------------------------- | ---------------- |
 | \`base\` | Deprecated. Style the host element instead. | \`::part(base)\` |

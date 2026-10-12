@@ -18,13 +18,13 @@ Set the `active` attribute to the name of the current [`<wa-step>`](https://weba
 
 ## Accessibility Considerations
 
--   **Structure.** The stepper renders an ordered list, and each [`<wa-step>`](https://webawesome.com/docs/components/step) carries `role="listitem"`. When the stepper is [`clickable`](#clickable), the list sits in a `<nav>` landmark, since its steps are then controls you can navigate with; otherwise it's a labeled group, so a display-only stepper doesn't add a navigation landmark with nothing to navigate. Set the `label` attribute whenever more than one stepper appears on the same page, so screen reader users can tell them apart. Without it, the wrapper gets a generic localized name.
--   **Current step.** The active step carries `aria-current="step"` on whichever element is actually focusable: the step's own host when the stepper isn't `clickable`, or its inner `<button>` when it is. It's removed, not set to `"false"`, everywhere else. The stepper also renders visually hidden "Step 2 of 4" text, so the position is announced without relying on the markers.
--   **Step changes are announced.** When `next()`, `previous()`, or `goTo()` changes the active step, the new position is announced to screen readers through a shared live region, so the update isn't silent even when nothing in the stepper has focus.
--   **Step status.** Each step's status is announced, not just shown. Completed steps carry visually hidden "Completed" text, pending steps "Not completed", disabled steps "Disabled", and locked steps "Locked". The checkmark itself is decorative.
--   **Keyboard.** Steps are only in the tab order when the stepper is [`clickable`](#clickable), and then each one is rendered as a `<button>`: Tab moves between them and Enter or Space activates one, the same as clicking it. `disabled` and locked steps render as disabled buttons, so they're skipped. Without `clickable`, nothing in the stepper takes focus, and screen readers still read every step in order.
--   **Busy state.** Each loading step carries `aria-busy="true"`. The stepper itself carries the `loading` custom state while any step is loading, as a styling hook. It isn't propagated to the stepper's own `aria-busy`, since nesting that on the landmark can suppress announcements for the whole region.
--   **Color and meaning.** The `variant` attribute is cosmetic. It changes color, which doesn't carry meaning on its own, so include the reason in the step's visible label or description, and add an icon in the `icon` slot when a step needs to read as failed.
+- **Structure.** The stepper renders an ordered list, and each [`<wa-step>`](https://webawesome.com/docs/components/step) carries `role="listitem"`. When the stepper is [`clickable`](#clickable), the list sits in a `<nav>` landmark, since its steps are then controls you can navigate with; otherwise it's a labeled group, so a display-only stepper doesn't add a navigation landmark with nothing to navigate. Set the `label` attribute whenever more than one stepper appears on the same page, so screen reader users can tell them apart. Without it, the wrapper gets a generic localized name.
+- **Current step.** The active step carries `aria-current="step"` on whichever element is actually focusable: the step's own host when the stepper isn't `clickable`, or its inner `<button>` when it is. It's removed, not set to `"false"`, everywhere else. The stepper also renders visually hidden "Step 2 of 4" text, so the position is announced without relying on the markers.
+- **Step changes are announced.** When `next()`, `previous()`, or `goTo()` changes the active step, the new position is announced to screen readers through a shared live region, so the update isn't silent even when nothing in the stepper has focus.
+- **Step status.** Each step's status is announced, not just shown. Completed steps carry visually hidden "Completed" text, pending steps "Not completed", disabled steps "Disabled", and locked steps "Locked". The checkmark itself is decorative.
+- **Keyboard.** Steps are only in the tab order when the stepper is [`clickable`](#clickable), and then each one is rendered as a `<button>`: Tab moves between them and Enter or Space activates one, the same as clicking it. `disabled` and locked steps render as disabled buttons, so they're skipped. Without `clickable`, nothing in the stepper takes focus, and screen readers still read every step in order.
+- **Busy state.** Each loading step carries `aria-busy="true"`. The stepper itself carries the `loading` custom state while any step is loading, as a styling hook. It isn't propagated to the stepper's own `aria-busy`, since nesting that on the landmark can suppress announcements for the whole region.
+- **Color and meaning.** The `variant` attribute is cosmetic. It changes color, which doesn't carry meaning on its own, so include the reason in the step's visible label or description, and add an icon in the `icon` slot when a step needs to read as failed.
 
 ## API
 
@@ -37,7 +37,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/stepper/stepper.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/stepper/stepper.js";
 ```
 
 \*\*npm\*\*
@@ -45,7 +45,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/stepper/stepper
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/stepper/stepper.js';
+import "@awesome.me/webawesome/dist/components/stepper/stepper.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -53,7 +53,7 @@ import '@awesome.me/webawesome/dist/components/stepper/stepper.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/stepper/stepper.js';
+import "./webawesome/dist/components/stepper/stepper.js";
 ```
 
 \*\*React\*\*
@@ -61,65 +61,65 @@ import './webawesome/dist/components/stepper/stepper.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaStepper from '@awesome.me/webawesome/dist/react/stepper/index.js';
+import WaStepper from "@awesome.me/webawesome/dist/react/stepper/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                |
+| --------- | -------------------------- |
 | (default) | \`\` One or more elements. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`active\` active | \`string\` The name of the active step. Falls back to the first step if unset, or if it doesn't match any step's name. Type Default '' | |
-| \`clickable\` clickable | \`next()\` Allows clicking a step, or focusing it and pressing Enter/Space, to jump straight to it. When unset (the default), only /previous()/goTo() change the active step, e.g. from your own Next/Back buttons or a data-stepper invoker. Type boolean Default false | |
-| \`label\` label | \`string\` A label that describes the stepper to assistive devices. Especially useful when more than one is on the page. Type Default '' | |
-| \`linear\` linear | \`next()\` Requires steps to be completed in order. When set, /goTo()/a data-stepper invoker and, if clickable is also set, clicking or activating a step can't reach a step until every step before it is completed. Every step past that point renders as locked. Type boolean Default false | |
-| \`orientation\` orientation | \`auto\` The stepper's layout direction. lays steps out in a row and stacks them when the stepper is too narrow to give each step about 6em of width, so labels stay legible on small screens; use it for anything shown on a phone. It relies on measuring the stepper, so a server-rendered auto stepper starts as a row and stacks once it hydrates, which is why horizontal is the default. Type 'horizontal' \\| 'vertical' \\| 'auto' Default 'horizontal' | |
+| Name                        | Description                                                                                                                                                                                                                                                                                                                                                                                                          | Reflects      |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| \`active\` active           | \`string\` The name of the active step. Falls back to the first step if unset, or if it doesn't match any step's name. Type Default ''                                                                                                                                                                                                                                                                               |               |
+| \`clickable\` clickable     | \`next()\` Allows clicking a step, or focusing it and pressing Enter/Space, to jump straight to it. When unset (the default), only /previous()/goTo() change the active step, e.g. from your own Next/Back buttons or a data-stepper invoker. Type boolean Default false                                                                                                                                             |               |
+| \`label\` label             | \`string\` A label that describes the stepper to assistive devices. Especially useful when more than one is on the page. Type Default ''                                                                                                                                                                                                                                                                             |               |
+| \`linear\` linear           | \`next()\` Requires steps to be completed in order. When set, /goTo()/a data-stepper invoker and, if clickable is also set, clicking or activating a step can't reach a step until every step before it is completed. Every step past that point renders as locked. Type boolean Default false                                                                                                                       |               |
+| \`orientation\` orientation | \`auto\` The stepper's layout direction. lays steps out in a row and stacks them when the stepper is too narrow to give each step about 6em of width, so labels stay legible on small screens; use it for anything shown on a phone. It relies on measuring the stepper, so a server-rendered auto stepper starts as a row and stacks once it hydrates, which is why horizontal is the default. Type 'horizontal' \\ | 'vertical' \\ | 'auto' Default 'horizontal' |     |
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`goTo()\` | \`wa-before-step-change\` Requests a change to the named step. Emits a cancelable ; if not canceled, updates active, emits wa-step-change, and announces the new position to assistive technology. No-ops silently if the step doesn't exist, is disabled, or (in linear mode) isn't reachable yet. | \`name: string\` |
-| \`next()\` | Advances to the step after the active one, if any. | |
-| \`previous()\` | Goes back to the step before the active one, if any. | |
+| Name           | Description                                                                                                                                                                                                                                                                                         | Arguments        |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| \`goTo()\`     | \`wa-before-step-change\` Requests a change to the named step. Emits a cancelable ; if not canceled, updates active, emits wa-step-change, and announces the new position to assistive technology. No-ops silently if the step doesn't exist, is disabled, or (in linear mode) isn't reachable yet. | \`name: string\` |
+| \`next()\`     | Advances to the step after the active one, if any.                                                                                                                                                                                                                                                  |                  |
+| \`previous()\` | Goes back to the step before the active one, if any.                                                                                                                                                                                                                                                |                  |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`detail\` | |
+| Name                      | Description                                                                                                                               |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| \`detail\`                |                                                                                                                                           |
 | \`wa-before-step-change\` | \`event.preventDefault()\` Emitted before the active step changes. Calling prevents the change, to guard against invalid or unsaved data. |
-| \`wa-step-change\` | Emitted after the active step changes. |
+| \`wa-step-change\`        | Emitted after the active step changes.                                                                                                    |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--connector-color\` | \`var(--wa-color-neutral-fill-normal)\` The color of the connector line after a step that isn't completed. Default |
-| \`--connector-color-active\` | \`variant\` The color of the connector line after a completed step. Unset by default, so the line takes the completed marker's fill and follows its . |
-| \`--connector-gap\` | \`0.35em\` The gap between a marker's edge and the connector line, on both sides. Kept clear of the marker geometrically, so it holds even if a marker's background is transparent. Default |
-| \`--connector-width\` | \`var(--wa-border-width-m)\` The thickness of the connector line, in either orientation. Default |
-| \`--gap\` | \`var(--wa-space-l)\` The space between steps. Default |
-| \`--marker-size\` | \`2em\` The size of each step's marker. Default |
+| Name                         | Description                                                                                                                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \`--connector-color\`        | \`var(--wa-color-neutral-fill-normal)\` The color of the connector line after a step that isn't completed. Default                                                                          |
+| \`--connector-color-active\` | \`variant\` The color of the connector line after a completed step. Unset by default, so the line takes the completed marker's fill and follows its .                                       |
+| \`--connector-gap\`          | \`0.35em\` The gap between a marker's edge and the connector line, on both sides. Kept clear of the marker geometrically, so it holds even if a marker's background is transparent. Default |
+| \`--connector-width\`        | \`var(--wa-border-width-m)\` The thickness of the connector line, in either orientation. Default                                                                                            |
+| \`--gap\`                    | \`var(--wa-space-l)\` The space between steps. Default                                                                                                                                      |
+| \`--marker-size\`            | \`2em\` The size of each step's marker. Default                                                                                                                                             |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`completed\` | Applied when every step is completed. | \`:state(completed)\` |
-| \`loading\` | Applied when at least one step is loading. | \`:state(loading)\` |
-| \`stacked\` | \`orientation="vertical"\` Applied while the steps are laid out vertically, whether by or because an auto stepper is too narrow to give each step room. | \`:state(stacked)\` |
+| Name          | Description                                                                                                                                             | CSS selector          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| \`completed\` | Applied when every step is completed.                                                                                                                   | \`:state(completed)\` |
+| \`loading\`   | Applied when at least one step is loading.                                                                                                              | \`:state(loading)\`   |
+| \`stacked\`   | \`orientation="vertical"\` Applied while the steps are laid out vertically, whether by or because an auto stepper is too narrow to give each step room. | \`:state(stacked)\`   |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`stepper\` | \`
+| Name        | Description | CSS selector |
+| ----------- | ----------- | ------------ |
+| \`stepper\` | \`          |
 
 \` The component's outer wrapper. A landmark when the stepper is clickable, since its steps are then controls you can navigate with; otherwise a labeled role="group", since a display-only stepper has nothing to navigate. | \`::part(stepper)\` |
 | \`steps\` | \`\` The that lays out the steps. | \`::part(steps)\` |
@@ -129,9 +129,9 @@ import WaStepper from '@awesome.me/webawesome/dist/react/stepper/index.js';
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
--   [`<wa-step>`](https://webawesome.com/docs/components/step)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
+- [`<wa-step>`](https://webawesome.com/docs/components/step)
 
 ### SSR
 
@@ -186,7 +186,11 @@ Set the `orientation` attribute to `vertical` to stack the steps, useful in a si
 Each connector runs from its step's marker, across the gap, to the next marker. To lengthen the connectors, increase the `--gap` custom property.
 
 ```html
-<wa-stepper orientation="vertical" active="proof" style="--gap: var(--wa-space-3xl);">
+<wa-stepper
+  orientation="vertical"
+  active="proof"
+  style="--gap: var(--wa-space-3xl);"
+>
   <wa-step name="mix" completed>Mix</wa-step>
   <wa-step name="knead" completed>Knead</wa-step>
   <wa-step name="proof">
@@ -230,7 +234,12 @@ To flag a step that failed or needs attention, pair the variant with an icon in 
   <wa-step name="cart" completed variant="success">Cart</wa-step>
   <wa-step name="shipping" completed variant="success">Shipping</wa-step>
   <wa-step name="payment" variant="danger">
-    <wa-icon slot="icon" name="xmark" library="system" variant="solid"></wa-icon>
+    <wa-icon
+      slot="icon"
+      name="xmark"
+      library="system"
+      variant="solid"
+    ></wa-icon>
     Payment
     <span slot="description">Card declined</span>
   </wa-step>
@@ -243,27 +252,47 @@ A stepper is sized relative to the current font size, like a badge. Set `font-si
 
 ```html
 <div class="wa-stack wa-gap-l">
-  <wa-stepper class="size-stepper" active="shipping" style="font-size: var(--wa-font-size-xs);">
+  <wa-stepper
+    class="size-stepper"
+    active="shipping"
+    style="font-size: var(--wa-font-size-xs);"
+  >
     <wa-step name="cart" completed>Cart</wa-step>
     <wa-step name="shipping">Shipping</wa-step>
     <wa-step name="payment">Payment</wa-step>
   </wa-stepper>
-  <wa-stepper class="size-stepper" active="shipping" style="font-size: var(--wa-font-size-s);">
+  <wa-stepper
+    class="size-stepper"
+    active="shipping"
+    style="font-size: var(--wa-font-size-s);"
+  >
     <wa-step name="cart" completed>Cart</wa-step>
     <wa-step name="shipping">Shipping</wa-step>
     <wa-step name="payment">Payment</wa-step>
   </wa-stepper>
-  <wa-stepper class="size-stepper" active="shipping" style="font-size: var(--wa-font-size-m);">
+  <wa-stepper
+    class="size-stepper"
+    active="shipping"
+    style="font-size: var(--wa-font-size-m);"
+  >
     <wa-step name="cart" completed>Cart</wa-step>
     <wa-step name="shipping">Shipping</wa-step>
     <wa-step name="payment">Payment</wa-step>
   </wa-stepper>
-  <wa-stepper class="size-stepper" active="shipping" style="font-size: var(--wa-font-size-l);">
+  <wa-stepper
+    class="size-stepper"
+    active="shipping"
+    style="font-size: var(--wa-font-size-l);"
+  >
     <wa-step name="cart" completed>Cart</wa-step>
     <wa-step name="shipping">Shipping</wa-step>
     <wa-step name="payment">Payment</wa-step>
   </wa-stepper>
-  <wa-stepper class="size-stepper" active="shipping" style="font-size: var(--wa-font-size-xl);">
+  <wa-stepper
+    class="size-stepper"
+    active="shipping"
+    style="font-size: var(--wa-font-size-xl);"
+  >
     <wa-step name="cart" completed>Cart</wa-step>
     <wa-step name="shipping">Shipping</wa-step>
     <wa-step name="payment">Payment</wa-step>
@@ -386,9 +415,17 @@ Add the `data-stepper` attribute to any button on the page, with `next <id>`, `p
   <wa-divider></wa-divider>
 
   <div class="wa-cluster">
-    <wa-button appearance="filled" data-stepper="previous stepper-declarative">Back</wa-button>
-    <wa-button appearance="filled" data-stepper="next stepper-declarative">Continue</wa-button>
-    <wa-button appearance="filled" data-stepper="goto stepper-declarative payment">Skip to Payment</wa-button>
+    <wa-button appearance="filled" data-stepper="previous stepper-declarative"
+      >Back</wa-button
+    >
+    <wa-button appearance="filled" data-stepper="next stepper-declarative"
+      >Continue</wa-button
+    >
+    <wa-button
+      appearance="filled"
+      data-stepper="goto stepper-declarative payment"
+      >Skip to Payment</wa-button
+    >
   </div>
 </div>
 ```
@@ -408,19 +445,23 @@ The `wa-step-change` event fires once the active step has changed, with `name` a
   <wa-divider></wa-divider>
 
   <div class="wa-cluster wa-align-items-center">
-    <wa-button appearance="filled" data-stepper="previous stepper-events">Back</wa-button>
-    <wa-button appearance="filled" data-stepper="next stepper-events">Continue</wa-button>
+    <wa-button appearance="filled" data-stepper="previous stepper-events"
+      >Back</wa-button
+    >
+    <wa-button appearance="filled" data-stepper="next stepper-events"
+      >Continue</wa-button
+    >
     <small>Active step: <span id="stepper-events-output">cart</span></small>
   </div>
 </div>
 
 <script>
-  const stepperEvents = document.getElementById('stepper-events');
-  const stepperEventsOutput = document.getElementById('stepper-events-output');
+  const stepperEvents = document.getElementById("stepper-events");
+  const stepperEventsOutput = document.getElementById("stepper-events-output");
 
-  stepperEvents.addEventListener('wa-step-change', event => {
+  stepperEvents.addEventListener("wa-step-change", (event) => {
     const { name, step, previousStep } = event.detail;
-    const steps = [...stepperEvents.querySelectorAll('wa-step')];
+    const steps = [...stepperEvents.querySelectorAll("wa-step")];
 
     if (previousStep) {
       if (steps.indexOf(step) > steps.indexOf(previousStep)) {
@@ -456,17 +497,22 @@ The stepper only shows progress; it doesn't hold the content for each step. Keep
   <wa-divider></wa-divider>
 
   <div class="wa-cluster">
-    <wa-button appearance="filled" data-stepper="previous stepper-content">Back</wa-button>
-    <wa-button appearance="filled" data-stepper="next stepper-content">Continue</wa-button>
+    <wa-button appearance="filled" data-stepper="previous stepper-content"
+      >Back</wa-button
+    >
+    <wa-button appearance="filled" data-stepper="next stepper-content"
+      >Continue</wa-button
+    >
   </div>
 </div>
 
 <script>
-  const stepperContent = document.getElementById('stepper-content');
-  const stepperContentPanels = stepperContent.parentElement.querySelectorAll('[data-step]');
+  const stepperContent = document.getElementById("stepper-content");
+  const stepperContentPanels =
+    stepperContent.parentElement.querySelectorAll("[data-step]");
 
-  stepperContent.addEventListener('wa-step-change', event => {
-    stepperContentPanels.forEach(panel => {
+  stepperContent.addEventListener("wa-step-change", (event) => {
+    stepperContentPanels.forEach((panel) => {
       panel.hidden = panel.dataset.step !== event.detail.name;
     });
   });
@@ -489,26 +535,28 @@ The `wa-before-step-change` event fires before the step changes and is cancelabl
 
   <div class="wa-cluster wa-align-items-center">
     <wa-switch id="stepper-guard-unsaved" checked>Unsaved changes</wa-switch>
-    <wa-button appearance="filled" data-stepper="next stepper-guard">Continue</wa-button>
+    <wa-button appearance="filled" data-stepper="next stepper-guard"
+      >Continue</wa-button
+    >
     <small id="stepper-guard-output"></small>
   </div>
 </div>
 
 <script>
-  const stepperGuard = document.getElementById('stepper-guard');
-  const stepperGuardUnsaved = document.getElementById('stepper-guard-unsaved');
-  const stepperGuardOutput = document.getElementById('stepper-guard-output');
+  const stepperGuard = document.getElementById("stepper-guard");
+  const stepperGuardUnsaved = document.getElementById("stepper-guard-unsaved");
+  const stepperGuardOutput = document.getElementById("stepper-guard-output");
 
-  stepperGuard.addEventListener('wa-before-step-change', event => {
+  stepperGuard.addEventListener("wa-before-step-change", (event) => {
     if (stepperGuardUnsaved.checked) {
       event.preventDefault();
-      stepperGuardOutput.textContent = 'Blocked by unsaved changes';
+      stepperGuardOutput.textContent = "Blocked by unsaved changes";
     } else {
-      stepperGuardOutput.textContent = '';
+      stepperGuardOutput.textContent = "";
     }
   });
 
-  stepperGuard.addEventListener('wa-step-change', event => {
+  stepperGuard.addEventListener("wa-step-change", (event) => {
     if (event.detail.previousStep) event.detail.previousStep.completed = true;
   });
 </script>
@@ -542,7 +590,12 @@ Use the exported [CSS parts](#css-parts) and [custom properties](#css-custom-pro
 Here the connector properties become a transit line, the `marker` part turns each stop into a ring, and the `completed` and `active` custom states mark the stops behind you and the one you're at. Shrink it to see `orientation="auto"` stack it into a strip map.
 
 ```html
-<wa-stepper class="tube-stepper" label="Piccadilly line" orientation="auto" active="green-park">
+<wa-stepper
+  class="tube-stepper"
+  label="Piccadilly line"
+  orientation="auto"
+  active="green-park"
+>
   <wa-step name="heathrow" completed>Heathrow</wa-step>
   <wa-step name="earls-court" completed>
     Earl's Court
@@ -597,7 +650,7 @@ Steps share the row equally. Give a step with more content extra room by setting
 </wa-stepper>
 
 <style>
-  .uneven-stepper wa-step[name='mordor'] {
+  .uneven-stepper wa-step[name="mordor"] {
     flex: 3;
   }
 </style>

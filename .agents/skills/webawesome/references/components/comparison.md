@@ -37,7 +37,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/comparison/comparison.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/comparison/comparison.js";
 ```
 
 \*\*npm\*\*
@@ -45,7 +45,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/comparison/comp
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/comparison/comparison.js';
+import "@awesome.me/webawesome/dist/components/comparison/comparison.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -53,7 +53,7 @@ import '@awesome.me/webawesome/dist/components/comparison/comparison.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/comparison/comparison.js';
+import "./webawesome/dist/components/comparison/comparison.js";
 ```
 
 \*\*React\*\*
@@ -61,58 +61,58 @@ import './webawesome/dist/components/comparison/comparison.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaComparison from '@awesome.me/webawesome/dist/react/comparison/index.js';
+import WaComparison from "@awesome.me/webawesome/dist/react/comparison/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`after\` | \`![]()\` The after content, often an or element. |
-| \`before\` | \`![]()\` The before content, often an or element. |
-| \`handle\` | The icon used inside the handle. |
+| Name       | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| \`after\`  | \`![](<>)\` The after content, often an or element.  |
+| \`before\` | \`![](<>)\` The before content, often an or element. |
+| \`handle\` | The icon used inside the handle.                     |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`position\` position | \`number\` The position of the divider as a percentage. Type Default 50 | |
+| Name                  | Description                                                             | Reflects |
+| --------------------- | ----------------------------------------------------------------------- | -------- |
+| \`position\` position | \`number\` The position of the divider as a percentage. Type Default 50 |          |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name       | Description                        |
+| ---------- | ---------------------------------- |
 | \`change\` | Emitted when the position changes. |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name                | Description                     |
+| ------------------- | ------------------------------- |
 | \`--divider-width\` | The width of the dividing line. |
-| \`--handle-size\` | The size of the compare handle. |
+| \`--handle-size\`   | The size of the compare handle. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name         | Description                                   | CSS selector         |
+| ------------ | --------------------------------------------- | -------------------- |
 | \`dragging\` | Applied when the comparison is being dragged. | \`:state(dragging)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`after\` | The container that wraps the after content. | \`::part(after)\` |
-| \`before\` | The container that wraps the before content. | \`::part(before)\` |
-| \`comparison\` | The component's outer wrapper. | \`::part(comparison)\` |
-| \`divider\` | The divider that separates the before and after content. | \`::part(divider)\` |
-| \`handle\` | The handle that the user drags to expose the after content. | \`::part(handle)\` |
-| \`base\` | \`comparison\` Deprecated. Use the part instead. | \`::part(base)\` |
+| Name           | Description                                                 | CSS selector           |
+| -------------- | ----------------------------------------------------------- | ---------------------- |
+| \`after\`      | The container that wraps the after content.                 | \`::part(after)\`      |
+| \`before\`     | The container that wraps the before content.                | \`::part(before)\`     |
+| \`comparison\` | The component's outer wrapper.                              | \`::part(comparison)\` |
+| \`divider\`    | The divider that separates the before and after content.    | \`::part(divider)\`    |
+| \`handle\`     | The handle that the user drags to expose the after content. | \`::part(handle)\`     |
+| \`base\`       | \`comparison\` Deprecated. Use the part instead.            | \`::part(base)\`       |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 

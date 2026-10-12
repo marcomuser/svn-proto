@@ -14,21 +14,21 @@ Web Awesome uses [themes](https://webawesome.com/docs/themes) to apply a cohesiv
 
 #### Free Workspace Projects
 
-| Step | Action |
-| --- | --- |
-| 1 | Go to your project's Settings. |
-| 2 | Find Theme and select the theme you'd like to use. |
-| 3 | Find Color Palette and select the palette you'd like to use. |
-| 4 | Save your changes to immediately update anywhere you're using your project. |
+| Step | Action                                                                      |
+| ---- | --------------------------------------------------------------------------- |
+| 1    | Go to your project's Settings.                                              |
+| 2    | Find Theme and select the theme you'd like to use.                          |
+| 3    | Find Color Palette and select the palette you'd like to use.                |
+| 4    | Save your changes to immediately update anywhere you're using your project. |
 
 #### Pro Workspace Projects
 
-| Step | Action |
-| --- | --- |
-| 1 | Go to your project's Settings. |
-| 2 | Press Edit Your Theme to open the Theme Builder. |
-| 3 | Select a pre-built theme or customize colors, fonts, icons, and more. |
-| 4 | Save your theme to immediately update anywhere you're using your project. |
+| Step | Action                                                                    |
+| ---- | ------------------------------------------------------------------------- |
+| 1    | Go to your project's Settings.                                            |
+| 2    | Press Edit Your Theme to open the Theme Builder.                          |
+| 3    | Select a pre-built theme or customize colors, fonts, icons, and more.     |
+| 4    | Save your theme to immediately update anywhere you're using your project. |
 
 ### Theme Builder
 
@@ -87,7 +87,10 @@ Every theme is designed to adapt to light and dark mode. Light mode styles are a
 You can force a section to behave like `.wa-dark` in light mode and like `.wa-light` in dark mode by using `class="wa-invert"`.
 
 ```html
-<p>This card will always use the opposite of the color scheme applied to the docs.</p>
+<p>
+  This card will always use the opposite of the color scheme applied to the
+  docs.
+</p>
 
 <wa-card class="wa-invert">
   <div slot="header" class="wa-split wa-color-text-quiet">
@@ -116,43 +119,45 @@ While both light and dark mode styles are built-in to all themes, Web Awesome do
 
 Follow these best practices for supporting both light and dark mode:
 
--   Check for [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) and use its value by default
--   Allow the user to override this setting in your app
--   Remember the user's preference and restore it on subsequent visits
+- Check for [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) and use its value by default
+- Allow the user to override this setting in your app
+- Remember the user's preference and restore it on subsequent visits
 
 Let's assume you have a button with `id="color-scheme-button"` that simply toggles between light and dark mode. You can use the following JS snippet to apply `class="wa-dark"` to the `<html>` element accordingly:
 
 ```js
 // Function to apply color scheme
 function applyScheme(dark) {
-  document.documentElement.classList.toggle('wa-dark', dark);
+  document.documentElement.classList.toggle("wa-dark", dark);
 }
 
 // Function to get the user's preferred color scheme
 // Grabs from local storage if available or falls back to system preference
 function getPreferredScheme() {
-  const savedMode = localStorage.getItem('wa-color-scheme');
-  if (savedMode !== null) return savedMode === 'dark';
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedMode = localStorage.getItem("wa-color-scheme");
+  if (savedMode !== null) return savedMode === "dark";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
 // Apply the preferred color scheme on load
 applyScheme(getPreferredScheme());
 
 // Listen for changes in system preference
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-  // If nothing in local storage, update accordingly
-  const savedMode = localStorage.getItem('wa-color-scheme');
-  if (!savedMode) {
-    applyScheme(event.matches);
-  }
-});
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (event) => {
+    // If nothing in local storage, update accordingly
+    const savedMode = localStorage.getItem("wa-color-scheme");
+    if (!savedMode) {
+      applyScheme(event.matches);
+    }
+  });
 
 // Listen for clicks on the color scheme button
-document.getElementById('color-scheme-button').addEventListener('click', () => {
-  const toDark = !document.documentElement.classList.contains('wa-dark');
+document.getElementById("color-scheme-button").addEventListener("click", () => {
+  const toDark = !document.documentElement.classList.contains("wa-dark");
   applyScheme(toDark);
-  localStorage.setItem('wa-color-scheme', toDark ? 'dark' : 'light');
+  localStorage.setItem("wa-color-scheme", toDark ? "dark" : "light");
 });
 ```
 
@@ -168,8 +173,8 @@ Here's a starter that tweaks fonts, spacing, and corner radius across both color
 .wa-light,
 .wa-dark,
 .wa-invert {
-  --wa-font-family-body: 'Inter', sans-serif;
-  --wa-font-family-heading: 'Crimson Pro', serif;
+  --wa-font-family-body: "Inter", sans-serif;
+  --wa-font-family-heading: "Crimson Pro", serif;
   --wa-border-radius-scale: 1.5;
   --wa-space-scale: 1.125;
 }
@@ -194,13 +199,13 @@ To create your own dark mode styles, scope your styles to these selectors:
 }
 ```
 
-| Selector | What It Targets |
-| --- | --- |
-| \`:where(:root)\` | The default scope, with low specificity so other theme classes can override it |
-| \`.wa-light\` | Explicit light sections |
-| \`.wa-dark\` | Explicit dark sections |
-| \`.wa-invert\` | Flips the current color scheme for the section it's applied to |
-| \`.wa-dark .wa-invert\` | An inverted descendant inside a dark section (becomes light) |
+| Selector                | What It Targets                                                                |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| \`:where(:root)\`       | The default scope, with low specificity so other theme classes can override it |
+| \`.wa-light\`           | Explicit light sections                                                        |
+| \`.wa-dark\`            | Explicit dark sections                                                         |
+| \`.wa-invert\`          | Flips the current color scheme for the section it's applied to                 |
+| \`.wa-dark .wa-invert\` | An inverted descendant inside a dark section (becomes light)                   |
 
 For a complete list of all custom properties used for theming, refer to `src/styles/themes/default.css` in the project's source code.
 
@@ -212,13 +217,25 @@ Simply load the theme stylesheets, then add your preferred classes to each eleme
 
 ```html
 <!-- Load each theme's stylesheet -->
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/awesome.css" />
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/shoelace.css" />
+<link
+  rel="stylesheet"
+  href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/awesome.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/shoelace.css"
+/>
 
-<wa-callout class="wa-theme-awesome wa-brand-yellow" style="margin-block-start: 0;">
+<wa-callout
+  class="wa-theme-awesome wa-brand-yellow"
+  style="margin-block-start: 0;"
+>
   <wa-icon slot="icon" name="face-awesome"></wa-icon>
   <div class="wa-flank:end">
-    <span>This callout uses <code>wa-theme-awesome</code> and <code>wa-brand-yellow</code>.</span>
+    <span
+      >This callout uses <code>wa-theme-awesome</code> and
+      <code>wa-brand-yellow</code>.</span
+    >
     <wa-button variant="brand" size="s">Yellow Button</wa-button>
   </div>
 </wa-callout>
@@ -226,7 +243,10 @@ Simply load the theme stylesheets, then add your preferred classes to each eleme
 <wa-callout class="wa-theme-shoelace wa-brand-cyan">
   <wa-icon slot="icon" name="shoelace" family="brands"></wa-icon>
   <div class="wa-flank:end">
-    <span>This callout uses <code>wa-theme-shoelace</code> and <code>wa-brand-cyan</code>.</span>
+    <span
+      >This callout uses <code>wa-theme-shoelace</code> and
+      <code>wa-brand-cyan</code>.</span
+    >
     <wa-button variant="brand" size="s">Cyan Button</wa-button>
   </div>
 </wa-callout>
@@ -240,10 +260,24 @@ You can also use multiple variant colors on the same page. **On each element whe
   <div class="wa-stack wa-align-items-start wa-gap-xs">
     <span>The buttons in this callout use multiple brand colors.</span>
     <div class="wa-cluster">
-      <wa-button class="wa-theme-default wa-brand-cyan" variant="brand" size="s">Cyan</wa-button>
-      <wa-button class="wa-theme-default wa-brand-indigo" variant="brand" size="s">Indigo</wa-button>
-      <wa-button class="wa-theme-default wa-brand-purple" variant="brand" size="s">Purple</wa-button>
-      <wa-button class="wa-theme-default wa-brand-pink" variant="brand" size="s">Pink</wa-button>
+      <wa-button class="wa-theme-default wa-brand-cyan" variant="brand" size="s"
+        >Cyan</wa-button
+      >
+      <wa-button
+        class="wa-theme-default wa-brand-indigo"
+        variant="brand"
+        size="s"
+        >Indigo</wa-button
+      >
+      <wa-button
+        class="wa-theme-default wa-brand-purple"
+        variant="brand"
+        size="s"
+        >Purple</wa-button
+      >
+      <wa-button class="wa-theme-default wa-brand-pink" variant="brand" size="s"
+        >Pink</wa-button
+      >
     </div>
   </div>
 </wa-callout>
@@ -264,7 +298,12 @@ Parts allow you to style _any_ standard CSS property, not just those exposed thr
 
 <style>
   .gradient-button::part(button) {
-    background: linear-gradient(217deg, var(--wa-color-indigo-50), var(--wa-color-purple-50), var(--wa-color-red-50));
+    background: linear-gradient(
+      217deg,
+      var(--wa-color-indigo-50),
+      var(--wa-color-purple-50),
+      var(--wa-color-red-50)
+    );
     border: solid 1px var(--wa-color-purple-50);
     transition:
       transform 100ms,
@@ -290,12 +329,11 @@ Parts allow you to style _any_ standard CSS property, not just those exposed thr
 
 CSS parts have a few important advantages:
 
--   Customizations can be made to components with explicit selectors, such as `::part(icon)`, rather than implicit selectors, such as `.button > div > span + .icon`, that are much more fragile.
-    
--   The internal structure of a component will likely change as it evolves. By exposing CSS parts through an API, the internals can be reworked without fear of breaking customizations as long as its parts remain intact.
-    
--   It encourages us to think more about how components are designed and how customizations should be allowed before users can take advantage of them. Once we opt a part into the component's API, it's guaranteed to be supported and can't be removed until a major version of the library is released.
-    
+- Customizations can be made to components with explicit selectors, such as `::part(icon)`, rather than implicit selectors, such as `.button > div > span + .icon`, that are much more fragile.
+
+- The internal structure of a component will likely change as it evolves. By exposing CSS parts through an API, the internals can be reworked without fear of breaking customizations as long as its parts remain intact.
+
+- It encourages us to think more about how components are designed and how customizations should be allowed before users can take advantage of them. Once we opt a part into the component's API, it's guaranteed to be supported and can't be removed until a major version of the library is released.
 
 Most (but not all) components expose parts. You can find them in each component's API documentation under the "CSS Parts" section.
 
@@ -363,12 +401,12 @@ For example, we can give `<input type="checkbox">` the same custom styles as [`<
 
 <style>
   wa-checkbox.pinkify::part(control),
-  input[type='checkbox'].pinkify {
+  input[type="checkbox"].pinkify {
     border-width: 3px;
   }
 
   wa-checkbox.pinkify:state(checked)::part(control),
-  input[type='checkbox'].pinkify:checked {
+  input[type="checkbox"].pinkify:checked {
     background-color: hotpink;
     border-color: hotpink;
     color: lavenderblush;

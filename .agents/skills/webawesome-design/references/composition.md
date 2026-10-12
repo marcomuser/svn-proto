@@ -257,7 +257,10 @@ these:
 Option 1 — the `data-fa-kit-code` attribute on `<html>` (mirrors the theme/palette classes):
 
 ```html
-<html class="wa-theme-default wa-palette-default wa-light" data-fa-kit-code="YOUR_KIT_CODE_HERE"></html>
+<html
+  class="wa-theme-default wa-palette-default wa-light"
+  data-fa-kit-code="YOUR_KIT_CODE_HERE"
+></html>
 ```
 
 Option 2 — the same attribute on the loader script (the canonical CDN URL is
@@ -265,16 +268,19 @@ Option 2 — the same attribute on the loader script (the canonical CDN URL is
 loader's actual URL or path):
 
 ```html
-<script src="…/webawesome.loader.js" data-fa-kit-code="YOUR_KIT_CODE_HERE"></script>
+<script
+  src="…/webawesome.loader.js"
+  data-fa-kit-code="YOUR_KIT_CODE_HERE"
+></script>
 ```
 
 Option 3 — the `setKitCode()` method. Import from the npm package, or from the CDN loader URL:
 
 ```js
 // npm
-import { setKitCode } from '@awesome.me/webawesome';
+import { setKitCode } from "@awesome.me/webawesome";
 // or CDN: import { setKitCode } from 'https://ka-f.webawesome.com/webawesome@<version>/dist/webawesome.loader.js';
-setKitCode('YOUR_KIT_CODE_HERE');
+setKitCode("YOUR_KIT_CODE_HERE");
 ```
 
 Once a kit code is set, select a Pro family with the `variant` attribute, e.g.
@@ -427,7 +433,10 @@ playbook so your CSS stays themed, accessible, and dark-mode-aware automatically
 ```html
 <section class="brand-callout">
   <h3>Important update</h3>
-  <p>A custom-styled section that respects theme, dark mode, and contrast automatically.</p>
+  <p>
+    A custom-styled section that respects theme, dark mode, and contrast
+    automatically.
+  </p>
 </section>
 
 <style>

@@ -13,12 +13,12 @@ Toasts display brief, non-blocking notifications that appear temporarily above t
 </div>
 
 <script>
-  const container = document.getElementById('toast-basic');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-basic");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
-    toast.create('This is a toast notification!');
+  button.addEventListener("click", () => {
+    toast.create("This is a toast notification!");
   });
 </script>
 ```
@@ -40,17 +40,17 @@ This page has many `<wa-toast>` elements to show off the component â€” most apps
 
 Toasts have a number of accessibility limitations. For example:
 
--   Due to their transient nature, toasts can be missed entirely by screen magnifier users and difficult to perceive for others depending on their visual and cognitive abilities.
--   Due to their DOM placement and vague position in a page's reading order, toasts can be difficult for keyboard users to navigate to.
--   Due to their positioning on the page, toasts can obscure other essential elements, especially for users who use browser or OS zooming features.
+- Due to their transient nature, toasts can be missed entirely by screen magnifier users and difficult to perceive for others depending on their visual and cognitive abilities.
+- Due to their DOM placement and vague position in a page's reading order, toasts can be difficult for keyboard users to navigate to.
+- Due to their positioning on the page, toasts can obscure other essential elements, especially for users who use browser or OS zooming features.
 
 Rarely will toasts offer the best usability for all of your users, so consider if other UX patterns, like dialogs or inline messages, offer a better experience. If toasts are the right fit for your use case, consider these tips:
 
--   Keep toasts short and sweet.
--   Set the `duration` to `5000` ms (5 seconds) or longer to give users enough time to locate and understand the toast item.
--   Consider allowing users to adjust the timing. While the duration of a toast item resets on hover (see [Hover & Focus Behavior](#hover-and-focus-behavior)), a setting in your application can allow users to control the timing of toasts to best suit their needs and abilities.
--   Choose a consistent placement for toasts in your application and stick with it. Otherwise, users need to guess where transient notifications will appear and risk missing them entirely.
--   If a transient toast item contains an action, ensure that action is available elsewhere on the page. This ensures that users can still execute the action even if they miss the toast.
+- Keep toasts short and sweet.
+- Set the `duration` to `5000` ms (5 seconds) or longer to give users enough time to locate and understand the toast item.
+- Consider allowing users to adjust the timing. While the duration of a toast item resets on hover (see [Hover & Focus Behavior](#hover-and-focus-behavior)), a setting in your application can allow users to control the timing of toasts to best suit their needs and abilities.
+- Choose a consistent placement for toasts in your application and stick with it. Otherwise, users need to guess where transient notifications will appear and risk missing them entirely.
+- If a transient toast item contains an action, ensure that action is available elsewhere on the page. This ensures that users can still execute the action even if they miss the toast.
 
 ## API
 
@@ -63,7 +63,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/toast/toast.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/toast/toast.js";
 ```
 
 \*\*npm\*\*
@@ -71,7 +71,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/toast/toast.js'
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/toast/toast.js';
+import "@awesome.me/webawesome/dist/components/toast/toast.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -79,7 +79,7 @@ import '@awesome.me/webawesome/dist/components/toast/toast.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/toast/toast.js';
+import "./webawesome/dist/components/toast/toast.js";
 ```
 
 \*\*React\*\*
@@ -87,53 +87,53 @@ import './webawesome/dist/components/toast/toast.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaToast from '@awesome.me/webawesome/dist/react/toast/index.js';
+import WaToast from "@awesome.me/webawesome/dist/react/toast/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                             |
+| --------- | ------------------------------------------------------- |
 | (default) | \`\` Place elements here to show them as notifications. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`placement\` placement | \`'top-start' \\| 'top-center' \\| 'top-end' \\| 'bottom-start' \\| 'bottom-center' \\| 'bottom-end'\` The placement of the toast stack on the screen. Type Default 'top-end' | |
+| Name                    | Description      | Reflects        |
+| ----------------------- | ---------------- | --------------- |
+| \`placement\` placement | \`'top-start' \\ | 'top-center' \\ | 'top-end' \\ | 'bottom-start' \\ | 'bottom-center' \\ | 'bottom-end'\` The placement of the toast stack on the screen. Type Default 'top-end' |     |
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
+| Name         | Description                                                                                                                    | Arguments                                        |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
 | \`create()\` | Creates a toast notification programmatically and adds it to the stack. Returns a reference to the created toast item element. | \`message: string, options: ToastCreateOptions\` |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--gap\` | \`var(--wa-space-s)\` The gap between stacked toast items. Default |
-| \`--width\` | \`28rem\` The width of the toast stack. Default |
+| Name        | Description                                                        |
+| ----------- | ------------------------------------------------------------------ |
+| \`--gap\`   | \`var(--wa-space-s)\` The gap between stacked toast items. Default |
+| \`--width\` | \`28rem\` The width of the toast stack. Default                    |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name        | Description                                                       | CSS selector        |
+| ----------- | ----------------------------------------------------------------- | ------------------- |
 | \`visible\` | Applied when the toast stack has one or more visible toast items. | \`:state(visible)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name      | Description                               | CSS selector      |
+| --------- | ----------------------------------------- | ----------------- |
 | \`stack\` | The container that holds the toast items. | \`::part(stack)\` |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-progress-ring>`](https://webawesome.com/docs/components/progress-ring)
--   [`<wa-toast-item>`](https://webawesome.com/docs/components/toast-item)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-progress-ring>`](https://webawesome.com/docs/components/progress-ring)
+- [`<wa-toast-item>`](https://webawesome.com/docs/components/toast-item)
 
 ## Examples
 
@@ -144,25 +144,41 @@ Set the `variant` option to `brand`, `success`, `warning`, `danger`, or `neutral
 ```html
 <div id="toast-variant">
   <div class="wa-cluster wa-gap-xs">
-    <wa-button appearance="filled" data-variant="neutral" data-icon="gear">Neutral</wa-button>
-    <wa-button appearance="filled" data-variant="brand" data-icon="circle-info">Brand</wa-button>
-    <wa-button appearance="filled" data-variant="success" data-icon="check">Success</wa-button>
-    <wa-button appearance="filled" data-variant="warning" data-icon="circle-exclamation">Warning</wa-button>
-    <wa-button appearance="filled" data-variant="danger" data-icon="triangle-exclamation">Danger</wa-button>
+    <wa-button appearance="filled" data-variant="neutral" data-icon="gear"
+      >Neutral</wa-button
+    >
+    <wa-button appearance="filled" data-variant="brand" data-icon="circle-info"
+      >Brand</wa-button
+    >
+    <wa-button appearance="filled" data-variant="success" data-icon="check"
+      >Success</wa-button
+    >
+    <wa-button
+      appearance="filled"
+      data-variant="warning"
+      data-icon="circle-exclamation"
+      >Warning</wa-button
+    >
+    <wa-button
+      appearance="filled"
+      data-variant="danger"
+      data-icon="triangle-exclamation"
+      >Danger</wa-button
+    >
   </div>
   <wa-toast></wa-toast>
 </div>
 
 <script>
-  const container = document.getElementById('toast-variant');
-  const toast = container.querySelector('wa-toast');
+  const container = document.getElementById("toast-variant");
+  const toast = container.querySelector("wa-toast");
 
-  container.addEventListener('click', event => {
-    const button = event.target.closest('[data-variant]');
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-variant]");
     if (!button) return;
 
-    const variant = button.getAttribute('data-variant');
-    const icon = button.getAttribute('data-icon');
+    const variant = button.getAttribute("data-variant");
+    const icon = button.getAttribute("data-icon");
 
     toast.create(`This is a ${variant} notification`, {
       variant,
@@ -179,25 +195,35 @@ Set the `size` option to `xs`, `s`, `m`, `l`, or `xl` to change the size of the 
 ```html
 <div id="toast-size">
   <div class="wa-cluster wa-gap-xs">
-    <wa-button appearance="filled" data-size="xs" data-icon="shrimp">Extra Small</wa-button>
-    <wa-button appearance="filled" data-size="s" data-icon="mouse-field">Small</wa-button>
-    <wa-button appearance="filled" data-size="m" data-icon="horse">Medium</wa-button>
-    <wa-button appearance="filled" data-size="l" data-icon="elephant">Large</wa-button>
-    <wa-button appearance="filled" data-size="xl" data-icon="whale">Extra Large</wa-button>
+    <wa-button appearance="filled" data-size="xs" data-icon="shrimp"
+      >Extra Small</wa-button
+    >
+    <wa-button appearance="filled" data-size="s" data-icon="mouse-field"
+      >Small</wa-button
+    >
+    <wa-button appearance="filled" data-size="m" data-icon="horse"
+      >Medium</wa-button
+    >
+    <wa-button appearance="filled" data-size="l" data-icon="elephant"
+      >Large</wa-button
+    >
+    <wa-button appearance="filled" data-size="xl" data-icon="whale"
+      >Extra Large</wa-button
+    >
   </div>
   <wa-toast></wa-toast>
 </div>
 
 <script>
-  const container = document.getElementById('toast-size');
-  const toast = container.querySelector('wa-toast');
+  const container = document.getElementById("toast-size");
+  const toast = container.querySelector("wa-toast");
 
-  container.addEventListener('click', event => {
-    const button = event.target.closest('[data-size]');
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-size]");
     if (!button) return;
 
-    const size = button.getAttribute('data-size');
-    const icon = button.getAttribute('data-icon');
+    const size = button.getAttribute("data-size");
+    const icon = button.getAttribute("data-icon");
 
     toast.create(`This is a ${size} notification`, {
       size,
@@ -218,14 +244,14 @@ Pass an `icon` option to display an icon at the start of the toast item. You can
 </div>
 
 <script>
-  const container = document.getElementById('toast-icons');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-icons");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
-    toast.create('Your message has been sent successfully!', {
-      variant: 'success',
-      icon: 'paper-plane',
+  button.addEventListener("click", () => {
+    toast.create("Your message has been sent successfully!", {
+      variant: "success",
+      icon: "paper-plane",
     });
   });
 </script>
@@ -243,27 +269,27 @@ For more control over the icon, pass an object with `name` and optional `library
 </div>
 
 <script>
-  const container = document.getElementById('toast-icons-advanced');
-  const toast = container.querySelector('wa-toast');
-  const buttons = container.querySelectorAll('wa-button');
+  const container = document.getElementById("toast-icons-advanced");
+  const toast = container.querySelector("wa-toast");
+  const buttons = container.querySelectorAll("wa-button");
 
-  buttons[0].addEventListener('click', () => {
-    toast.create('This uses a duotone icon!', {
-      variant: 'brand',
+  buttons[0].addEventListener("click", () => {
+    toast.create("This uses a duotone icon!", {
+      variant: "brand",
       icon: {
-        name: 'bell',
-        family: 'duotone',
-        variant: 'solid',
+        name: "bell",
+        family: "duotone",
+        variant: "solid",
       },
     });
   });
 
-  buttons[1].addEventListener('click', () => {
-    toast.create('Follow us on GitHub!', {
-      variant: 'neutral',
+  buttons[1].addEventListener("click", () => {
+    toast.create("Follow us on GitHub!", {
+      variant: "neutral",
       icon: {
-        name: 'github',
-        family: 'brands',
+        name: "github",
+        family: "brands",
       },
     });
   });
@@ -285,19 +311,24 @@ Set the `duration` option to control how long notifications show before disappea
 </div>
 
 <script>
-  const container = document.getElementById('toast-duration');
-  const toast = container.querySelector('wa-toast');
+  const container = document.getElementById("toast-duration");
+  const toast = container.querySelector("wa-toast");
 
-  container.addEventListener('click', event => {
-    const button = event.target.closest('[data-duration]');
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-duration]");
     if (!button) return;
 
-    const duration = parseInt(button.getAttribute('data-duration'));
+    const duration = parseInt(button.getAttribute("data-duration"));
 
-    toast.create(duration > 0 ? `This will disappear in ${duration / 1000} seconds` : 'Dismiss me manually!', {
-      duration,
-      variant: 'brand',
-    });
+    toast.create(
+      duration > 0
+        ? `This will disappear in ${duration / 1000} seconds`
+        : "Dismiss me manually!",
+      {
+        duration,
+        variant: "brand",
+      },
+    );
   });
 </script>
 ```
@@ -322,19 +353,19 @@ Use the `placement` attribute to set the position of the toast stack on the scre
 </div>
 
 <script>
-  const container = document.getElementById('toast-placement');
-  const toast = container.querySelector('wa-toast');
-  const select = container.querySelector('wa-select');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-placement");
+  const toast = container.querySelector("wa-toast");
+  const select = container.querySelector("wa-select");
+  const button = container.querySelector("wa-button");
 
-  select.addEventListener('change', () => {
+  select.addEventListener("change", () => {
     toast.placement = select.value;
   });
 
-  button.addEventListener('click', () => {
-    toast.create('This notification appears at ' + toast.placement, {
-      variant: 'brand',
-      icon: 'location-dot',
+  button.addEventListener("click", () => {
+    toast.create("This notification appears at " + toast.placement, {
+      variant: "brand",
+      icon: "location-dot",
     });
   });
 </script>
@@ -351,15 +382,15 @@ Toast items automatically pause their countdown timer when you hover over them o
 </div>
 
 <script>
-  const container = document.getElementById('toast-pause');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-pause");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
-    toast.create('Hover over me to pause the countdown timer!', {
+  button.addEventListener("click", () => {
+    toast.create("Hover over me to pause the countdown timer!", {
       duration: 5000,
-      variant: 'brand',
-      icon: 'clock',
+      variant: "brand",
+      icon: "clock",
     });
   });
 </script>
@@ -376,11 +407,11 @@ Set `allowHtml` to `true` to render HTML content in notifications. Make sure you
 </div>
 
 <script>
-  const container = document.getElementById('toast-html');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-html");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     toast.create(
       `
       <wa-icon slot="icon" name="bell"></wa-icon>
@@ -389,7 +420,7 @@ Set `allowHtml` to `true` to render HTML content in notifications. Make sure you
     `,
       {
         allowHtml: true,
-        variant: 'brand',
+        variant: "brand",
         duration: 0,
       },
     );
@@ -408,11 +439,11 @@ You can add custom buttons or other interactive elements to a toast item using `
 </div>
 
 <script>
-  const container = document.getElementById('toast-custom-button');
-  const toast = container.querySelector('wa-toast');
-  const showButton = container.querySelector('wa-button');
+  const container = document.getElementById("toast-custom-button");
+  const toast = container.querySelector("wa-toast");
+  const showButton = container.querySelector("wa-button");
 
-  showButton.addEventListener('click', async () => {
+  showButton.addEventListener("click", async () => {
     const toastItem = await toast.create(
       `
       <wa-icon slot="icon" name="gift"></wa-icon>
@@ -424,16 +455,16 @@ You can add custom buttons or other interactive elements to a toast item using `
     `,
       {
         allowHtml: true,
-        variant: 'brand',
+        variant: "brand",
         duration: 0,
       },
     );
 
-    const claimButton = toastItem.querySelector('.claim-button');
-    const dismissButton = toastItem.querySelector('.dismiss-button');
+    const claimButton = toastItem.querySelector(".claim-button");
+    const dismissButton = toastItem.querySelector(".dismiss-button");
 
     // When the claim button is clicked
-    claimButton.addEventListener('click', () => {
+    claimButton.addEventListener("click", () => {
       //
       // Add custom claim logic here
       //
@@ -441,7 +472,7 @@ You can add custom buttons or other interactive elements to a toast item using `
     });
 
     // When the dismiss button is clicked
-    dismissButton.addEventListener('click', () => {
+    dismissButton.addEventListener("click", () => {
       toastItem.hide();
     });
   });
@@ -459,22 +490,22 @@ The `create()` method returns a promise that resolves to the generated toast ite
 </div>
 
 <script>
-  const container = document.getElementById('toast-events');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-events");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', async () => {
-    const toastItem = await toast.create('Click me or let me disappear...', {
-      variant: 'brand',
-      icon: 'hand-pointer',
+  button.addEventListener("click", async () => {
+    const toastItem = await toast.create("Click me or let me disappear...", {
+      variant: "brand",
+      icon: "hand-pointer",
     });
 
-    toastItem.addEventListener('click', () => {
-      console.log('Toast item was clicked!');
+    toastItem.addEventListener("click", () => {
+      console.log("Toast item was clicked!");
     });
 
-    toastItem.addEventListener('wa-after-hide', () => {
-      console.log('Toast item was dismissed');
+    toastItem.addEventListener("wa-after-hide", () => {
+      console.log("Toast item was dismissed");
     });
   });
 </script>
@@ -491,13 +522,13 @@ While `toast.create()` is the easiest way to show notifications, you can also cr
 </div>
 
 <script>
-  const container = document.getElementById('toast-append');
-  const toast = container.querySelector('wa-toast');
-  const button = container.querySelector('wa-button');
+  const container = document.getElementById("toast-append");
+  const toast = container.querySelector("wa-toast");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
-    const toastItem = document.createElement('wa-toast-item');
-    toastItem.variant = 'brand';
+  button.addEventListener("click", () => {
+    const toastItem = document.createElement("wa-toast-item");
+    toastItem.variant = "brand";
     toastItem.innerHTML = `
       <wa-icon slot="icon" name="paw"></wa-icon>
       This notification was created manually!

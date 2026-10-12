@@ -12,25 +12,27 @@ Mutation observers watch for changes to an element's DOM tree and emit an event 
     <wa-button appearance="filled" variant="brand">Click to mutate</wa-button>
   </wa-mutation-observer>
 
-  <p>The observer saw the variant change to <span class="current">brand</span>.</p>
+  <p>
+    The observer saw the variant change to <span class="current">brand</span>.
+  </p>
 
   <script>
-    const container = document.querySelector('.mutation-overview');
-    const mutationObserver = container.querySelector('wa-mutation-observer');
-    const button = container.querySelector('wa-button');
-    const current = container.querySelector('.current');
-    const variants = ['brand', 'success', 'neutral', 'warning', 'danger'];
+    const container = document.querySelector(".mutation-overview");
+    const mutationObserver = container.querySelector("wa-mutation-observer");
+    const button = container.querySelector("wa-button");
+    const current = container.querySelector(".current");
+    const variants = ["brand", "success", "neutral", "warning", "danger"];
     let clicks = 0;
 
     // Change the button's variant attribute
-    button.addEventListener('click', () => {
+    button.addEventListener("click", () => {
       clicks++;
-      button.setAttribute('variant', variants[clicks % variants.length]);
+      button.setAttribute("variant", variants[clicks % variants.length]);
     });
 
     // The observer reports each change it detects
-    mutationObserver.addEventListener('wa-mutation', () => {
-      current.textContent = button.getAttribute('variant');
+    mutationObserver.addEventListener("wa-mutation", () => {
+      current.textContent = button.getAttribute("variant");
     });
   </script>
 
@@ -58,7 +60,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/mutation-observer/mutation-observer.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/mutation-observer/mutation-observer.js";
 ```
 
 \*\*npm\*\*
@@ -66,7 +68,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/mutation-observ
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/mutation-observer/mutation-observer.js';
+import "@awesome.me/webawesome/dist/components/mutation-observer/mutation-observer.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -74,7 +76,7 @@ import '@awesome.me/webawesome/dist/components/mutation-observer/mutation-observ
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/mutation-observer/mutation-observer.js';
+import "./webawesome/dist/components/mutation-observer/mutation-observer.js";
 ```
 
 \*\*React\*\*
@@ -82,30 +84,30 @@ import './webawesome/dist/components/mutation-observer/mutation-observer.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaMutationObserver from '@awesome.me/webawesome/dist/react/mutation-observer/index.js';
+import WaMutationObserver from "@awesome.me/webawesome/dist/react/mutation-observer/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                         |
+| --------- | ----------------------------------- |
 | (default) | The content to watch for mutations. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`attr\` attr | \`attr="class id title"\` Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. . To watch all attributes, use \*. Type string | |
-| \`attrOldValue\` attr-old-value | \`boolean\` Indicates whether or not the attribute's previous value should be recorded when monitoring changes. Type Default false | |
-| \`charData\` char-data | \`boolean\` Watches for changes to the character data contained within the node. Type Default false | |
-| \`charDataOldValue\` char-data-old-value | \`boolean\` Indicates whether or not the previous value of the node's text should be recorded. Type Default false | |
-| \`childList\` child-list | \`boolean\` Watches for the addition or removal of new child nodes. Type Default false | |
-| \`disabled\` disabled | \`boolean\` Disables the observer. Type Default false | |
+| Name                                     | Description                                                                                                                                                                   | Reflects |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| \`attr\` attr                            | \`attr="class id title"\` Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. . To watch all attributes, use \*. Type string |          |
+| \`attrOldValue\` attr-old-value          | \`boolean\` Indicates whether or not the attribute's previous value should be recorded when monitoring changes. Type Default false                                            |          |
+| \`charData\` char-data                   | \`boolean\` Watches for changes to the character data contained within the node. Type Default false                                                                           |          |
+| \`charDataOldValue\` char-data-old-value | \`boolean\` Indicates whether or not the previous value of the node's text should be recorded. Type Default false                                                             |          |
+| \`childList\` child-list                 | \`boolean\` Watches for the addition or removal of new child nodes. Type Default false                                                                                        |          |
+| \`disabled\` disabled                    | \`boolean\` Disables the observer. Type Default false                                                                                                                         |          |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name            | Description                     |
+| --------------- | ------------------------------- |
 | \`wa-mutation\` | Emitted when a mutation occurs. |
 
 ## Examples
@@ -122,26 +124,29 @@ Use the `child-list` attribute to watch for new child elements that are added or
     </div>
   </wa-mutation-observer>
 
-  <p>Add buttons, then click a numbered one to remove it. The observer saw <span class="log">no changes yet</span>.</p>
+  <p>
+    Add buttons, then click a numbered one to remove it. The observer saw
+    <span class="log">no changes yet</span>.
+  </p>
 
   <script>
-    const container = document.querySelector('.mutation-child-list');
-    const mutationObserver = container.querySelector('wa-mutation-observer');
-    const buttons = container.querySelector('.buttons');
+    const container = document.querySelector(".mutation-child-list");
+    const mutationObserver = container.querySelector("wa-mutation-observer");
+    const buttons = container.querySelector(".buttons");
     const button = container.querySelector('wa-button[variant="brand"]');
-    const log = container.querySelector('.log');
+    const log = container.querySelector(".log");
     let i = 0;
 
     // Add a button
-    button.addEventListener('click', () => {
-      const button = document.createElement('wa-button');
-      button.setAttribute('appearance', 'filled');
+    button.addEventListener("click", () => {
+      const button = document.createElement("wa-button");
+      button.setAttribute("appearance", "filled");
       button.textContent = ++i;
       buttons.append(button);
     });
 
     // Remove a button
-    buttons.addEventListener('click', event => {
+    buttons.addEventListener("click", (event) => {
       const target = event.target.closest('wa-button:not([variant="brand"])');
       event.stopPropagation();
 
@@ -151,9 +156,11 @@ Use the `child-list` attribute to watch for new child elements that are added or
     });
 
     // The observer reports each change it detects
-    mutationObserver.addEventListener('wa-mutation', event => {
+    mutationObserver.addEventListener("wa-mutation", (event) => {
       const [record] = event.detail.mutationList;
-      log.textContent = record.addedNodes.length ? 'a button added' : 'a button removed';
+      log.textContent = record.addedNodes.length
+        ? "a button added"
+        : "a button removed";
     });
   </script>
 

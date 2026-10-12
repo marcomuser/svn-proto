@@ -27,7 +27,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/checkbox-group/checkbox-group.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/checkbox-group/checkbox-group.js";
 ```
 
 \*\*npm\*\*
@@ -35,7 +35,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/checkbox-group/
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/checkbox-group/checkbox-group.js';
+import "@awesome.me/webawesome/dist/components/checkbox-group/checkbox-group.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -43,7 +43,7 @@ import '@awesome.me/webawesome/dist/components/checkbox-group/checkbox-group.js'
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/checkbox-group/checkbox-group.js';
+import "./webawesome/dist/components/checkbox-group/checkbox-group.js";
 ```
 
 \*\*React\*\*
@@ -51,50 +51,50 @@ import './webawesome/dist/components/checkbox-group/checkbox-group.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaCheckboxGroup from '@awesome.me/webawesome/dist/react/checkbox-group/index.js';
+import WaCheckboxGroup from "@awesome.me/webawesome/dist/react/checkbox-group/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The default slot where or elements are placed. |
-| \`hint\` | \`hint\` Text that describes how to use the checkbox group. Alternatively, you can use the attribute. |
+| Name      | Description                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
+| (default) | \`\` The default slot where or elements are placed.                                                                 |
+| \`hint\`  | \`hint\` Text that describes how to use the checkbox group. Alternatively, you can use the attribute.               |
 | \`label\` | \`label\` The checkbox group's . Required for proper accessibility. Alternatively, you can use the label attribute. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`hint\` hint | \`hint\` The checkbox group's . If you need to display HTML, use the hint slot instead. Type string Default '' | |
-| \`label\` label | \`label\` The checkbox group's . Required for proper accessibility. If you need to display HTML, use the label slot instead. Type string Default '' | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` The orientation in which to show grouped checkboxes. Type Default 'vertical' | |
-| \`required\` required | \`required\` Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce the requirement, use the attribute on the individual checkboxes and/or their setCustomValidity() method. Type boolean Default false | |
-| \`size\` size | \`\` The group's size. When present, this size will be applied to all and items inside. Type 'xs' \\| 's' \\| 'm' \\| 'l' \\| 'xl' \\| 'small' \\| 'medium' \\| 'large' | |
-| \`withHint\` with-hint | \`true\` Only required for SSR. Set to if you're slotting in a hint element so the server-rendered markup includes the hint before the component hydrates on the client. Type boolean Default false | |
-| \`withLabel\` with-label | \`true\` Only required for SSR. Set to if you're slotting in a label element so the server-rendered markup includes the label before the component hydrates on the client. Type boolean Default false | |
+| Name                        | Description                                                                                                                                                                                                                                                        | Reflects                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| \`hint\` hint               | \`hint\` The checkbox group's . If you need to display HTML, use the hint slot instead. Type string Default ''                                                                                                                                                     |                                                                                           |
+| \`label\` label             | \`label\` The checkbox group's . Required for proper accessibility. If you need to display HTML, use the label slot instead. Type string Default ''                                                                                                                |                                                                                           |
+| \`orientation\` orientation | \`'horizontal' \\                                                                                                                                                                                                                                                  | 'vertical'\` The orientation in which to show grouped checkboxes. Type Default 'vertical' |        |
+| \`required\` required       | \`required\` Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce the requirement, use the attribute on the individual checkboxes and/or their setCustomValidity() method. Type boolean Default false |                                                                                           |
+| \`size\` size               | \`\` The group's size. When present, this size will be applied to all and items inside. Type 'xs' \\                                                                                                                                                               | 's' \\                                                                                    | 'm' \\ | 'l' \\ | 'xl' \\ | 'small' \\ | 'medium' \\ | 'large' |     |
+| \`withHint\` with-hint      | \`true\` Only required for SSR. Set to if you're slotting in a hint element so the server-rendered markup includes the hint before the component hydrates on the client. Type boolean Default false                                                                |                                                                                           |
+| \`withLabel\` with-label    | \`true\` Only required for SSR. Set to if you're slotting in a label element so the server-rendered markup includes the label before the component hydrates on the client. Type boolean Default false                                                              |                                                                                           |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                           |
+| --------- | ----------------------------------------------------- |
 | \`--gap\` | \`0.5em\` The gap between grouped checkboxes. Default |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`form-control\` | The form control that wraps the label, group, and hint. | \`::part(form-control)\` |
+| Name                   | Description                                                                    | CSS selector                   |
+| ---------------------- | ------------------------------------------------------------------------------ | ------------------------------ |
+| \`form-control\`       | The form control that wraps the label, group, and hint.                        | \`::part(form-control)\`       |
 | \`form-control-input\` | \`role="group"\` The element that wraps the grouped checkboxes, exposed as a . | \`::part(form-control-input)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
+| \`form-control-label\` | The label.                                                                     | \`::part(form-control-label)\` |
+| \`hint\`               | The hint's wrapper.                                                            | \`::part(hint)\`               |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-checkbox>`](https://webawesome.com/docs/components/checkbox)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-checkbox>`](https://webawesome.com/docs/components/checkbox)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 
@@ -198,7 +198,9 @@ The `required` attribute adds a visual indicator to the group's label. Because e
 ```html
 <form>
   <wa-checkbox-group label="Accept terms" required>
-    <wa-checkbox name="terms" required>I agree to the terms and conditions</wa-checkbox>
+    <wa-checkbox name="terms" required
+      >I agree to the terms and conditions</wa-checkbox
+    >
   </wa-checkbox-group>
   <br />
   <wa-button type="submit" appearance="filled">Submit</wa-button>

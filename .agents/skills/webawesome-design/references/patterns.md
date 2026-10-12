@@ -43,9 +43,15 @@ to stay put while content scrolls. `<wa-page>` gives sticky regions and a mobile
 
   <!-- data-drawer="close" closes the mobile nav drawer after a tap -->
   <nav slot="navigation" class="wa-stack wa-gap-2xs">
-    <a href="#" data-drawer="close"><wa-icon slot="start" name="gauge"></wa-icon> Dashboard</a>
-    <a href="#" data-drawer="close"><wa-icon slot="start" name="users"></wa-icon> Customers</a>
-    <a href="#" data-drawer="close"><wa-icon slot="start" name="gear"></wa-icon> Settings</a>
+    <a href="#" data-drawer="close"
+      ><wa-icon slot="start" name="gauge"></wa-icon> Dashboard</a
+    >
+    <a href="#" data-drawer="close"
+      ><wa-icon slot="start" name="users"></wa-icon> Customers</a
+    >
+    <a href="#" data-drawer="close"
+      ><wa-icon slot="start" name="gear"></wa-icon> Settings</a
+    >
   </nav>
 
   <main class="wa-stack wa-gap-xl">
@@ -64,7 +70,7 @@ to stay put while content scrolls. `<wa-page>` gives sticky regions and a mobile
   wa-page {
     --menu-width: 15rem;
   }
-  wa-page[view='mobile'] {
+  wa-page[view="mobile"] {
     --menu-width: auto;
   }
 </style>
@@ -105,16 +111,25 @@ the mobile drawer.)
   </nav>
 
   <main class="wa-stack wa-gap-3xl">
-    <section class="wa-stack wa-gap-l" style="max-width: 40rem; text-align: center; margin-inline: auto;">
+    <section
+      class="wa-stack wa-gap-l"
+      style="max-width: 40rem; text-align: center; margin-inline: auto;"
+    >
       <h1 class="wa-heading-3xl">Ship faster with Acme</h1>
-      <p class="wa-body-l">The toolkit teams reach for when deadlines are real.</p>
+      <p class="wa-body-l">
+        The toolkit teams reach for when deadlines are real.
+      </p>
       <div class="wa-cluster" style="justify-content: center;">
         <wa-button variant="brand" size="l">Start free</wa-button>
         <wa-button appearance="plain" size="l">Watch demo</wa-button>
       </div>
     </section>
 
-    <section id="features" class="wa-grid wa-gap-xl" style="--min-column-size: 16rem;">
+    <section
+      id="features"
+      class="wa-grid wa-gap-xl"
+      style="--min-column-size: 16rem;"
+    >
       <div class="wa-stack wa-gap-xs">
         <wa-icon name="bolt"></wa-icon>
         <h3>Fast</h3>
@@ -134,8 +149,12 @@ the mobile drawer.)
   </main>
 
   <footer slot="footer" class="wa-grid wa-gap-2xl">
-    <div class="wa-stack wa-gap-xs"><strong>Product</strong><a href="#">Features</a><a href="#">Pricing</a></div>
-    <div class="wa-stack wa-gap-xs"><strong>Company</strong><a href="#">About</a><a href="#">Careers</a></div>
+    <div class="wa-stack wa-gap-xs">
+      <strong>Product</strong><a href="#">Features</a><a href="#">Pricing</a>
+    </div>
+    <div class="wa-stack wa-gap-xs">
+      <strong>Company</strong><a href="#">About</a><a href="#">Careers</a>
+    </div>
   </footer>
 </wa-page>
 
@@ -146,10 +165,10 @@ the mobile drawer.)
     padding: 0;
     margin: 0;
   }
-  wa-page[view='mobile'] .header-nav {
+  wa-page[view="mobile"] .header-nav {
     display: none; /* hide desktop header links on mobile */
   }
-  wa-page[view='desktop']::part(navigation) {
+  wa-page[view="desktop"]::part(navigation) {
     display: none; /* hide the desktop sidebar; mobile drawer is unaffected */
   }
 </style>

@@ -27,7 +27,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/radio/radio.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/radio/radio.js";
 ```
 
 \*\*npm\*\*
@@ -35,7 +35,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/radio/radio.js'
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/radio/radio.js';
+import "@awesome.me/webawesome/dist/components/radio/radio.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -43,7 +43,7 @@ import '@awesome.me/webawesome/dist/components/radio/radio.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/radio/radio.js';
+import "./webawesome/dist/components/radio/radio.js";
 ```
 
 \*\*React\*\*
@@ -51,22 +51,22 @@ import './webawesome/dist/components/radio/radio.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaRadio from '@awesome.me/webawesome/dist/react/radio/index.js';
+import WaRadio from "@awesome.me/webawesome/dist/react/radio/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description        |
+| --------- | ------------------ |
 | (default) | The radio's label. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'default' \\| 'button'\` The radio's visual appearance. Type Default 'default' | |
-| \`disabled\` disabled | \`boolean\` Disables the radio. Type Default false | |
-| \`form\` | \`
+| Name                      | Description                                        | Reflects                                                         |
+| ------------------------- | -------------------------------------------------- | ---------------------------------------------------------------- |
+| \`appearance\` appearance | \`'default' \\                                     | 'button'\` The radio's visual appearance. Type Default 'default' |     |
+| \`disabled\` disabled     | \`boolean\` Disables the radio. Type Default false |                                                                  |
+| \`form\`                  | \`                                                 |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`name\` name | \`string \\| null\` The name of the input, submitted as a name/value pair with form data. Type Default null | |
@@ -77,43 +77,43 @@ import WaRadio from '@awesome.me/webawesome/dist/react/radio/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\  | File \\ | FormData \\ | null, reason: 'autocomplete' \\ | 'restore'\` |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                     |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\` |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
+| Name      | Description                           |
+| --------- | ------------------------------------- |
+| \`blur\`  | Emitted when the control loses focus. |
 | \`focus\` | Emitted when the control gains focus. |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--checked-icon-color\` | The color of the checked icon. |
+| Name                     | Description                                         |
+| ------------------------ | --------------------------------------------------- |
+| \`--checked-icon-color\` | The color of the checked icon.                      |
 | \`--checked-icon-scale\` | The size of the checked icon relative to the radio. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`checked\` | Applied when the control is checked. | \`:state(checked)\` |
+| Name         | Description                           | CSS selector         |
+| ------------ | ------------------------------------- | -------------------- |
+| \`checked\`  | Applied when the control is checked.  | \`:state(checked)\`  |
 | \`disabled\` | Applied when the control is disabled. | \`:state(disabled)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`checked-icon\` | The checked icon. | \`::part(checked-icon)\` |
-| \`control\` | The circular container that wraps the radio's checked state. | \`::part(control)\` |
-| \`label\` | The container that wraps the radio's label. | \`::part(label)\` |
+| Name             | Description                                                  | CSS selector             |
+| ---------------- | ------------------------------------------------------------ | ------------------------ |
+| \`checked-icon\` | The checked icon.                                            | \`::part(checked-icon)\` |
+| \`control\`      | The circular container that wraps the radio's checked state. | \`::part(control)\`      |
+| \`label\`        | The container that wraps the radio's label.                  | \`::part(label)\`        |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)

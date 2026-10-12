@@ -39,13 +39,16 @@ Stacks are well suited for forms, text, and ensuring consistent spacing between 
 <div class="wa-stack wa-gap-2xl">
   <h3>Aragorn's Squash</h3>
   <p>
-    Altogether unleash weasel mainly well-protected hiding Farthing excuse. Falling pits oil em Hasufel levels weight
-    rides vagabonds? Gamgee hard-won thunder merrier forests treasury. Past birthday lasts lowly there'd woe Woodland pa
-    sun's slaying most handling.
+    Altogether unleash weasel mainly well-protected hiding Farthing excuse.
+    Falling pits oil em Hasufel levels weight rides vagabonds? Gamgee hard-won
+    thunder merrier forests treasury. Past birthday lasts lowly there'd woe
+    Woodland pa sun's slaying most handling.
   </p>
   <p>
-    Even the smallest person can change the course of the future. They tempted completely other caves cloven wisest
-    draught scrumptious cook Undómiel friends. Dory crunchy huge sleepless. Unmade took nerves liquor defeated Arathorn.
+    Even the smallest person can change the course of the future. They tempted
+    completely other caves cloven wisest draught scrumptious cook Undómiel
+    friends. Dory crunchy huge sleepless. Unmade took nerves liquor defeated
+    Arathorn.
   </p>
 </div>
 ```
@@ -242,35 +245,50 @@ Grids work especially well for card lists and content designed for browsing.
 <div class="wa-grid">
   <div class="wa-stack wa-gap-s">
     <div class="wa-frame wa-border-radius-l">
-      <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=20" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=20"
+        alt=""
+      />
     </div>
     <h3 class="wa-heading-m">Tulip</h3>
     <em>Tulipa gesneriana</em>
   </div>
   <div class="wa-stack wa-gap-s">
     <div class="wa-frame wa-border-radius-l">
-      <img src="https://images.unsplash.com/photo-1591767134492-338e62f7b5a2?q=20" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1591767134492-338e62f7b5a2?q=20"
+        alt=""
+      />
     </div>
     <h3 class="wa-heading-m">Peony</h3>
     <em>Paeonia officinalis</em>
   </div>
   <div class="wa-stack wa-gap-s">
     <div class="wa-frame wa-border-radius-l">
-      <img src="https://images.unsplash.com/photo-1590872000386-4348c6393115?q=20" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1590872000386-4348c6393115?q=20"
+        alt=""
+      />
     </div>
     <h3 class="wa-heading-m">Poppy</h3>
     <em>Papaver rhoeas</em>
   </div>
   <div class="wa-stack wa-gap-s">
     <div class="wa-frame wa-border-radius-l">
-      <img src="https://images.unsplash.com/photo-1516723338795-324c7c33f700?q=20" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1516723338795-324c7c33f700?q=20"
+        alt=""
+      />
     </div>
     <h3 class="wa-heading-m">Sunflower</h3>
     <em>Helianthus annuus</em>
   </div>
   <div class="wa-stack wa-gap-s">
     <div class="wa-frame wa-border-radius-l">
-      <img src="https://images.unsplash.com/photo-1563601841845-74a0a8ab7c8a?q=20" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1563601841845-74a0a8ab7c8a?q=20"
+        alt=""
+      />
     </div>
     <h3 class="wa-heading-m">Daisy</h3>
     <em>Bellis perennis</em>
@@ -289,7 +307,9 @@ Grids work especially well for card lists and content designed for browsing.
         <span class="wa-caption-xs">Population (Zion)</span>
         <span class="wa-cluster wa-gap-xs">
           <span class="wa-heading-2xl">251,999</span>
-          <wa-badge variant="danger">-3%&nbsp;<wa-icon name="arrow-trend-down"></wa-icon></wa-badge>
+          <wa-badge variant="danger"
+            >-3%&nbsp;<wa-icon name="arrow-trend-down"></wa-icon
+          ></wa-badge>
         </span>
       </div>
     </div>
@@ -303,7 +323,9 @@ Grids work especially well for card lists and content designed for browsing.
         <span class="wa-caption-xs">Minds Freed</span>
         <span class="wa-cluster wa-gap-xs">
           <span class="wa-heading-2xl">0.36%</span>
-          <wa-badge variant="success">+0.03%&nbsp;<wa-icon name="arrow-trend-up"></wa-icon></wa-badge>
+          <wa-badge variant="success"
+            >+0.03%&nbsp;<wa-icon name="arrow-trend-up"></wa-icon
+          ></wa-badge>
         </span>
       </div>
     </div>
@@ -317,7 +339,9 @@ Grids work especially well for card lists and content designed for browsing.
         <span class="wa-caption-xs">Agents Discovered</span>
         <span class="wa-cluster wa-gap-xs">
           <span class="wa-heading-2xl">3</span>
-          <wa-badge variant="neutral">±0%&nbsp;<wa-icon name="minus"></wa-icon></wa-badge>
+          <wa-badge variant="neutral"
+            >±0%&nbsp;<wa-icon name="minus"></wa-icon
+          ></wa-badge>
         </span>
       </div>
     </div>
@@ -331,7 +355,9 @@ Grids work especially well for card lists and content designed for browsing.
         <span class="wa-caption-xs">Sentinels Controlled</span>
         <span class="wa-cluster wa-gap-xs">
           <span class="wa-heading-2xl">208</span>
-          <wa-badge variant="success">+1%&nbsp;<wa-icon name="arrow-trend-up"></wa-icon></wa-badge>
+          <wa-badge variant="success"
+            >+1%&nbsp;<wa-icon name="arrow-trend-up"></wa-icon
+          ></wa-badge>
         </span>
       </div>
     </div>
@@ -458,7 +484,8 @@ Splits are especially helpful for navigation, header, and footer layouts.
   .placeholder {
     min-block-size: 300px;
     background-color: var(--wa-color-neutral-fill-quiet);
-    border: dashed var(--wa-border-width-s) var(--wa-color-neutral-border-normal);
+    border: dashed var(--wa-border-width-s)
+      var(--wa-color-neutral-border-normal);
     border-radius: var(--wa-border-radius-l);
   }
 </style>
@@ -467,7 +494,11 @@ Splits are especially helpful for navigation, header, and footer layouts.
 ```html
 <div class="wa-stack">
   <div class="wa-split">
-    <wa-icon name="web-awesome" label="Web Awesome" class="wa-font-size-xl"></wa-icon>
+    <wa-icon
+      name="web-awesome"
+      label="Web Awesome"
+      class="wa-font-size-xl"
+    ></wa-icon>
     <div class="wa-cluster">
       <wa-button appearance="filled">Sign Up</wa-button>
       <wa-button appearance="outlined">Log In</wa-button>
@@ -480,7 +511,8 @@ Splits are especially helpful for navigation, header, and footer layouts.
   .placeholder {
     min-block-size: 300px;
     background-color: var(--wa-color-neutral-fill-quiet);
-    border: dashed var(--wa-border-width-s) var(--wa-color-neutral-border-normal);
+    border: dashed var(--wa-border-width-s)
+      var(--wa-color-neutral-border-normal);
     border-radius: var(--wa-border-radius-l);
   }
 </style>
@@ -585,8 +617,9 @@ Flanks work especially well for asides, inputs with adjacent buttons, and rich d
     <div class="wa-stack wa-gap-3xs">
       <strong>Gandalf</strong>
       <p class="wa-body-s">
-        All we have to decide is what to do with the time that is given to us. There are other forces at work in this
-        world, Frodo, besides the will of evil.
+        All we have to decide is what to do with the time that is given to us.
+        There are other forces at work in this world, Frodo, besides the will of
+        evil.
       </p>
     </div>
   </div>
@@ -598,8 +631,9 @@ Flanks work especially well for asides, inputs with adjacent buttons, and rich d
     <div class="wa-stack wa-gap-3xs">
       <strong>Boromir</strong>
       <p class="wa-body-s">
-        One does not simply walk into Mordor. Its Black Gates are guarded by more than just Orcs. There is evil there
-        that does not sleep, and the Great Eye is ever watchful.
+        One does not simply walk into Mordor. Its Black Gates are guarded by
+        more than just Orcs. There is evil there that does not sleep, and the
+        Great Eye is ever watchful.
       </p>
     </div>
   </div>
@@ -611,8 +645,9 @@ Flanks work especially well for asides, inputs with adjacent buttons, and rich d
     <div class="wa-stack wa-gap-3xs">
       <strong>Galadriel</strong>
       <p class="wa-body-s">
-        The world is changed. I feel it in the water. I feel it in the earth. I smell it in the air. Much that once was
-        is lost, for none now live who remember it.
+        The world is changed. I feel it in the water. I feel it in the earth. I
+        smell it in the air. Much that once was is lost, for none now live who
+        remember it.
       </p>
     </div>
   </div>
@@ -733,7 +768,10 @@ Frames are well-suited for images and image placeholders.
 ```html
 <div class="wa-flank" style="--flank-size: 8rem;">
   <div class="wa-frame wa-border-radius-m">
-    <img src="https://images.unsplash.com/photo-1523593288094-3ccfb6b2c192?q=20" alt="" />
+    <img
+      src="https://images.unsplash.com/photo-1523593288094-3ccfb6b2c192?q=20"
+      alt=""
+    />
   </div>
   <div class="wa-flank:end" style="--content-percentage: 70%">
     <div class="wa-stack wa-gap-xs">
@@ -752,13 +790,18 @@ Frames are well-suited for images and image placeholders.
 <div class="wa-grid" style="--min-column-size: 25ch;">
   <wa-card>
     <div class="wa-frame:landscape" slot="media">
-      <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=20" alt="Grey and white tabby kitten" />
+      <img
+        src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=20"
+        alt="Grey and white tabby kitten"
+      />
     </div>
     <div class="wa-stack wa-gap-xs">
       <h3 class="wa-heading-m">White-socks</h3>
       <span class="wa-body-s">Kitten &bull; Male</span>
       <div class="wa-flank:end wa-gap-xs">
-        <wa-button size="s" appearance="filled" variant="brand">Adopt this pet</wa-button>
+        <wa-button size="s" appearance="filled" variant="brand"
+          >Adopt this pet</wa-button
+        >
         <wa-button id="fav-whitesocks" appearance="plain" size="s">
           <wa-icon name="heart" variant="regular" label="Favorite"></wa-icon>
         </wa-button>
@@ -777,7 +820,9 @@ Frames are well-suited for images and image placeholders.
       <h3 class="wa-heading-m">Bumpkin</h3>
       <span class="wa-body-s">Adult &bull; Male</span>
       <div class="wa-flank:end wa-gap-xs">
-        <wa-button size="s" appearance="filled" variant="brand">Adopt this pet</wa-button>
+        <wa-button size="s" appearance="filled" variant="brand"
+          >Adopt this pet</wa-button
+        >
         <wa-button id="fav-bumpkin" appearance="plain" size="s">
           <wa-icon name="heart" variant="regular" label="Favorite"></wa-icon>
         </wa-button>
@@ -787,13 +832,18 @@ Frames are well-suited for images and image placeholders.
   </wa-card>
   <wa-card>
     <div class="wa-frame:landscape" slot="media">
-      <img src="https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?q=20" alt="Diluted calico kitten" />
+      <img
+        src="https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?q=20"
+        alt="Diluted calico kitten"
+      />
     </div>
     <div class="wa-stack wa-gap-xs">
       <h3 class="wa-heading-m">Swish-tail</h3>
       <span class="wa-body-s">Kitten &bull; Female</span>
       <div class="wa-flank:end wa-gap-xs">
-        <wa-button size="s" appearance="filled" variant="brand">Adopt this pet</wa-button>
+        <wa-button size="s" appearance="filled" variant="brand"
+          >Adopt this pet</wa-button
+        >
         <wa-button id="fav-swishtail" appearance="plain" size="s">
           <wa-icon name="heart" variant="regular" label="Favorite"></wa-icon>
         </wa-button>
@@ -803,13 +853,18 @@ Frames are well-suited for images and image placeholders.
   </wa-card>
   <wa-card>
     <div class="wa-frame:landscape" slot="media">
-      <img src="https://images.unsplash.com/photo-1517451330947-7809dead78d5?q=20" alt="Short-haired tabby cat" />
+      <img
+        src="https://images.unsplash.com/photo-1517451330947-7809dead78d5?q=20"
+        alt="Short-haired tabby cat"
+      />
     </div>
     <div class="wa-stack wa-gap-xs">
       <h3 class="wa-heading-m">Sharp-ears</h3>
       <span class="wa-body-s">Adult &bull; Female</span>
       <div class="wa-flank:end wa-gap-xs">
-        <wa-button size="s" appearance="filled" variant="brand">Adopt this pet</wa-button>
+        <wa-button size="s" appearance="filled" variant="brand"
+          >Adopt this pet</wa-button
+        >
         <wa-button id="fav-sharpears" appearance="plain" size="s">
           <wa-icon name="heart" variant="regular" label="Favorite"></wa-icon>
         </wa-button>
@@ -868,16 +923,16 @@ Every class besides `wa-gap-0` corresponds to one of the [`--wa-space-*`](https:
 
 ## Gap Classes
 
-| Class Name | gap Value |
-| --- | --- |
-| \`wa-gap-0\` | \`0\` |
+| Class Name     | gap Value          |
+| -------------- | ------------------ |
+| \`wa-gap-0\`   | \`0\`              |
 | \`wa-gap-3xs\` | \`--wa-space-3xs\` |
 | \`wa-gap-2xs\` | \`--wa-space-2xs\` |
-| \`wa-gap-xs\` | \`--wa-space-xs\` |
-| \`wa-gap-s\` | \`--wa-space-s\` |
-| \`wa-gap-m\` | \`--wa-space-m\` |
-| \`wa-gap-l\` | \`--wa-space-l\` |
-| \`wa-gap-xl\` | \`--wa-space-xl\` |
+| \`wa-gap-xs\`  | \`--wa-space-xs\`  |
+| \`wa-gap-s\`   | \`--wa-space-s\`   |
+| \`wa-gap-m\`   | \`--wa-space-m\`   |
+| \`wa-gap-l\`   | \`--wa-space-l\`   |
+| \`wa-gap-xl\`  | \`--wa-space-xl\`  |
 | \`wa-gap-2xl\` | \`--wa-space-2xl\` |
 | \`wa-gap-3xl\` | \`--wa-space-3xl\` |
 | \`wa-gap-4xl\` | \`--wa-space-4xl\` |
@@ -891,25 +946,25 @@ CSS Utilities Align Items
 
 These utility classes control how flex and grid items line up across the container's [cross axis](#whats-the-cross-axis), which is the axis perpendicular to the one its children flow along. Reach for them any time the default alignment of a [cluster](https://webawesome.com/docs/utilities/cluster), [stack](https://webawesome.com/docs/utilities/stack), [flank](https://webawesome.com/docs/utilities/flank), [split](https://webawesome.com/docs/utilities/split), or [grid](https://webawesome.com/docs/utilities/grid) doesn't match what you're after: centering icons next to text, making all cards in a row share the same height, or pinning form labels to the top of each row.
 
-| Class Name | align-items Value |
-| --- | --- |
-| \`wa-align-items-baseline\` | \`baseline\` |
-| \`wa-align-items-center\` | \`center\` |
-| \`wa-align-items-end\` | \`flex-end\` |
-| \`wa-align-items-start\` | \`flex-start\` |
-| \`wa-align-items-stretch\` | \`stretch\` |
+| Class Name                  | align-items Value |
+| --------------------------- | ----------------- |
+| \`wa-align-items-baseline\` | \`baseline\`      |
+| \`wa-align-items-center\`   | \`center\`        |
+| \`wa-align-items-end\`      | \`flex-end\`      |
+| \`wa-align-items-start\`    | \`flex-start\`    |
+| \`wa-align-items-stretch\`  | \`stretch\`       |
 
 ## Override with Align Self
 
 When you need a flex or grid item to deviate from the `align-items` property of its container, use the `wa-align-self-*` classes to set the item's `align-self` property and individually change its alignment on the container's [cross axis](#whats-the-cross-axis).
 
-| Class Name | align-self Value |
-| --- | --- |
-| \`wa-align-self-center\` | \`center\` |
-| \`wa-align-self-baseline\` | \`baseline\` |
-| \`wa-align-self-end\` | \`flex-end\` |
-| \`wa-align-self-start\` | \`flex-start\` |
-| \`wa-align-self-stretch\` | \`stretch\` |
+| Class Name                 | align-self Value |
+| -------------------------- | ---------------- |
+| \`wa-align-self-center\`   | \`center\`       |
+| \`wa-align-self-baseline\` | \`baseline\`     |
+| \`wa-align-self-end\`      | \`flex-end\`     |
+| \`wa-align-self-start\`    | \`flex-start\`   |
+| \`wa-align-self-stretch\`  | \`stretch\`      |
 
 ## What's the Cross Axis?
 
@@ -923,14 +978,14 @@ CSS Utilities Justify Content
 
 These utility classes control how space is distributed between items along a flex or grid container's [main axis](#whats-the-main-axis), which is the axis its children flow along. Reach for them when you want to push items to one end of a [cluster](https://webawesome.com/docs/utilities/cluster) or [stack](https://webawesome.com/docs/utilities/stack), center a row of buttons, or spread a set of navigation links evenly across a header.
 
-| Class Name | justify-content Value |
-| --- | --- |
-| \`wa-justify-content-start\` | \`flex-start\` |
-| \`wa-justify-content-end\` | \`flex-end\` |
-| \`wa-justify-content-center\` | \`center\` |
-| \`wa-justify-content-space-around\` | \`space-around\` |
-| \`wa-justify-content-space-between\` | \`space-between\` |
-| \`wa-justify-content-space-evenly\` | \`space-evenly\` |
+| Class Name                           | justify-content Value |
+| ------------------------------------ | --------------------- |
+| \`wa-justify-content-start\`         | \`flex-start\`        |
+| \`wa-justify-content-end\`           | \`flex-end\`          |
+| \`wa-justify-content-center\`        | \`center\`            |
+| \`wa-justify-content-space-around\`  | \`space-around\`      |
+| \`wa-justify-content-space-between\` | \`space-between\`     |
+| \`wa-justify-content-space-evenly\`  | \`space-evenly\`      |
 
 ## What's the Main Axis?
 
@@ -946,10 +1001,10 @@ These utility classes control whether the items inside a flex container wrap ont
 
 ## Flex Wrap Classes
 
-| Class Name | flex-wrap Value |
-| --- | --- |
-| \`wa-flex-wrap\` | \`wrap\` |
-| \`wa-flex-nowrap\` | \`nowrap\` |
+| Class Name               | flex-wrap Value  |
+| ------------------------ | ---------------- |
+| \`wa-flex-wrap\`         | \`wrap\`         |
+| \`wa-flex-nowrap\`       | \`nowrap\`       |
 | \`wa-flex-wrap-reverse\` | \`wrap-reverse\` |
 
 ---

@@ -15,11 +15,11 @@ Resize observers watch their slotted elements for size changes and emit an event
 </div>
 
 <script>
-  const container = document.querySelector('.resize-observer-overview');
-  const dimensions = container.querySelector('.dimensions');
-  const resizeObserver = container.querySelector('wa-resize-observer');
+  const container = document.querySelector(".resize-observer-overview");
+  const dimensions = container.querySelector(".dimensions");
+  const resizeObserver = container.querySelector("wa-resize-observer");
 
-  resizeObserver.addEventListener('wa-resize', event => {
+  resizeObserver.addEventListener("wa-resize", (event) => {
     const { width, height } = event.detail.entries[0].contentRect;
     dimensions.textContent = `${Math.round(width)} Ã— ${Math.round(height)}`;
   });
@@ -62,7 +62,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/resize-observer/resize-observer.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/resize-observer/resize-observer.js";
 ```
 
 \*\*npm\*\*
@@ -70,7 +70,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/resize-observer
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/resize-observer/resize-observer.js';
+import "@awesome.me/webawesome/dist/components/resize-observer/resize-observer.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -78,7 +78,7 @@ import '@awesome.me/webawesome/dist/components/resize-observer/resize-observer.j
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/resize-observer/resize-observer.js';
+import "./webawesome/dist/components/resize-observer/resize-observer.js";
 ```
 
 \*\*React\*\*
@@ -86,23 +86,23 @@ import './webawesome/dist/components/resize-observer/resize-observer.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaResizeObserver from '@awesome.me/webawesome/dist/react/resize-observer/index.js';
+import WaResizeObserver from "@awesome.me/webawesome/dist/react/resize-observer/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                 |
+| --------- | ------------------------------------------- |
 | (default) | One or more elements to watch for resizing. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`disabled\` disabled | \`boolean\` Disables the observer. Type Default false | |
+| Name                  | Description                                           | Reflects |
+| --------------------- | ----------------------------------------------------- | -------- |
+| \`disabled\` disabled | \`boolean\` Disables the observer. Type Default false |          |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name          | Description                          |
+| ------------- | ------------------------------------ |
 | \`wa-resize\` | Emitted when the element is resized. |

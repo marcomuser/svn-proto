@@ -27,7 +27,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/include/include.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/include/include.js";
 ```
 
 \*\*npm\*\*
@@ -35,7 +35,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/include/include
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/include/include.js';
+import "@awesome.me/webawesome/dist/components/include/include.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -43,7 +43,7 @@ import '@awesome.me/webawesome/dist/components/include/include.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/include/include.js';
+import "./webawesome/dist/components/include/include.js";
 ```
 
 \*\*React\*\*
@@ -51,23 +51,23 @@ import './webawesome/dist/components/include/include.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaInclude from '@awesome.me/webawesome/dist/react/include/index.js';
+import WaInclude from "@awesome.me/webawesome/dist/react/include/index.js";
 ```
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`allowScripts\` allow-scripts | \`boolean\` Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. Type Default false | |
-| \`mode\` mode | \`'cors' \\| 'no-cors' \\| 'same-origin'\` The fetch mode to use. Type Default 'cors' | |
-| \`src\` src | \`#my-id\` The location of the content to include. This can be a URL to an HTML file, a same-page reference to an element's id (e.g. ), or a URL with a fragment that targets an element's id within the fetched file (e.g. /partials.html#my-id). When targeting an element by id, its content is cloned. If the target is a
+| Name                           | Description                                                                                                                                                                                                                                                                                                                   | Reflects     |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| \`allowScripts\` allow-scripts | \`boolean\` Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. Type Default false                                                                                                                                          |              |
+| \`mode\` mode                  | \`'cors' \\                                                                                                                                                                                                                                                                                                                   | 'no-cors' \\ | 'same-origin'\` The fetch mode to use. Type Default 'cors' |     |
+| \`src\` src                    | \`#my-id\` The location of the content to include. This can be a URL to an HTML file, a same-page reference to an element's id (e.g. ), or a URL with a fragment that targets an element's id within the fetched file (e.g. /partials.html#my-id). When targeting an element by id, its content is cloned. If the target is a |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name                 | Description                                                   |
+| -------------------- | ------------------------------------------------------------- |
 | \`wa-include-error\` | Emitted when the included file fails to load due to an error. |
-| \`wa-load\` | Emitted when the included file is loaded. |
+| \`wa-load\`          | Emitted when the included file is loaded.                     |
 
 ### SSR
 
@@ -114,17 +114,17 @@ If the request fails, the `wa-include-error` event will be emitted. In this case
 <wa-include src="/assets/examples/include.html"></wa-include>
 
 <script>
-  const include = document.querySelector('wa-include');
+  const include = document.querySelector("wa-include");
 
-  include.addEventListener('wa-load', event => {
+  include.addEventListener("wa-load", (event) => {
     if (event.eventPhase === Event.AT_TARGET) {
-      console.log('Success');
+      console.log("Success");
     }
   });
 
-  include.addEventListener('wa-include-error', event => {
+  include.addEventListener("wa-include-error", (event) => {
     if (event.eventPhase === Event.AT_TARGET) {
-      console.log('Error', event.detail.status);
+      console.log("Error", event.detail.status);
     }
   });
 </script>

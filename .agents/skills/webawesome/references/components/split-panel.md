@@ -8,12 +8,8 @@ Split panels display two adjacent panels separated by a draggable divider, letti
 
 ```html
 <wa-split-panel>
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 
 <style>
@@ -39,7 +35,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/split-panel/split-panel.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/split-panel/split-panel.js";
 ```
 
 \*\*npm\*\*
@@ -47,7 +43,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/split-panel/spl
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/split-panel/split-panel.js';
+import "@awesome.me/webawesome/dist/components/split-panel/split-panel.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -55,7 +51,7 @@ import '@awesome.me/webawesome/dist/components/split-panel/split-panel.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/split-panel/split-panel.js';
+import "./webawesome/dist/components/split-panel/split-panel.js";
 ```
 
 \*\*React\*\*
@@ -63,52 +59,52 @@ import './webawesome/dist/components/split-panel/split-panel.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaSplitPanel from '@awesome.me/webawesome/dist/react/split-panel/index.js';
+import WaSplitPanel from "@awesome.me/webawesome/dist/react/split-panel/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name        | Description                                                                 |
+| ----------- | --------------------------------------------------------------------------- |
 | \`divider\` | The divider. Useful for slotting in a custom icon that renders as a handle. |
-| \`end\` | Content to place in the end panel. |
-| \`start\` | Content to place in the start panel. |
+| \`end\`     | Content to place in the end panel.                                          |
+| \`start\`   | Content to place in the start panel.                                        |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`disabled\` disabled | \`boolean\` Disables resizing. Note that the position may still change as a result of resizing the host element. Type Default false | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` Sets the split panel's orientation. Type Default 'horizontal' | |
-| \`position\` position | \`number\` The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size. Type Default 50 | |
-| \`positionInPixels\` position-in-pixels | \`number\` The current position of the divider from the primary panel's edge in pixels. Type | |
-| \`primary\` primary | \`'start' \\| 'end' \\| undefined\` If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized. Type | |
-| \`snap\` snap | \`"100px 50%"\` One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. . Type string \\| undefined | |
-| \`snapThreshold\` snap-threshold | \`number\` How close the divider must be to a snap point until snapping occurs. Type Default 12 | |
+| Name                                    | Description                                                                                                                                                          | Reflects                                                                   |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| \`disabled\` disabled                   | \`boolean\` Disables resizing. Note that the position may still change as a result of resizing the host element. Type Default false                                  |                                                                            |
+| \`orientation\` orientation             | \`'horizontal' \\                                                                                                                                                    | 'vertical'\` Sets the split panel's orientation. Type Default 'horizontal' |                                                                                                                                                                                                                                                                              |
+| \`position\` position                   | \`number\` The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size. Type Default 50 |                                                                            |
+| \`positionInPixels\` position-in-pixels | \`number\` The current position of the divider from the primary panel's edge in pixels. Type                                                                         |                                                                            |
+| \`primary\` primary                     | \`'start' \\                                                                                                                                                         | 'end' \\                                                                   | undefined\` If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized. Type |     |
+| \`snap\` snap                           | \`"100px 50%"\` One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. . Type string \\                   | undefined                                                                  |                                                                                                                                                                                                                                                                              |
+| \`snapThreshold\` snap-threshold        | \`number\` How close the divider must be to a snap point until snapping occurs. Type Default 12                                                                      |                                                                            |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name              | Description                                  |
+| ----------------- | -------------------------------------------- |
 | \`wa-reposition\` | Emitted when the divider's position changes. |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name                   | Description                                                                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | \`--divider-hit-area\` | \`12px\` The invisible region around the divider where dragging can occur. This is usually wider than the divider to facilitate easier dragging. Default |
-| \`--divider-width\` | \`4px\` The width of the visible divider. Default |
-| \`--max\` | \`100%\` The maximum allowed size of the primary panel. Default |
-| \`--min\` | \`0\` The minimum allowed size of the primary panel. Default |
+| \`--divider-width\`    | \`4px\` The width of the visible divider. Default                                                                                                        |
+| \`--max\`              | \`100%\` The maximum allowed size of the primary panel. Default                                                                                          |
+| \`--min\`              | \`0\` The minimum allowed size of the primary panel. Default                                                                                             |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name        | Description                                          | CSS selector        |
+| ----------- | ---------------------------------------------------- | ------------------- |
 | \`divider\` | The divider that separates the start and end panels. | \`::part(divider)\` |
-| \`end\` | The end panel. | \`::part(end)\` |
-| \`panel\` | Targets both the start and end panels. | \`::part(panel)\` |
-| \`start\` | The start panel. | \`::part(start)\` |
+| \`end\`     | The end panel.                                       | \`::part(end)\`     |
+| \`panel\`   | Targets both the start and end panels.               | \`::part(panel)\`   |
+| \`start\`   | The start panel.                                     | \`::part(start)\`   |
 
 ## Examples
 
@@ -118,23 +114,15 @@ Set the `position` attribute to change the divider's starting position, given as
 
 ```html
 <wa-split-panel position="75">
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 ```
 
 ```html
 <wa-split-panel position-in-pixels="150">
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 ```
 
@@ -144,12 +132,8 @@ Set the `orientation` attribute to `vertical` and provide a height to render the
 
 ```html
 <wa-split-panel orientation="vertical" style="height: 400px;">
-  <div slot="start" class="split-demo" style="height: 100%;">
-    Start
-  </div>
-  <div slot="end" class="split-demo" style="height: 100%;">
-    End
-  </div>
+  <div slot="start" class="split-demo" style="height: 100%;">Start</div>
+  <div slot="end" class="split-demo" style="height: 100%;">End</div>
 </wa-split-panel>
 ```
 
@@ -160,12 +144,8 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 ```html
 <div class="split-panel-snapping">
   <wa-split-panel snap="100px 50%">
-    <div slot="start" class="split-demo">
-      Start
-    </div>
-    <div slot="end" class="split-demo">
-      End
-    </div>
+    <div slot="start" class="split-demo">Start</div>
+    <div slot="end" class="split-demo">End</div>
   </wa-split-panel>
 
   <div class="split-panel-snapping-dots"></div>
@@ -178,7 +158,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 
   .split-panel-snapping-dots::before,
   .split-panel-snapping-dots::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -12px;
     width: 6px;
@@ -204,12 +184,8 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
 
 ```html
 <wa-split-panel disabled>
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 ```
 
@@ -222,12 +198,8 @@ Try resizing the example below with each option and notice how the panels respon
 ```html
 <div class="split-panel-primary">
   <wa-split-panel>
-    <div slot="start" class="split-demo">
-      Start
-    </div>
-    <div slot="end" class="split-demo">
-      End
-    </div>
+    <div slot="start" class="split-demo">Start</div>
+    <div slot="end" class="split-demo">End</div>
   </wa-split-panel>
 
   <wa-divider></wa-divider>
@@ -240,11 +212,11 @@ Try resizing the example below with each option and notice how the panels respon
 </div>
 
 <script>
-  const container = document.querySelector('.split-panel-primary');
-  const splitPanel = container.querySelector('wa-split-panel');
-  const select = container.querySelector('wa-select');
+  const container = document.querySelector(".split-panel-primary");
+  const splitPanel = container.querySelector("wa-split-panel");
+  const select = container.querySelector("wa-select");
 
-  select.addEventListener('change', () => (splitPanel.primary = select.value));
+  select.addEventListener("change", () => (splitPanel.primary = select.value));
 </script>
 ```
 
@@ -256,12 +228,8 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
 
 ```html
 <wa-split-panel style="--min: 150px; --max: calc(100% - 150px);">
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 ```
 
@@ -271,17 +239,11 @@ Create complex layouts that can be repositioned independently by nesting split p
 
 ```html
 <wa-split-panel>
-  <div slot="start" class="split-demo" style="height: 400px;">
-    Start
-  </div>
+  <div slot="start" class="split-demo" style="height: 400px;">Start</div>
   <div slot="end">
     <wa-split-panel orientation="vertical" style="height: 400px;">
-      <div slot="start" class="split-demo" style="height: 100%;">
-        Top
-      </div>
-      <div slot="end" class="split-demo" style="height: 100%;">
-        Bottom
-      </div>
+      <div slot="start" class="split-demo" style="height: 100%;">Top</div>
+      <div slot="end" class="split-demo" style="height: 100%;">Bottom</div>
     </wa-split-panel>
   </div>
 </wa-split-panel>
@@ -294,12 +256,8 @@ You can target the `divider` part to apply CSS properties to the divider. To add
 ```html
 <wa-split-panel style="--divider-width: 20px;">
   <wa-icon slot="divider" name="grip-vertical" variant="solid"></wa-icon>
-  <div slot="start" class="split-demo">
-    Start
-  </div>
-  <div slot="end" class="split-demo">
-    End
-  </div>
+  <div slot="start" class="split-demo">Start</div>
+  <div slot="end" class="split-demo">End</div>
 </wa-split-panel>
 ```
 
@@ -309,12 +267,8 @@ Here's a more elaborate example that changes the divider's color and width and a
 <div class="split-panel-divider">
   <wa-split-panel>
     <wa-icon slot="divider" name="grip-vertical" variant="solid"></wa-icon>
-    <div slot="start" class="split-demo">
-      Start
-    </div>
-    <div slot="end" class="split-demo">
-      End
-    </div>
+    <div slot="start" class="split-demo">Start</div>
+    <div slot="end" class="split-demo">End</div>
   </wa-split-panel>
 </div>
 

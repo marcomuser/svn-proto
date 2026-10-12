@@ -10,10 +10,18 @@ To animate an element, wrap it in `<wa-animation>` and set the `name` attribute.
 
 ```html
 <div class="animation-overview">
-  <wa-animation name="bounce" duration="2000" play><div class="box"></div></wa-animation>
-  <wa-animation name="jello" duration="2000" play><div class="box"></div></wa-animation>
-  <wa-animation name="heartBeat" duration="2000" play><div class="box"></div></wa-animation>
-  <wa-animation name="flip" duration="2000" play><div class="box"></div></wa-animation>
+  <wa-animation name="bounce" duration="2000" play
+    ><div class="box"></div
+  ></wa-animation>
+  <wa-animation name="jello" duration="2000" play
+    ><div class="box"></div
+  ></wa-animation>
+  <wa-animation name="heartBeat" duration="2000" play
+    ><div class="box"></div
+  ></wa-animation>
+  <wa-animation name="flip" duration="2000" play
+    ><div class="box"></div
+  ></wa-animation>
 </div>
 
 <style>
@@ -43,7 +51,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/animation/animation.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/animation/animation.js";
 ```
 
 \*\*npm\*\*
@@ -51,7 +59,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/animation/anima
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/animation/animation.js';
+import "@awesome.me/webawesome/dist/components/animation/animation.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -59,7 +67,7 @@ import '@awesome.me/webawesome/dist/components/animation/animation.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/animation/animation.js';
+import "./webawesome/dist/components/animation/animation.js";
 ```
 
 \*\*React\*\*
@@ -67,47 +75,47 @@ import './webawesome/dist/components/animation/animation.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaAnimation from '@awesome.me/webawesome/dist/react/animation/index.js';
+import WaAnimation from "@awesome.me/webawesome/dist/react/animation/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                                                                                                                                                                              |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (default) | \`\` The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple elements. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`currentTime\` | \`CSSNumberish\` Gets and sets the current animation time. Type | |
-| \`delay\` delay | \`number\` The of milliseconds to delay the start of the animation. Type number Default 0 | |
-| \`direction\` direction | \`PlaybackDirection\` Determines the direction of playback as well as the behavior when reaching the end of an iteration. Learn more Type Default 'normal' | |
-| \`duration\` duration | \`number\` The of milliseconds each iteration of the animation takes to complete. Type number Default 1000 | |
-| \`easing\` easing | \`cubic-bezier(0, 1, .76, 1.14)\` The easing function to use for the animation. This can be a Web Awesome easing function or a custom easing function such as . Type string Default 'linear' | |
-| \`endDelay\` end-delay | \`number\` The of milliseconds to delay after the active period of an animation sequence. Type number Default 0 | |
-| \`fill\` fill | \`FillMode\` Sets how the animation applies styles to its target before and after its execution. Type Default 'auto' | |
-| \`iterations\` iterations | \`Infinity\` The number of iterations to run before the animation completes. Defaults to , which loops. Type number Default Infinity | |
-| \`iterationStart\` iteration-start | \`number\` The offset at which to start the animation, usually between 0 (start) and 1 (end). Type Default 0 | |
-| \`keyframes\` | \`name\` The keyframes to use for the animation. If this is set, will be ignored. Type Keyframe\[\] \\| undefined | |
-| \`name\` name | \`keyframes\` The name of the built-in animation to use. For custom animations, use the prop. Type string Default 'none' | |
-| \`play\` play | \`boolean\` Plays the animation. When omitted, the animation will be paused. This attribute will be automatically removed when the animation finishes or gets canceled. Type Default false | |
-| \`playbackRate\` playback-rate | \`1\` Sets the animation's playback rate. The default is , which plays the animation at a normal speed. Setting this to 2, for example, will double the animation's speed. A negative value can be used to reverse the animation. This value can be changed without causing the animation to restart. Type number Default 1 | |
+| Name                               | Description                                                                                                                                                                                                                                                                                                                 | Reflects  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| \`currentTime\`                    | \`CSSNumberish\` Gets and sets the current animation time. Type                                                                                                                                                                                                                                                             |           |
+| \`delay\` delay                    | \`number\` The of milliseconds to delay the start of the animation. Type number Default 0                                                                                                                                                                                                                                   |           |
+| \`direction\` direction            | \`PlaybackDirection\` Determines the direction of playback as well as the behavior when reaching the end of an iteration. Learn more Type Default 'normal'                                                                                                                                                                  |           |
+| \`duration\` duration              | \`number\` The of milliseconds each iteration of the animation takes to complete. Type number Default 1000                                                                                                                                                                                                                  |           |
+| \`easing\` easing                  | \`cubic-bezier(0, 1, .76, 1.14)\` The easing function to use for the animation. This can be a Web Awesome easing function or a custom easing function such as . Type string Default 'linear'                                                                                                                                |           |
+| \`endDelay\` end-delay             | \`number\` The of milliseconds to delay after the active period of an animation sequence. Type number Default 0                                                                                                                                                                                                             |           |
+| \`fill\` fill                      | \`FillMode\` Sets how the animation applies styles to its target before and after its execution. Type Default 'auto'                                                                                                                                                                                                        |           |
+| \`iterations\` iterations          | \`Infinity\` The number of iterations to run before the animation completes. Defaults to , which loops. Type number Default Infinity                                                                                                                                                                                        |           |
+| \`iterationStart\` iteration-start | \`number\` The offset at which to start the animation, usually between 0 (start) and 1 (end). Type Default 0                                                                                                                                                                                                                |           |
+| \`keyframes\`                      | \`name\` The keyframes to use for the animation. If this is set, will be ignored. Type Keyframe\[\] \\                                                                                                                                                                                                                      | undefined |     |
+| \`name\` name                      | \`keyframes\` The name of the built-in animation to use. For custom animations, use the prop. Type string Default 'none'                                                                                                                                                                                                    |           |
+| \`play\` play                      | \`boolean\` Plays the animation. When omitted, the animation will be paused. This attribute will be automatically removed when the animation finishes or gets canceled. Type Default false                                                                                                                                  |           |
+| \`playbackRate\` playback-rate     | \`1\` Sets the animation's playback rate. The default is , which plays the animation at a normal speed. Setting this to 2, for example, will double the animation's speed. A negative value can be used to reverse the animation. This value can be changed without causing the animation to restart. Type number Default 1 |           |
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`cancel()\` | Clears all keyframe effects caused by this animation and aborts its playback. | |
-| \`finish()\` | Sets the playback time to the end of the animation corresponding to the current playback direction. | |
+| Name         | Description                                                                                         | Arguments |
+| ------------ | --------------------------------------------------------------------------------------------------- | --------- |
+| \`cancel()\` | Clears all keyframe effects caused by this animation and aborts its playback.                       |           |
+| \`finish()\` | Sets the playback time to the end of the animation corresponding to the current playback direction. |           |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`wa-cancel\` | Emitted when the animation is canceled. |
-| \`wa-finish\` | Emitted when the animation finishes. |
-| \`wa-start\` | Emitted when the animation starts or restarts. |
+| Name          | Description                                    |
+| ------------- | ---------------------------------------------- |
+| \`wa-cancel\` | Emitted when the animation is canceled.        |
+| \`wa-finish\` | Emitted when the animation finishes.           |
+| \`wa-start\`  | Emitted when the animation starts or restarts. |
 
 ### SSR
 
@@ -132,40 +140,60 @@ This example demonstrates all of the baked-in animations and easings. Animations
   <div class="controls">
     <wa-select label="Animation" value="bounce"></wa-select>
     <wa-select label="Easing" value="linear"></wa-select>
-    <wa-input label="Playback Rate" type="number" min="0" max="2" step=".25" value="1"></wa-input>
+    <wa-input
+      label="Playback Rate"
+      type="number"
+      min="0"
+      max="2"
+      step=".25"
+      value="1"
+    ></wa-input>
   </div>
 </div>
 
 <script type="module">
-  import { getAnimationNames, getEasingNames } from '/dist/webawesome.js';
+  import { getAnimationNames, getEasingNames } from "/dist/webawesome.js";
 
-  const container = document.querySelector('.animation-sandbox');
-  const animation = container.querySelector('wa-animation');
-  const animationName = container.querySelector('.controls wa-select:nth-child(1)');
-  const easingName = container.querySelector('.controls wa-select:nth-child(2)');
+  const container = document.querySelector(".animation-sandbox");
+  const animation = container.querySelector("wa-animation");
+  const animationName = container.querySelector(
+    ".controls wa-select:nth-child(1)",
+  );
+  const easingName = container.querySelector(
+    ".controls wa-select:nth-child(2)",
+  );
   const playbackRate = container.querySelector('wa-input[type="number"]');
   const animations = getAnimationNames();
   const easings = getEasingNames();
 
-  animations.map(name => {
-    const option = Object.assign(document.createElement('wa-option'), {
+  animations.map((name) => {
+    const option = Object.assign(document.createElement("wa-option"), {
       textContent: name,
       value: name,
     });
     animationName.appendChild(option);
   });
 
-  easings.map(name => {
-    const option = Object.assign(document.createElement('wa-option'), {
+  easings.map((name) => {
+    const option = Object.assign(document.createElement("wa-option"), {
       textContent: name,
       value: name,
     });
     easingName.appendChild(option);
   });
 
-  animationName.addEventListener('change', () => (animation.name = animationName.value));
-  easingName.addEventListener('change', () => (animation.easing = easingName.value));
-  playbackRate.addEventListener('input', () => (animation.playbackRate = playbackRate.value));
+  animationName.addEventListener(
+    "change",
+    () => (animation.name = animationName.value),
+  );
+  easingName.addEventListener(
+    "change",
+    () => (animation.easing = easingName.value),
+  );
+  playbackRate.addEventListener(
+    "input",
+    () => (animation.playbackRate = playbackRate.value),
+  );
 </script>
 
 <style>
@@ -192,16 +220,18 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ```html
 <div class="animation-scroll">
-  <wa-animation name="jackInTheBox" duration="2000" iterations="1"><div class="box"></div></wa-animation>
+  <wa-animation name="jackInTheBox" duration="2000" iterations="1"
+    ><div class="box"></div
+  ></wa-animation>
 </div>
 
 <script>
-  const container = document.querySelector('.animation-scroll');
-  const animation = container.querySelector('wa-animation');
-  const box = animation.querySelector('.box');
+  const container = document.querySelector(".animation-scroll");
+  const animation = container.querySelector("wa-animation");
+  const box = animation.querySelector(".box");
 
   // Watch for the box to enter and exit the viewport. Note that we're observing the box, not the animation element!
-  const observer = new IntersectionObserver(entries => {
+  const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       // Start the animation when the box enters the viewport
       animation.play = true;
@@ -235,21 +265,21 @@ Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/
 </div>
 
 <script>
-  const animation = document.querySelector('.animation-keyframes wa-animation');
+  const animation = document.querySelector(".animation-keyframes wa-animation");
   animation.keyframes = [
     {
       offset: 0,
-      easing: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-      fillMode: 'both',
-      transformOrigin: 'center center',
-      transform: 'rotate(0)',
+      easing: "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
+      fillMode: "both",
+      transformOrigin: "center center",
+      transform: "rotate(0)",
     },
     {
       offset: 1,
-      easing: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-      fillMode: 'both',
-      transformOrigin: 'center center',
-      transform: 'rotate(90deg)',
+      easing: "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
+      fillMode: "both",
+      transformOrigin: "center center",
+      transform: "rotate(90deg)",
     },
   ];
 </script>
@@ -275,11 +305,11 @@ Animations won't play until you apply the `play` attribute. You can omit it init
 </div>
 
 <script>
-  const container = document.querySelector('.animation-form');
-  const animation = container.querySelector('wa-animation');
-  const button = container.querySelector('wa-button');
+  const container = document.querySelector(".animation-form");
+  const animation = container.querySelector("wa-animation");
+  const button = container.querySelector("wa-button");
 
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     animation.play = true;
   });
 </script>

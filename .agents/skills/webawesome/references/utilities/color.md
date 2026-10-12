@@ -10,13 +10,13 @@ Several Web Awesome components (like [`<wa-badge>`](https://webawesome.com/docs/
 
 Add one of these classes to any element to apply a semantic color:
 
-| Class Name | Best For |
-| --- | --- |
-| \`wa-brand\` | Primary emphasis and brand color |
-| \`wa-neutral\` | Default, low-emphasis UI |
-| \`wa-success\` | Positive or confirming states |
+| Class Name     | Best For                              |
+| -------------- | ------------------------------------- |
+| \`wa-brand\`   | Primary emphasis and brand color      |
+| \`wa-neutral\` | Default, low-emphasis UI              |
+| \`wa-success\` | Positive or confirming states         |
 | \`wa-warning\` | Cautionary states that need attention |
-| \`wa-danger\` | Errors and destructive actions |
+| \`wa-danger\`  | Errors and destructive actions        |
 
 ## How Variants Work
 

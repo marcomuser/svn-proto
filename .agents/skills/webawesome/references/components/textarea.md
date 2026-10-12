@@ -23,7 +23,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/textarea/textarea.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/textarea/textarea.js";
 ```
 
 \*\*npm\*\*
@@ -31,7 +31,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/textarea/textar
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/textarea/textarea.js';
+import "@awesome.me/webawesome/dist/components/textarea/textarea.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -39,7 +39,7 @@ import '@awesome.me/webawesome/dist/components/textarea/textarea.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/textarea/textarea.js';
+import "./webawesome/dist/components/textarea/textarea.js";
 ```
 
 \*\*React\*\*
@@ -47,29 +47,29 @@ import './webawesome/dist/components/textarea/textarea.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaTextarea from '@awesome.me/webawesome/dist/react/textarea/index.js';
+import WaTextarea from "@awesome.me/webawesome/dist/react/textarea/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`hint\` | \`hint\` Text that describes how to use the input. Alternatively, you can use the attribute. |
-| \`label\` | \`label\` The textarea's . Alternatively, you can use the label attribute. |
+| Name      | Description                                                                                  |
+| --------- | -------------------------------------------------------------------------------------------- |
+| \`hint\`  | \`hint\` Text that describes how to use the input. Alternatively, you can use the attribute. |
+| \`label\` | \`label\` The textarea's . Alternatively, you can use the label attribute.                   |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'filled' \\| 'outlined' \\| 'filled-outlined'\` The textarea's visual appearance. Type Default 'outlined' | |
-| \`autocapitalize\` autocapitalize | \`'off' \\| 'none' \\| 'on' \\| 'sentences' \\| 'words' \\| 'characters'\` Controls whether and how text input is automatically capitalized as it is entered by the user. Type | |
-| \`autocomplete\` autocomplete | \`string\` Specifies what permission the browser has to provide assistance in filling out form field values. Refer to this page on MDN for available values. Type | |
-| \`autocorrect\` autocorrect | \`"off"\` Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use or "on". When set as a property, use true or false. Type boolean | |
-| \`autofocus\` autofocus | \`boolean\` Indicates that the input should receive focus on page load. Type | |
-| \`defaultValue\` value | \`string\` The default value of the form control. Primarily used for resetting the form control. Type | |
-| \`disabled\` disabled | \`boolean\` Disables the textarea. Type Default false | |
-| \`enterkeyhint\` enterkeyhint | \`'enter' \\| 'done' \\| 'go' \\| 'next' \\| 'previous' \\| 'search' \\| 'send'\` Used to customize the label or icon of the Enter key on virtual keyboards. Type | |
-| \`form\` | \`
+| Name                              | Description                                                                                                                                                                | Reflects      |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| \`appearance\` appearance         | \`'filled' \\                                                                                                                                                              | 'outlined' \\ | 'filled-outlined'\` The textarea's visual appearance. Type Default 'outlined' |                |
+| \`autocapitalize\` autocapitalize | \`'off' \\                                                                                                                                                                 | 'none' \\     | 'on' \\                                                                       | 'sentences' \\ | 'words' \\    | 'characters'\` Controls whether and how text input is automatically capitalized as it is entered by the user. Type |                                                                                          |
+| \`autocomplete\` autocomplete     | \`string\` Specifies what permission the browser has to provide assistance in filling out form field values. Refer to this page on MDN for available values. Type          |               |
+| \`autocorrect\` autocorrect       | \`"off"\` Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use or "on". When set as a property, use true or false. Type boolean |               |
+| \`autofocus\` autofocus           | \`boolean\` Indicates that the input should receive focus on page load. Type                                                                                               |               |
+| \`defaultValue\` value            | \`string\` The default value of the form control. Primarily used for resetting the form control. Type                                                                      |               |
+| \`disabled\` disabled             | \`boolean\` Disables the textarea. Type Default false                                                                                                                      |               |
+| \`enterkeyhint\` enterkeyhint     | \`'enter' \\                                                                                                                                                               | 'done' \\     | 'go' \\                                                                       | 'next' \\      | 'previous' \\ | 'search' \\                                                                                                        | 'send'\` Used to customize the label or icon of the Enter key on virtual keyboards. Type |     |
+| \`form\`                          | \`                                                                                                                                                                         |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`hint\` hint | \`hint\` The textarea's . If you need to display HTML, use the hint slot instead. Type string Default '' | |
@@ -94,46 +94,46 @@ import WaTextarea from '@awesome.me/webawesome/dist/react/textarea/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the textarea. | |
-| \`focus()\` | Sets focus on the textarea. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`scrollPosition()\` | Gets or sets the textarea's scroll position. | \`position: { top?: number; left?: number }\` |
-| \`select()\` | Selects all the text in the textarea. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`setRangeText()\` | Replaces a range of text with a new string. | \`replacement: string, start: number, end: number, selectMode: 'select' \\| 'start' \\| 'end' \\| 'preserve'\` |
-| \`setSelectionRange()\` | Sets the start and end positions of the text selection (0-based). | \`selectionStart: number, selectionEnd: number, selectionDirection: 'forward' \\| 'backward' \\| 'none'\` |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| \`blur()\`                     | Removes focus from the textarea.                                                                                                                                                                                                                                                                                                                  |                                                                                  |
+| \`focus()\`                    | Sets focus on the textarea.                                                                                                                                                                                                                                                                                                                       | \`options: FocusOptions\`                                                        |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\                                                               | File \\       | FormData \\ | null, reason: 'autocomplete' \\ | 'restore'\` |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                                                                                  |
+| \`scrollPosition()\`           | Gets or sets the textarea's scroll position.                                                                                                                                                                                                                                                                                                      | \`position: { top?: number; left?: number }\`                                    |
+| \`select()\`                   | Selects all the text in the textarea.                                                                                                                                                                                                                                                                                                             |                                                                                  |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`                                                              |
+| \`setRangeText()\`             | Replaces a range of text with a new string.                                                                                                                                                                                                                                                                                                       | \`replacement: string, start: number, end: number, selectMode: 'select' \\       | 'start' \\    | 'end' \\    | 'preserve'\`                    |
+| \`setSelectionRange()\`        | Sets the start and end positions of the text selection (0-based).                                                                                                                                                                                                                                                                                 | \`selectionStart: number, selectionEnd: number, selectionDirection: 'forward' \\ | 'backward' \\ | 'none'\`    |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when an alteration to the control's value is committed by the user. |
-| \`focus\` | Emitted when the control gains focus. |
-| \`input\` | Emitted when the control receives input. |
+| Name           | Description                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`       | Emitted when the control loses focus.                                                             |
+| \`change\`     | Emitted when an alteration to the control's value is committed by the user.                       |
+| \`focus\`      | Emitted when the control gains focus.                                                             |
+| \`input\`      | Emitted when the control receives input.                                                          |
 | \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name      | Description            | CSS selector      |
+| --------- | ---------------------- | ----------------- |
 | \`blank\` | The textarea is empty. | \`:state(blank)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`count\` | \`with-count\` The character count element, rendered when the attribute is present. | \`::part(count)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`textarea\` | \`\` The internal control. | \`::part(textarea)\` |
-| \`textarea-adjuster\` | \`resize\` The invisible sizer that grows the control to fit its content when is auto. | \`::part(textarea-adjuster)\` |
-| \`textarea-wrapper\` | The component's outer wrapper. | \`::part(textarea-wrapper)\` |
-| \`base\` | \`textarea-wrapper\` Deprecated. Use the part instead. | \`::part(base)\` |
-| \`label\` | \`form-control-label\` Deprecated. Use the part instead. | \`::part(label)\` |
+| Name                   | Description                                                                            | CSS selector                   |
+| ---------------------- | -------------------------------------------------------------------------------------- | ------------------------------ |
+| \`count\`              | \`with-count\` The character count element, rendered when the attribute is present.    | \`::part(count)\`              |
+| \`form-control-label\` | The label.                                                                             | \`::part(form-control-label)\` |
+| \`hint\`               | The hint's wrapper.                                                                    | \`::part(hint)\`               |
+| \`textarea\`           | \`\` The internal control.                                                             | \`::part(textarea)\`           |
+| \`textarea-adjuster\`  | \`resize\` The invisible sizer that grows the control to fit its content when is auto. | \`::part(textarea-adjuster)\`  |
+| \`textarea-wrapper\`   | The component's outer wrapper.                                                         | \`::part(textarea-wrapper)\`   |
+| \`base\`               | \`textarea-wrapper\` Deprecated. Use the part instead.                                 | \`::part(base)\`               |
+| \`label\`              | \`form-control-label\` Deprecated. Use the part instead.                               | \`::part(label)\`              |
 
 ## Examples
 
@@ -150,7 +150,10 @@ Use the `label` attribute to give the textarea an accessible label. For labels t
 Add a descriptive hint to a textarea with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
-<wa-textarea label="Feedback" hint="Please tell us what you think."></wa-textarea>
+<wa-textarea
+  label="Feedback"
+  hint="Please tell us what you think."
+></wa-textarea>
 ```
 
 ### Placeholder
@@ -169,7 +172,10 @@ Use the `appearance` attribute to change the textarea's visual appearance.
 <div class="wa-stack">
   <wa-textarea appearance="outlined" placeholder="outlined"></wa-textarea>
   <wa-textarea appearance="filled" placeholder="filled"></wa-textarea>
-  <wa-textarea appearance="filled-outlined" placeholder="filled-outlined"></wa-textarea>
+  <wa-textarea
+    appearance="filled-outlined"
+    placeholder="filled-outlined"
+  ></wa-textarea>
 </div>
 ```
 
@@ -186,7 +192,11 @@ Use the `disabled` attribute to disable a textarea.
 Use the `readonly` attribute to keep a value visible but uneditable. Unlike `disabled`, a readonly textarea stays focusable and its value is still submitted with the form.
 
 ```html
-<wa-textarea label="Release notes" value="Fixed a handful of bugs and polished the edges." readonly></wa-textarea>
+<wa-textarea
+  label="Release notes"
+  value="Fixed a handful of bugs and polished the edges."
+  readonly
+></wa-textarea>
 ```
 
 ### Size
@@ -215,13 +225,13 @@ Use the `rows` attribute to change the number of text rows that show by default.
 
 Use the `resize` attribute to control how the user can resize the textarea.
 
-| Mode | Behavior | Best for |
-| --- | --- | --- |
-| \`vertical\` (default) | Drag the bottom edge to change the height | Most multi-line fields |
-| \`none\` | Resizing is disabled | Fixed layouts where height must hold |
-| \`horizontal\` | Drag the side edge to change the width | Adjusting line length |
-| \`both\` | Drag the corner to change width and height | Free-form editing |
-| \`auto\` | Grows to fit its content as the user types | Inputs whose length varies a lot |
+| Mode                   | Behavior                                   | Best for                             |
+| ---------------------- | ------------------------------------------ | ------------------------------------ |
+| \`vertical\` (default) | Drag the bottom edge to change the height  | Most multi-line fields               |
+| \`none\`               | Resizing is disabled                       | Fixed layouts where height must hold |
+| \`horizontal\`         | Drag the side edge to change the width     | Adjusting line length                |
+| \`both\`               | Drag the corner to change width and height | Free-form editing                    |
+| \`auto\`               | Grows to fit its content as the user types | Inputs whose length varies a lot     |
 
 The default, `vertical`, lets the user drag the bottom edge to resize the field.
 
@@ -241,8 +251,17 @@ Add the `with-count` attribute to show a character count below the textarea. Whe
 
 ```html
 <div class="wa-stack">
-  <wa-textarea label="Comments" hint="Share your thoughts with us" with-count></wa-textarea>
-  <wa-textarea label="Bio" hint="Tell us a little about yourself" with-count maxlength="100"></wa-textarea>
+  <wa-textarea
+    label="Comments"
+    hint="Share your thoughts with us"
+    with-count
+  ></wa-textarea>
+  <wa-textarea
+    label="Bio"
+    hint="Tell us a little about yourself"
+    with-count
+    maxlength="100"
+  ></wa-textarea>
 </div>
 ```
 

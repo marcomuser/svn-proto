@@ -30,7 +30,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/toast-item/toast-item.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/toast-item/toast-item.js";
 ```
 
 \*\*npm\*\*
@@ -38,7 +38,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/toast-item/toas
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/toast-item/toast-item.js';
+import "@awesome.me/webawesome/dist/components/toast-item/toast-item.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -46,7 +46,7 @@ import '@awesome.me/webawesome/dist/components/toast-item/toast-item.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/toast-item/toast-item.js';
+import "./webawesome/dist/components/toast-item/toast-item.js";
 ```
 
 \*\*React\*\*
@@ -54,72 +54,72 @@ import './webawesome/dist/components/toast-item/toast-item.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaToastItem from '@awesome.me/webawesome/dist/react/toast-item/index.js';
+import WaToastItem from "@awesome.me/webawesome/dist/react/toast-item/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | The toast item's message content. |
-| \`icon\` | An optional icon to show at the start of the toast item. |
+| Name      | Description                                              |
+| --------- | -------------------------------------------------------- |
+| (default) | The toast item's message content.                        |
+| \`icon\`  | An optional icon to show at the start of the toast item. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`duration\` duration | \`number\` The length of time in milliseconds before the toast item is automatically dismissed. Set to 0 to keep the toast item open until the user dismisses it. Type Default 5000 | |
-| \`size\` size | \`'xs' \\| 's' \\| 'm' \\| 'l' \\| 'xl' \\| 'small' \\| 'medium' \\| 'large'\` The toast item's size. Type Default 'm' | |
-| \`variant\` variant | \`'brand' \\| 'success' \\| 'warning' \\| 'danger' \\| 'neutral'\` The toast item's variant. Type Default 'neutral' | |
-| \`withIcon\` with-icon | \`true\` Only required for SSR. Set to if you're slotting in an icon element so the server-rendered markup includes the icon before the component hydrates on the client. Type boolean Default false | |
+| Name                   | Description                                                                                                                                                                                          | Reflects     |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| \`duration\` duration  | \`number\` The length of time in milliseconds before the toast item is automatically dismissed. Set to 0 to keep the toast item open until the user dismisses it. Type Default 5000                  |              |
+| \`size\` size          | \`'xs' \\                                                                                                                                                                                            | 's' \\       | 'm' \\       | 'l' \\      | 'xl' \\                                                      | 'small' \\ | 'medium' \\ | 'large'\` The toast item's size. Type Default 'm' |     |
+| \`variant\` variant    | \`'brand' \\                                                                                                                                                                                         | 'success' \\ | 'warning' \\ | 'danger' \\ | 'neutral'\` The toast item's variant. Type Default 'neutral' |            |
+| \`withIcon\` with-icon | \`true\` Only required for SSR. Set to if you're slotting in an icon element so the server-rendered markup includes the icon before the component hydrates on the client. Type boolean Default false |              |
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`hide()\` | Hides the toast item with animation and removes it from the DOM. | |
+| Name       | Description                                                      | Arguments |
+| ---------- | ---------------------------------------------------------------- | --------- |
+| \`hide()\` | Hides the toast item with animation and removes it from the DOM. |           |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`wa-after-hide\` | Emitted after the toast item has finished hiding. |
+| Name              | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| \`wa-after-hide\` | Emitted after the toast item has finished hiding.  |
 | \`wa-after-show\` | Emitted after the toast item has finished showing. |
-| \`wa-hide\` | Emitted when the toast item begins to hide. |
-| \`wa-show\` | Emitted when the toast item begins to show. |
+| \`wa-hide\`       | Emitted when the toast item begins to hide.        |
+| \`wa-show\`       | Emitted when the toast item begins to show.        |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--accent-width\` | The width of the accent line. Defaults to 4px. |
-| \`--hide-duration\` | \`var(--wa-transition-normal)\` The animation duration when hiding. Default |
-| \`--padding\` | \`size\` The internal spacing of the toast item. Scales with the attribute. |
+| Name                | Description                                                                  |
+| ------------------- | ---------------------------------------------------------------------------- |
+| \`--accent-width\`  | The width of the accent line. Defaults to 4px.                               |
+| \`--hide-duration\` | \`var(--wa-transition-normal)\` The animation duration when hiding. Default  |
+| \`--padding\`       | \`size\` The internal spacing of the toast item. Scales with the attribute.  |
 | \`--show-duration\` | \`var(--wa-transition-normal)\` The animation duration when showing. Default |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`accent\` | The colored accent line on the start side. | \`::part(accent)\` |
-| \`close-button\` | The close button element. | \`::part(close-button)\` |
-| \`close-icon\` | The close icon element. | \`::part(close-icon)\` |
-| \`close-icon\_\_svg\` | The close icon's exported svg part. | \`::part(close-icon\_\_svg)\` |
-| \`content\` | The message content container. | \`::part(content)\` |
-| \`icon\` | The icon container. | \`::part(icon)\` |
-| \`progress-ring\` | The progress ring component. | \`::part(progress-ring)\` |
-| \`progress-ring\_\_base\` | The progress ring's exported base part. | \`::part(progress-ring\_\_base)\` |
+| Name                           | Description                                  | CSS selector                           |
+| ------------------------------ | -------------------------------------------- | -------------------------------------- |
+| \`accent\`                     | The colored accent line on the start side.   | \`::part(accent)\`                     |
+| \`close-button\`               | The close button element.                    | \`::part(close-button)\`               |
+| \`close-icon\`                 | The close icon element.                      | \`::part(close-icon)\`                 |
+| \`close-icon\_\_svg\`          | The close icon's exported svg part.          | \`::part(close-icon\_\_svg)\`          |
+| \`content\`                    | The message content container.               | \`::part(content)\`                    |
+| \`icon\`                       | The icon container.                          | \`::part(icon)\`                       |
+| \`progress-ring\`              | The progress ring component.                 | \`::part(progress-ring)\`              |
+| \`progress-ring\_\_base\`      | The progress ring's exported base part.      | \`::part(progress-ring\_\_base)\`      |
 | \`progress-ring\_\_indicator\` | The progress ring's exported indicator part. | \`::part(progress-ring\_\_indicator)\` |
-| \`progress-ring\_\_label\` | The progress ring's exported label part. | \`::part(progress-ring\_\_label)\` |
-| \`progress-ring\_\_track\` | The progress ring's exported track part. | \`::part(progress-ring\_\_track)\` |
-| \`toast-item\` | The toast item's main container. | \`::part(toast-item)\` |
+| \`progress-ring\_\_label\`     | The progress ring's exported label part.     | \`::part(progress-ring\_\_label)\`     |
+| \`progress-ring\_\_track\`     | The progress ring's exported track part.     | \`::part(progress-ring\_\_track)\`     |
+| \`toast-item\`                 | The toast item's main container.             | \`::part(toast-item)\`                 |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-progress-ring>`](https://webawesome.com/docs/components/progress-ring)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-progress-ring>`](https://webawesome.com/docs/components/progress-ring)
 
 ## Examples
 
@@ -215,7 +215,9 @@ Use the `icon` slot to display an icon at the start of the toast item. The icon 
 Toast items work fine without icons too.
 
 ```html
-<wa-toast-item variant="neutral" duration="0"> A simple notification without an icon. </wa-toast-item>
+<wa-toast-item variant="neutral" duration="0">
+  A simple notification without an icon.
+</wa-toast-item>
 ```
 
 ### Providing Content
@@ -298,12 +300,20 @@ Use the `--padding` custom property to adjust the internal spacing.
 
 ```html
 <div class="wa-stack">
-  <wa-toast-item variant="brand" duration="0" style="--padding: var(--wa-space-xs);">
+  <wa-toast-item
+    variant="brand"
+    duration="0"
+    style="--padding: var(--wa-space-xs);"
+  >
     <wa-icon slot="icon" name="compress"></wa-icon>
     Compact padding
   </wa-toast-item>
 
-  <wa-toast-item variant="brand" duration="0" style="--padding: var(--wa-space-xl);">
+  <wa-toast-item
+    variant="brand"
+    duration="0"
+    style="--padding: var(--wa-space-xl);"
+  >
     <wa-icon slot="icon" name="expand"></wa-icon>
     Spacious padding
   </wa-toast-item>

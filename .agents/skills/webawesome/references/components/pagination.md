@@ -7,7 +7,12 @@ Stable [Navigation](https://webawesome.com/docs/components/?category=navigation)
 Pagination splits long lists of content into pages, letting users navigate between them.
 
 ```html
-<wa-pagination total="237" page-size="10" page="3" label="Search results"></wa-pagination>
+<wa-pagination
+  total="237"
+  page-size="10"
+  page="3"
+  label="Search results"
+></wa-pagination>
 ```
 
 Set `total` and `page-size` to generate numbered page buttons with previous and next controls. Use the `label` attribute to give the control an accessible name, which is especially helpful when more than one appears on the same page.
@@ -19,10 +24,10 @@ It tracks the current page and emits events, but it doesn't submit a value with 
 
 Pagination ships with several accessibility behaviors built in:
 
--   **Page changes are announced.** When the page changes, the new position is announced to screen readers through a shared live region, so the update isn't silent.
--   **Focus follows the page.** After a control is activated, focus moves to the new current page rather than falling back to the top of the document, keeping keyboard users oriented.
--   **The current page is marked.** The active page carries `aria-current="page"`, and disabled or boundary controls carry `aria-disabled` so assistive technology skips them.
--   **Icons are direction-aware.** The previous, next, first, and last icons flip automatically in right-to-left languages.
+- **Page changes are announced.** When the page changes, the new position is announced to screen readers through a shared live region, so the update isn't silent.
+- **Focus follows the page.** After a control is activated, focus moves to the new current page rather than falling back to the top of the document, keeping keyboard users oriented.
+- **The current page is marked.** The active page carries `aria-current="page"`, and disabled or boundary controls carry `aria-disabled` so assistive technology skips them.
+- **Icons are direction-aware.** The previous, next, first, and last icons flip automatically in right-to-left languages.
 
 Give the control an accessible name with the `label` attribute whenever more than one pagination appears on a page, so screen reader users can tell them apart.
 
@@ -37,7 +42,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/pagination/pagination.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/pagination/pagination.js";
 ```
 
 \*\*npm\*\*
@@ -45,7 +50,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/pagination/pagi
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/pagination/pagination.js';
+import "@awesome.me/webawesome/dist/components/pagination/pagination.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -53,7 +58,7 @@ import '@awesome.me/webawesome/dist/components/pagination/pagination.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/pagination/pagination.js';
+import "./webawesome/dist/components/pagination/pagination.js";
 ```
 
 \*\*React\*\*
@@ -61,65 +66,65 @@ import './webawesome/dist/components/pagination/pagination.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaPagination from '@awesome.me/webawesome/dist/react/pagination/index.js';
+import WaPagination from "@awesome.me/webawesome/dist/react/pagination/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`first-icon\` | An icon to use in lieu of the default first icon. |
-| \`last-icon\` | An icon to use in lieu of the default last icon. |
-| \`next-icon\` | An icon to use in lieu of the default next icon. |
+| Name              | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| \`first-icon\`    | An icon to use in lieu of the default first icon.    |
+| \`last-icon\`     | An icon to use in lieu of the default last icon.     |
+| \`next-icon\`     | An icon to use in lieu of the default next icon.     |
 | \`previous-icon\` | An icon to use in lieu of the default previous icon. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'outlined' \\| 'filled' \\| 'plain'\` The pagination's visual appearance. Type Default 'outlined' | |
-| \`boundaryCount\` boundary-count | \`number\` The of pages to always show at the start and end. Type number Default 1 | |
-| \`disabled\` disabled | \`boolean\` Disables the pagination. Type Default false | |
-| \`format\` format | \`standard\` The pagination's layout. The default format shows the full page list with ellipses; compact collapses it into a short "1 of 5" label flanked by the previous and next buttons, useful in tight spaces like toolbars and cards. Type 'standard' \\| 'compact' Default 'standard' | |
-| \`hideSinglePage\` hide-single-page | \`boolean\` Renders nothing when there's only one page. Type Default false | |
-| \`hrefTemplate\` href-template | \`[\` A URL template used to render page items as links instead of buttons. When set, items render as elements for SSR, SEO, and no-JS support. Provide a string with {page} as a placeholder for the page number, e.g. /products?page={page}. In JavaScript, you can also assign a function that receives the page number and returns the URL, e.g. el.hrefTemplate = page => \\/products?page=${page}\`\`. Type string \\| ((page: number) => string) Default '' | |
-| \`label\` label | \`string\` A label that describes the pagination to assistive devices. This won't be shown on the screen, but it will be announced by screen readers. Especially useful when more than one pagination control exists on the same page. Type Default '' | |
-| \`page\` page | \`number\` The current page, starting at 1. Type Default 1 | |
-| \`pageSize\` page-size | \`number\` The of items shown per page. Type number Default 10 | |
-| \`siblingCount\` sibling-count | \`number\` The of pages to show on each side of the current page. Type number Default 2 | |
-| \`total\` total | \`number\` The total of items to paginate. Type number Default 0 | |
-| \`totalPages\` | \`total\` The number of pages, derived from total and pageSize. | |
-| \`withEdges\` with-edges | \`boolean\` Shows buttons that jump to the first and last pages. Type Default false | |
-| \`withoutNav\` without-nav | \`boolean\` Hides the previous and next buttons. Type Default false | |
-| \`withSummary\` with-summary | \`boolean\` Shows a summary of the items on the current page, e.g. "1–10 of 237". Type Default false | |]()
+| Name                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                 | Reflects                              |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| \`appearance\` appearance           | \`'outlined' \\                                                                                                                                                                                                                                                                                                                                                                                                             | 'filled' \\                           | 'plain'\` The pagination's visual appearance. Type Default 'outlined' |     |
+| \`boundaryCount\` boundary-count    | \`number\` The of pages to always show at the start and end. Type number Default 1                                                                                                                                                                                                                                                                                                                                          |                                       |
+| \`disabled\` disabled               | \`boolean\` Disables the pagination. Type Default false                                                                                                                                                                                                                                                                                                                                                                     |                                       |
+| \`format\` format                   | \`standard\` The pagination's layout. The default format shows the full page list with ellipses; compact collapses it into a short "1 of 5" label flanked by the previous and next buttons, useful in tight spaces like toolbars and cards. Type 'standard' \\                                                                                                                                                              | 'compact' Default 'standard'          |                                                                       |
+| \`hideSinglePage\` hide-single-page | \`boolean\` Renders nothing when there's only one page. Type Default false                                                                                                                                                                                                                                                                                                                                                  |                                       |
+| \`hrefTemplate\` href-template      | \`[\` A URL template used to render page items as links instead of buttons. When set, items render as elements for SSR, SEO, and no-JS support. Provide a string with {page} as a placeholder for the page number, e.g. /products?page={page}. In JavaScript, you can also assign a function that receives the page number and returns the URL, e.g. el.hrefTemplate = page => \\/products?page=${page}\`\`. Type string \\ | ((page: number) => string) Default '' |                                                                       |
+| \`label\` label                     | \`string\` A label that describes the pagination to assistive devices. This won't be shown on the screen, but it will be announced by screen readers. Especially useful when more than one pagination control exists on the same page. Type Default ''                                                                                                                                                                      |                                       |
+| \`page\` page                       | \`number\` The current page, starting at 1. Type Default 1                                                                                                                                                                                                                                                                                                                                                                  |                                       |
+| \`pageSize\` page-size              | \`number\` The of items shown per page. Type number Default 10                                                                                                                                                                                                                                                                                                                                                              |                                       |
+| \`siblingCount\` sibling-count      | \`number\` The of pages to show on each side of the current page. Type number Default 2                                                                                                                                                                                                                                                                                                                                     |                                       |
+| \`total\` total                     | \`number\` The total of items to paginate. Type number Default 0                                                                                                                                                                                                                                                                                                                                                            |                                       |
+| \`totalPages\`                      | \`total\` The number of pages, derived from total and pageSize.                                                                                                                                                                                                                                                                                                                                                             |                                       |
+| \`withEdges\` with-edges            | \`boolean\` Shows buttons that jump to the first and last pages. Type Default false                                                                                                                                                                                                                                                                                                                                         |                                       |
+| \`withoutNav\` without-nav          | \`boolean\` Hides the previous and next buttons. Type Default false                                                                                                                                                                                                                                                                                                                                                         |                                       |
+| \`withSummary\` with-summary        | \`boolean\` Shows a summary of the items on the current page, e.g. "1–10 of 237". Type Default false                                                                                                                                                                                                                                                                                                                        |                                       | ]()                                                                   |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name                      | Description                                                                                                                                        |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | \`wa-before-page-change\` | \`event.preventDefault()\` Emitted when the page is about to change but before it does. Canceling this event with prevents the page from changing. |
-| \`wa-page-change\` | Emitted after the page changes. |
+| \`wa-page-change\`        | Emitted after the page changes.                                                                                                                    |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name         | Description                              | CSS selector         |
+| ------------ | ---------------------------------------- | -------------------- |
 | \`disabled\` | Applied when the pagination is disabled. | \`:state(disabled)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`button\` | Every button or link, including page numbers and navigation controls. | \`::part(button)\` |
-| \`ellipsis\` | An ellipsis for collapsed pages. Acts as a button that jumps several pages toward that side. | \`::part(ellipsis)\` |
-| \`first-button\` | The first button. | \`::part(first-button)\` |
-| \`label\` | \`compact\` The "1 of 5" label shown between the navigation buttons in the layout. | \`::part(label)\` |
-| \`last-button\` | The last button. | \`::part(last-button)\` |
-| \`next-button\` | The next button. | \`::part(next-button)\` |
-| \`page\` | A page number button or link. | \`::part(page)\` |
-| \`page-current\` | The current page number button or link. | \`::part(page-current)\` |
-| \`pages\` | The list that wraps the page number items. | \`::part(pages)\` |
-| \`pagination\` | \`
+| Name             | Description                                                                                  | CSS selector             |
+| ---------------- | -------------------------------------------------------------------------------------------- | ------------------------ |
+| \`button\`       | Every button or link, including page numbers and navigation controls.                        | \`::part(button)\`       |
+| \`ellipsis\`     | An ellipsis for collapsed pages. Acts as a button that jumps several pages toward that side. | \`::part(ellipsis)\`     |
+| \`first-button\` | The first button.                                                                            | \`::part(first-button)\` |
+| \`label\`        | \`compact\` The "1 of 5" label shown between the navigation buttons in the layout.           | \`::part(label)\`        |
+| \`last-button\`  | The last button.                                                                             | \`::part(last-button)\`  |
+| \`next-button\`  | The next button.                                                                             | \`::part(next-button)\`  |
+| \`page\`         | A page number button or link.                                                                | \`::part(page)\`         |
+| \`page-current\` | The current page number button or link.                                                      | \`::part(page-current)\` |
+| \`pages\`        | The list that wraps the page number items.                                                   | \`::part(pages)\`        |
+| \`pagination\`   | \`                                                                                           |
 
 \` The component's outer wrapper, a element. | \`::part(pagination)\` |
 | \`previous-button\` | The previous button. | \`::part(previous-button)\` |
@@ -130,7 +135,7 @@ import WaPagination from '@awesome.me/webawesome/dist/react/pagination/index.js'
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 
@@ -140,9 +145,24 @@ Set the `appearance` attribute to change the pagination's visual style. Valid ap
 
 ```html
 <div class="wa-stack">
-  <wa-pagination total="237" page-size="10" page="3" appearance="outlined"></wa-pagination>
-  <wa-pagination total="237" page-size="10" page="3" appearance="filled"></wa-pagination>
-  <wa-pagination total="237" page-size="10" page="3" appearance="plain"></wa-pagination>
+  <wa-pagination
+    total="237"
+    page-size="10"
+    page="3"
+    appearance="outlined"
+  ></wa-pagination>
+  <wa-pagination
+    total="237"
+    page-size="10"
+    page="3"
+    appearance="filled"
+  ></wa-pagination>
+  <wa-pagination
+    total="237"
+    page-size="10"
+    page="3"
+    appearance="plain"
+  ></wa-pagination>
 </div>
 ```
 
@@ -152,9 +172,19 @@ Pagination has no `size` attribute; set `font-size` on the control or any ancest
 
 ```html
 <div class="wa-stack">
-  <wa-pagination total="237" page-size="10" page="3" style="font-size: var(--wa-font-size-s)"></wa-pagination>
+  <wa-pagination
+    total="237"
+    page-size="10"
+    page="3"
+    style="font-size: var(--wa-font-size-s)"
+  ></wa-pagination>
   <wa-pagination total="237" page-size="10" page="3"></wa-pagination>
-  <wa-pagination total="237" page-size="10" page="3" style="font-size: var(--wa-font-size-l)"></wa-pagination>
+  <wa-pagination
+    total="237"
+    page-size="10"
+    page="3"
+    style="font-size: var(--wa-font-size-l)"
+  ></wa-pagination>
 </div>
 ```
 
@@ -164,8 +194,20 @@ Use the `sibling-count` attribute to set how many pages show on each side of the
 
 ```html
 <div class="wa-stack">
-  <wa-pagination total="1000" page-size="10" page="50" sibling-count="1" boundary-count="1"></wa-pagination>
-  <wa-pagination total="1000" page-size="10" page="50" sibling-count="3" boundary-count="2"></wa-pagination>
+  <wa-pagination
+    total="1000"
+    page-size="10"
+    page="50"
+    sibling-count="1"
+    boundary-count="1"
+  ></wa-pagination>
+  <wa-pagination
+    total="1000"
+    page-size="10"
+    page="50"
+    sibling-count="3"
+    boundary-count="2"
+  ></wa-pagination>
 </div>
 ```
 
@@ -198,13 +240,24 @@ Add the `with-summary` attribute to show a summary of the items on the current p
 Set the `format` attribute to `compact` to replace the page numbers with a short "1 of 5" label between the previous and next buttons.
 
 ```html
-<wa-pagination total="237" page-size="10" page="1" format="compact"></wa-pagination>
+<wa-pagination
+  total="237"
+  page-size="10"
+  page="1"
+  format="compact"
+></wa-pagination>
 ```
 
 The compact format can be combined with other features, such as `with-summary`:
 
 ```html
-<wa-pagination total="237" page-size="10" page="1" format="compact" with-summary></wa-pagination>
+<wa-pagination
+  total="237"
+  page-size="10"
+  page="1"
+  format="compact"
+  with-summary
+></wa-pagination>
 ```
 
 ### Custom Icons
@@ -269,11 +322,11 @@ Pair a [select](https://webawesome.com/docs/components/select) with the paginati
 </style>
 
 <script>
-  const container = document.querySelector('.pagination-page-size');
-  const pagination = container.querySelector('wa-pagination');
-  const select = container.querySelector('wa-select');
+  const container = document.querySelector(".pagination-page-size");
+  const pagination = container.querySelector("wa-pagination");
+  const select = container.querySelector("wa-select");
 
-  select.addEventListener('change', () => {
+  select.addEventListener("change", () => {
     pagination.pageSize = Number(select.value);
     pagination.page = 1;
   });
@@ -286,19 +339,26 @@ When the user changes the page, the `wa-page-change` event is emitted with `{ pa
 
 ```html
 <div class="pagination-change-demo">
-  <wa-pagination class="pagination-change" total="237" page-size="10" page="1"></wa-pagination>
+  <wa-pagination
+    class="pagination-change"
+    total="237"
+    page-size="10"
+    page="1"
+  ></wa-pagination>
 
   <wa-divider></wa-divider>
 
-  <small class="pagination-change-output" style="display: block">Showing page 1</small>
+  <small class="pagination-change-output" style="display: block"
+    >Showing page 1</small
+  >
 </div>
 
 <script>
-  const container = document.querySelector('.pagination-change-demo');
-  const pagination = container.querySelector('.pagination-change');
-  const output = container.querySelector('.pagination-change-output');
+  const container = document.querySelector(".pagination-change-demo");
+  const pagination = container.querySelector(".pagination-change");
+  const output = container.querySelector(".pagination-change-output");
 
-  pagination.addEventListener('wa-page-change', event => {
+  pagination.addEventListener("wa-page-change", (event) => {
     pagination.page = event.detail.page;
     output.textContent = `Showing page ${event.detail.page}`;
   });
@@ -311,7 +371,12 @@ Set the `page` property to any valid page to change the current page without use
 
 ```html
 <div class="pagination-set-demo">
-  <wa-pagination class="pagination-set" total="237" page-size="10" page="1"></wa-pagination>
+  <wa-pagination
+    class="pagination-set"
+    total="237"
+    page-size="10"
+    page="1"
+  ></wa-pagination>
 
   <wa-divider></wa-divider>
 
@@ -323,11 +388,11 @@ Set the `page` property to any valid page to change the current page without use
 </div>
 
 <script>
-  const container = document.querySelector('.pagination-set-demo');
-  const pagination = container.querySelector('.pagination-set');
+  const container = document.querySelector(".pagination-set-demo");
+  const pagination = container.querySelector(".pagination-set");
 
-  container.querySelectorAll('[data-page]').forEach(button => {
-    button.addEventListener('click', () => {
+  container.querySelectorAll("[data-page]").forEach((button) => {
+    button.addEventListener("click", () => {
       pagination.page = Number(button.dataset.page);
     });
   });
@@ -339,18 +404,23 @@ Set the `page` property to any valid page to change the current page without use
 Call `event.preventDefault()` on the `wa-before-page-change` event to cancel a page change, such as to guard against unsaved changes.
 
 ```html
-<wa-pagination class="pagination-guard" total="237" page-size="10" page="1"></wa-pagination>
+<wa-pagination
+  class="pagination-guard"
+  total="237"
+  page-size="10"
+  page="1"
+></wa-pagination>
 
 <script>
-  const pagination = document.querySelector('.pagination-guard');
+  const pagination = document.querySelector(".pagination-guard");
 
-  pagination.addEventListener('wa-before-page-change', event => {
+  pagination.addEventListener("wa-before-page-change", (event) => {
     if (!window.confirm(`Leave for page ${event.detail.page}?`)) {
       event.preventDefault();
     }
   });
 
-  pagination.addEventListener('wa-page-change', event => {
+  pagination.addEventListener("wa-page-change", (event) => {
     pagination.page = event.detail.page;
   });
 </script>
@@ -361,7 +431,12 @@ Call `event.preventDefault()` on the `wa-before-page-change` event to cancel a p
 Set the `href-template` attribute to render page items as links instead of buttons, using `{page}` as a placeholder for the page number. Every control links through the template, which works well for server-rendered pages.
 
 ```html
-<wa-pagination total="237" page-size="10" page="3" href-template="?page={page}"></wa-pagination>
+<wa-pagination
+  total="237"
+  page-size="10"
+  page="3"
+  href-template="?page={page}"
+></wa-pagination>
 ```
 
 In JavaScript, you can also set the `hrefTemplate` property to a function that receives the page number and returns the URL. This is handy when the URL doesn't follow a simple substitution. When server-rendering, set the `href-template` attribute to the closest equivalent as well, so the server and the browser render the same markup.
@@ -376,9 +451,9 @@ In JavaScript, you can also set the `hrefTemplate` property to a function that r
 ></wa-pagination>
 
 <script>
-  const pagination = document.querySelector('.pagination-href-fn');
+  const pagination = document.querySelector(".pagination-href-fn");
 
-  pagination.hrefTemplate = page => `?page=${page}#results`;
+  pagination.hrefTemplate = (page) => `?page=${page}#results`;
 </script>
 ```
 
@@ -409,7 +484,11 @@ This example turns the control into a row of pill-shaped buttons, gives the navi
 
 <style>
   .custom-pagination {
-    --gradient: linear-gradient(135deg, var(--wa-color-brand-fill-loud), var(--wa-color-indigo-50));
+    --gradient: linear-gradient(
+      135deg,
+      var(--wa-color-brand-fill-loud),
+      var(--wa-color-indigo-50)
+    );
   }
 
   /* The host uses `display: contents`, so style the `pagination` part to create the container chrome. */

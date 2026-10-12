@@ -15,7 +15,11 @@ Type digits to fill the focused segment (focus auto-advances when a segment can 
 ```
 
 ```html
-<wa-time-input label="Meeting time" hint="Choose a time that works for you." value="14:30">
+<wa-time-input
+  label="Meeting time"
+  hint="Choose a time that works for you."
+  value="14:30"
+>
   <wa-icon slot="start" name="clock"></wa-icon>
 </wa-time-input>
 ```
@@ -24,20 +28,27 @@ Type digits to fill the focused segment (focus auto-advances when a segment can 
 
 The hidden form value is canonical 24-hour time, regardless of the user's locale or `hour-format`:
 
-| Input | Form value | Notes |
-| --- | --- | --- |
-| Whole-minute steps (default) | \`HH:mm\` | \`step="60"\` or any multiple; e.g. 14:30 |
-| Sub-minute steps | \`HH:mm:ss\` | \`step\` When < 60 and the seconds segment shows; e.g. 14:30:15 |
-| 12-hour UI | 24-hour | \`2:30 PM\` submits as 14:30 |
-| Partial input | (empty) | Until every required segment is filled |
+| Input                        | Form value   | Notes                                                           |
+| ---------------------------- | ------------ | --------------------------------------------------------------- |
+| Whole-minute steps (default) | \`HH:mm\`    | \`step="60"\` or any multiple; e.g. 14:30                       |
+| Sub-minute steps             | \`HH:mm:ss\` | \`step\` When < 60 and the seconds segment shows; e.g. 14:30:15 |
+| 12-hour UI                   | 24-hour      | \`2:30 PM\` submits as 14:30                                    |
+| Partial input                | (empty)      | Until every required segment is filled                          |
 
 The example below renders a working form. Submit it (or change the time) and watch the console. The time input submits its value just like a native `<input type="time">`, regardless of how the user typed or what locale they used.
 
 ```html
 <form id="tp-form-demo">
-  <wa-time-input name="meeting_time" label="Meeting time" required value="14:30"></wa-time-input>
+  <wa-time-input
+    name="meeting_time"
+    label="Meeting time"
+    required
+    value="14:30"
+  ></wa-time-input>
   <br />
-  <wa-button type="submit" appearance="filled" variant="neutral">Submit</wa-button>
+  <wa-button type="submit" appearance="filled" variant="neutral"
+    >Submit</wa-button
+  >
 </form>
 <pre id="tp-form-demo-output"></pre>
 <style>
@@ -56,16 +67,16 @@ The example below renders a working form. Submit it (or change the time) and wat
 </style>
 
 <script>
-  const form = document.getElementById('tp-form-demo');
-  const output = document.getElementById('tp-form-demo-output');
+  const form = document.getElementById("tp-form-demo");
+  const output = document.getElementById("tp-form-demo-output");
 
-  form.addEventListener('submit', event => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(form);
     const entries = Object.fromEntries(data.entries());
     const formatted = JSON.stringify(entries, null, 2);
-    console.log('Submitted FormData:', entries);
-    output.textContent = 'Submitted FormData:\n' + formatted;
+    console.log("Submitted FormData:", entries);
+    output.textContent = "Submitted FormData:\n" + formatted;
   });
 </script>
 ```
@@ -81,7 +92,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/time-input/time-input.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/time-input/time-input.js";
 ```
 
 \*\*npm\*\*
@@ -89,7 +100,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/time-input/time
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/time-input/time-input.js';
+import "@awesome.me/webawesome/dist/components/time-input/time-input.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -97,7 +108,7 @@ import '@awesome.me/webawesome/dist/components/time-input/time-input.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/time-input/time-input.js';
+import "./webawesome/dist/components/time-input/time-input.js";
 ```
 
 \*\*React\*\*
@@ -105,32 +116,32 @@ import './webawesome/dist/components/time-input/time-input.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaTimeInput from '@awesome.me/webawesome/dist/react/time-input/index.js';
+import WaTimeInput from "@awesome.me/webawesome/dist/react/time-input/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`clear-icon\` | An icon to use in lieu of the default clear icon. |
-| \`end\` | An element placed at the end of the input. |
-| \`expand-icon\` | The icon to show on the popup toggle button. Defaults to a clock icon. |
-| \`footer\` | Content shown below the column picker in the popup. Replaces the default Now button when present. |
-| \`hint\` | \`hint\` Text that describes how to use the time picker. Alternatively, use the attribute. |
-| \`label\` | \`label\` The time picker's . Alternatively, use the label attribute. |
-| \`start\` | An element placed at the start of the input. |
+| Name            | Description                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------------------- |
+| \`clear-icon\`  | An icon to use in lieu of the default clear icon.                                                 |
+| \`end\`         | An element placed at the end of the input.                                                        |
+| \`expand-icon\` | The icon to show on the popup toggle button. Defaults to a clock icon.                            |
+| \`footer\`      | Content shown below the column picker in the popup. Replaces the default Now button when present. |
+| \`hint\`        | \`hint\` Text that describes how to use the time picker. Alternatively, use the attribute.        |
+| \`label\`       | \`label\` The time picker's . Alternatively, use the label attribute.                             |
+| \`start\`       | An element placed at the start of the input.                                                      |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'filled' \\| 'outlined' \\| 'filled-outlined'\` The time picker's visual appearance. Type Default 'outlined' | |
-| \`assumeInteractionOn\` | \`input\` Every segment edit dispatches , so a single observed input event marks the field as interacted with. Type string\[\] Default \['input'\] | |
-| \`autocomplete\` autocomplete | \`on\` Forwarded to the hidden form input to enable browser autofill (/off/custom tokens). Type string Default '' | |
-| \`defaultValue\` value | \`string\` The default value of the form control. Used for form reset. Type | |
-| \`disabled\` disabled | \`boolean\` Disables the time picker. Type Default false | |
-| \`distance\` distance | \`number\` Distance in pixels between the popup and the input. Type Default 0 | |
-| \`form\` | \`
+| Name                          | Description                                                                                                                                        | Reflects      |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| \`appearance\` appearance     | \`'filled' \\                                                                                                                                      | 'outlined' \\ | 'filled-outlined'\` The time picker's visual appearance. Type Default 'outlined' |     |
+| \`assumeInteractionOn\`       | \`input\` Every segment edit dispatches , so a single observed input event marks the field as interacted with. Type string\[\] Default \['input'\] |               |
+| \`autocomplete\` autocomplete | \`on\` Forwarded to the hidden form input to enable browser autofill (/off/custom tokens). Type string Default ''                                  |               |
+| \`defaultValue\` value        | \`string\` The default value of the form control. Used for form reset. Type                                                                        |               |
+| \`disabled\` disabled         | \`boolean\` Disables the time picker. Type Default false                                                                                           |               |
+| \`distance\` distance         | \`number\` Distance in pixels between the popup and the input. Type Default 0                                                                      |               |
+| \`form\`                      | \`                                                                                                                                                 |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`hint\` hint | \`hint\` The time picker's . If you need to display HTML, use the hint slot instead. Type string Default '' | |
@@ -158,81 +169,81 @@ import WaTimeInput from '@awesome.me/webawesome/dist/react/time-input/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the time picker. | |
-| \`focus()\` | Sets focus on the first empty (else first) segment. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null\` |
-| \`hide()\` | Closes the popup. | |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`show()\` | Opens the popup. | |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| \`blur()\`                     | Removes focus from the time picker.                                                                                                                                                                                                                                                                                                               |                           |
+| \`focus()\`                    | Sets focus on the first empty (else first) segment.                                                                                                                                                                                                                                                                                               | \`options: FocusOptions\` |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\        | File \\ | FormData \\ | null\` |
+| \`hide()\`                     | Closes the popup.                                                                                                                                                                                                                                                                                                                                 |                           |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                           |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`       |
+| \`show()\`                     | Opens the popup.                                                                                                                                                                                                                                                                                                                                  |                           |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when the committed value changes. |
-| \`focus\` | Emitted when the control receives focus. |
-| \`input\` | Emitted as the user types into a segment or interacts with the popup columns. |
-| \`wa-after-hide\` | Emitted after the popup closes and animations complete. |
-| \`wa-after-show\` | Emitted after the popup opens and animations complete. |
-| \`wa-clear\` | Emitted when the clear button is activated. |
-| \`wa-hide\` | Emitted when the popup is about to close. Cancelable. |
-| \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-| \`wa-show\` | Emitted when the popup is about to open. Cancelable. |
+| Name              | Description                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`          | Emitted when the control loses focus.                                                             |
+| \`change\`        | Emitted when the committed value changes.                                                         |
+| \`focus\`         | Emitted when the control receives focus.                                                          |
+| \`input\`         | Emitted as the user types into a segment or interacts with the popup columns.                     |
+| \`wa-after-hide\` | Emitted after the popup closes and animations complete.                                           |
+| \`wa-after-show\` | Emitted after the popup opens and animations complete.                                            |
+| \`wa-clear\`      | Emitted when the clear button is activated.                                                       |
+| \`wa-hide\`       | Emitted when the popup is about to close. Cancelable.                                             |
+| \`wa-invalid\`    | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
+| \`wa-show\`       | Emitted when the popup is about to open. Cancelable.                                              |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--column-item-height\` | \`2.25em\` Height of each option inside a popup column. Default |
-| \`--column-width\` | \`3em\` Width of each popup column. Default |
-| \`--hide-duration\` | \`var(--wa-transition-fast)\` The duration of the hide animation. Default |
-| \`--show-duration\` | \`var(--wa-transition-fast)\` The duration of the show animation. Default |
+| Name                     | Description                                                               |
+| ------------------------ | ------------------------------------------------------------------------- |
+| \`--column-item-height\` | \`2.25em\` Height of each option inside a popup column. Default           |
+| \`--column-width\`       | \`3em\` Width of each popup column. Default                               |
+| \`--hide-duration\`      | \`var(--wa-transition-fast)\` The duration of the hide animation. Default |
+| \`--show-duration\`      | \`var(--wa-transition-fast)\` The duration of the show animation. Default |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`blank\` | The time picker has no committed value. | \`:state(blank)\` |
-| \`disabled\` | The time picker is disabled. | \`:state(disabled)\` |
-| \`open\` | The popup is open. | \`:state(open)\` |
+| Name         | Description                             | CSS selector         |
+| ------------ | --------------------------------------- | -------------------- |
+| \`blank\`    | The time picker has no committed value. | \`:state(blank)\`    |
+| \`disabled\` | The time picker is disabled.            | \`:state(disabled)\` |
+| \`open\`     | The popup is open.                      | \`:state(open)\`     |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`clear-button\` | The clear button. | \`::part(clear-button)\` |
-| \`column\` | Each column listbox. | \`::part(column)\` |
-| \`column-item\` | Each option inside a column. | \`::part(column-item)\` |
-| \`column-item-selected\` | The currently selected option inside a column. | \`::part(column-item-selected)\` |
-| \`columns\` | The row of column listboxes inside the popup. | \`::part(columns)\` |
-| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
-| \`expand-button\` | The popup toggle button. | \`::part(expand-button)\` |
-| \`expand-icon\` | The expand icon wrapper. | \`::part(expand-icon)\` |
-| \`form-control\` | The form control that wraps the label, input, and hint. | \`::part(form-control)\` |
-| \`form-control-input\` | The input's wrapper. | \`::part(form-control-input)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`input\` | The segmented input group. | \`::part(input)\` |
-| \`input-wrapper\` | The container around the start slot, segmented input, clear button, and expand button. | \`::part(input-wrapper)\` |
-| \`now-button\` | \`with-now\` The default "Now" button rendered in the popup footer when is set. | \`::part(now-button)\` |
-| \`popup\` | The popup container. | \`::part(popup)\` |
-| \`segment\` | \`\[part~="segment"\]\` Each editable segment (hour/minute/second/AM-PM spinbutton). Use to style all. | \`::part(segment)\` |
-| \`segment-literal\` | Inert literal text between segments (separators). | \`::part(segment-literal)\` |
-| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
-| \`time-input\` | The component's outer wrapper. | \`::part(time-input)\` |
-| \`base\` | \`time-input\` Deprecated. Use the part instead. | \`::part(base)\` |
-| \`label\` | \`form-control-label\` Deprecated. Use the part instead. | \`::part(label)\` |
+| Name                     | Description                                                                                            | CSS selector                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| \`clear-button\`         | The clear button.                                                                                      | \`::part(clear-button)\`         |
+| \`column\`               | Each column listbox.                                                                                   | \`::part(column)\`               |
+| \`column-item\`          | Each option inside a column.                                                                           | \`::part(column-item)\`          |
+| \`column-item-selected\` | The currently selected option inside a column.                                                         | \`::part(column-item-selected)\` |
+| \`columns\`              | The row of column listboxes inside the popup.                                                          | \`::part(columns)\`              |
+| \`end\`                  | \`end\` The container that wraps the slot.                                                             | \`::part(end)\`                  |
+| \`expand-button\`        | The popup toggle button.                                                                               | \`::part(expand-button)\`        |
+| \`expand-icon\`          | The expand icon wrapper.                                                                               | \`::part(expand-icon)\`          |
+| \`form-control\`         | The form control that wraps the label, input, and hint.                                                | \`::part(form-control)\`         |
+| \`form-control-input\`   | The input's wrapper.                                                                                   | \`::part(form-control-input)\`   |
+| \`form-control-label\`   | The label.                                                                                             | \`::part(form-control-label)\`   |
+| \`hint\`                 | The hint's wrapper.                                                                                    | \`::part(hint)\`                 |
+| \`input\`                | The segmented input group.                                                                             | \`::part(input)\`                |
+| \`input-wrapper\`        | The container around the start slot, segmented input, clear button, and expand button.                 | \`::part(input-wrapper)\`        |
+| \`now-button\`           | \`with-now\` The default "Now" button rendered in the popup footer when is set.                        | \`::part(now-button)\`           |
+| \`popup\`                | The popup container.                                                                                   | \`::part(popup)\`                |
+| \`segment\`              | \`\[part~="segment"\]\` Each editable segment (hour/minute/second/AM-PM spinbutton). Use to style all. | \`::part(segment)\`              |
+| \`segment-literal\`      | Inert literal text between segments (separators).                                                      | \`::part(segment-literal)\`      |
+| \`start\`                | \`start\` The container that wraps the slot.                                                           | \`::part(start)\`                |
+| \`time-input\`           | The component's outer wrapper.                                                                         | \`::part(time-input)\`           |
+| \`base\`                 | \`time-input\` Deprecated. Use the part instead.                                                       | \`::part(base)\`                 |
+| \`label\`                | \`form-control-label\` Deprecated. Use the part instead.                                               | \`::part(label)\`                |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-popup>`](https://webawesome.com/docs/components/popup)
 
 ## Examples
 
@@ -257,7 +268,10 @@ Use the `label` attribute to give the time input an accessible label. For labels
 Add descriptive hint to a time input with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
-<wa-time-input label="Wake up" hint="Set the time your alarm should go off."></wa-time-input>
+<wa-time-input
+  label="Wake up"
+  hint="Set the time your alarm should go off."
+></wa-time-input>
 ```
 
 ### Start & End Decorations
@@ -319,8 +333,16 @@ The segment order, separators, and AM/PM strings all derive from the page's loca
 
 ```html
 <div class="wa-stack">
-  <wa-time-input lang="en-US" label="English (US)" value="14:30"></wa-time-input>
-  <wa-time-input lang="en-GB" label="English (UK)" value="14:30"></wa-time-input>
+  <wa-time-input
+    lang="en-US"
+    label="English (US)"
+    value="14:30"
+  ></wa-time-input>
+  <wa-time-input
+    lang="en-GB"
+    label="English (UK)"
+    value="14:30"
+  ></wa-time-input>
   <wa-time-input lang="de-DE" label="German" value="14:30"></wa-time-input>
 </div>
 ```
@@ -355,7 +377,10 @@ Use the `appearance` attribute to switch between the default outlined input, a f
 <div class="wa-stack">
   <wa-time-input appearance="outlined" label="Outlined"></wa-time-input>
   <wa-time-input appearance="filled" label="Filled"></wa-time-input>
-  <wa-time-input appearance="filled-outlined" label="Filled outlined"></wa-time-input>
+  <wa-time-input
+    appearance="filled-outlined"
+    label="Filled outlined"
+  ></wa-time-input>
 </div>
 ```
 

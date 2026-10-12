@@ -24,7 +24,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/copy-button/copy-button.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/copy-button/copy-button.js";
 ```
 
 \*\*npm\*\*
@@ -32,7 +32,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/copy-button/cop
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/copy-button/copy-button.js';
+import "@awesome.me/webawesome/dist/components/copy-button/copy-button.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -40,7 +40,7 @@ import '@awesome.me/webawesome/dist/components/copy-button/copy-button.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/copy-button/copy-button.js';
+import "./webawesome/dist/components/copy-button/copy-button.js";
 ```
 
 \*\*React\*\*
@@ -48,62 +48,62 @@ import './webawesome/dist/components/copy-button/copy-button.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaCopyButton from '@awesome.me/webawesome/dist/react/copy-button/index.js';
+import WaCopyButton from "@awesome.me/webawesome/dist/react/copy-button/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The trigger element. By default, a copy icon button is rendered so this is optional. If desired, you can slot in a custom element such as or . |
-| \`copy-icon\` | \`\` The icon to show in the default copy state. Works best with . |
-| \`error-icon\` | \`\` The icon to show when the content is copied. Works best with . |
+| Name           | Description                                                                                                                                         |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default)      | \`\` The trigger element. By default, a copy icon button is rendered so this is optional. If desired, you can slot in a custom element such as or . |
+| \`copy-icon\`  | \`\` The icon to show in the default copy state. Works best with .                                                                                  |
+| \`error-icon\` | \`\` The icon to show when the content is copied. Works best with .                                                                                 |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`copyLabel\` copy-label | \`string\` A custom label to use as the accessible name and tooltip text in the default copy state. Type Default '' | |
-| \`disabled\` disabled | \`boolean\` Disables the copy button. Type Default false | |
-| \`errorLabel\` error-label | \`string\` A custom label to show in the tooltip when a copy error occurs. Type Default '' | |
-| \`feedbackDuration\` feedback-duration | \`number\` The length of time to show feedback before restoring the default trigger. Type Default 1000 | |
-| \`from\` from | \`value\` An id that references an element in the same document from which data will be copied. If both this and are present, this value will take precedence. By default, the target element's textContent will be copied. To copy an attribute, append the attribute name wrapped in square brackets, e.g. from="el\[value\]". To copy a property, append a dot and the property name, e.g. from="el.value". Type string Default '' | |
-| \`successLabel\` success-label | \`string\` A custom label to show in the tooltip after copying. Type Default '' | |
-| \`tooltip\` tooltip | \`full\` Controls the built-in tooltip. (default) shows the tooltip on hover and focus and during copy feedback. copy keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy. none disables the tooltip entirely. Applies to both the default and custom triggers. Type 'full' \\| 'copy' \\| 'none' Default 'full' | |
-| \`tooltipPlacement\` tooltip-placement | \`'top' \\| 'right' \\| 'bottom' \\| 'left'\` The preferred placement of the tooltip. Type Default 'top' | |
-| \`value\` value | \`string\` The text value to copy. Type Default '' | |
+| Name                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Reflects   |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| \`copyLabel\` copy-label               | \`string\` A custom label to use as the accessible name and tooltip text in the default copy state. Type Default ''                                                                                                                                                                                                                                                                                                                   |            |
+| \`disabled\` disabled                  | \`boolean\` Disables the copy button. Type Default false                                                                                                                                                                                                                                                                                                                                                                              |            |
+| \`errorLabel\` error-label             | \`string\` A custom label to show in the tooltip when a copy error occurs. Type Default ''                                                                                                                                                                                                                                                                                                                                            |            |
+| \`feedbackDuration\` feedback-duration | \`number\` The length of time to show feedback before restoring the default trigger. Type Default 1000                                                                                                                                                                                                                                                                                                                                |            |
+| \`from\` from                          | \`value\` An id that references an element in the same document from which data will be copied. If both this and are present, this value will take precedence. By default, the target element's textContent will be copied. To copy an attribute, append the attribute name wrapped in square brackets, e.g. from="el\[value\]". To copy a property, append a dot and the property name, e.g. from="el.value". Type string Default '' |            |
+| \`successLabel\` success-label         | \`string\` A custom label to show in the tooltip after copying. Type Default ''                                                                                                                                                                                                                                                                                                                                                       |            |
+| \`tooltip\` tooltip                    | \`full\` Controls the built-in tooltip. (default) shows the tooltip on hover and focus and during copy feedback. copy keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy. none disables the tooltip entirely. Applies to both the default and custom triggers. Type 'full' \\                                                                                                   | 'copy' \\  | 'none' Default 'full' |                                                                     |
+| \`tooltipPlacement\` tooltip-placement | \`'top' \\                                                                                                                                                                                                                                                                                                                                                                                                                            | 'right' \\ | 'bottom' \\           | 'left'\` The preferred placement of the tooltip. Type Default 'top' |     |
+| \`value\` value                        | \`string\` The text value to copy. Type Default ''                                                                                                                                                                                                                                                                                                                                                                                    |            |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`wa-copy\` | Emitted when the data has been copied. |
+| Name         | Description                                |
+| ------------ | ------------------------------------------ |
+| \`wa-copy\`  | Emitted when the data has been copied.     |
 | \`wa-error\` | Emitted when the data could not be copied. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`error\` | Applied when the copy operation fails. | \`:state(error)\` |
+| Name        | Description                               | CSS selector        |
+| ----------- | ----------------------------------------- | ------------------- |
+| \`error\`   | Applied when the copy operation fails.    | \`:state(error)\`   |
 | \`success\` | Applied when the copy operation succeeds. | \`:state(success)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`button\` | \`\` The internal element. | \`::part(button)\` |
-| \`copy-icon\` | The container that holds the copy icon. | \`::part(copy-icon)\` |
-| \`error-icon\` | The container that holds the error icon. | \`::part(error-icon)\` |
-| \`feedback\` | \`\` The internal element. | \`::part(feedback)\` |
+| Name             | Description                                | CSS selector             |
+| ---------------- | ------------------------------------------ | ------------------------ |
+| \`button\`       | \`\` The internal element.                 | \`::part(button)\`       |
+| \`copy-icon\`    | The container that holds the copy icon.    | \`::part(copy-icon)\`    |
+| \`error-icon\`   | The container that holds the error icon.   | \`::part(error-icon)\`   |
+| \`feedback\`     | \`\` The internal element.                 | \`::part(feedback)\`     |
 | \`success-icon\` | The container that holds the success icon. | \`::part(success-icon)\` |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
--   [`<wa-tooltip>`](https://webawesome.com/docs/components/tooltip)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+- [`<wa-tooltip>`](https://webawesome.com/docs/components/tooltip)
 
 ## Examples
 
@@ -113,11 +113,11 @@ Set the `value` attribute to copy a literal string, or point the `from` attribut
 
 By default `from` copies the target's [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent). Add a modifier to copy an attribute or property instead:
 
-| Syntax | Copies | Example |
-| --- | --- | --- |
-| \`from="id"\` | \`textContent\` The element's | \`from="my-phone"\` |
-| \`from="id\[attr\]"\` | The named attribute | \`from="my-link\[href\]"\` |
-| \`from="id.prop"\` | The named property | \`from="my-input.value"\` |
+| Syntax                | Copies                        | Example                    |
+| --------------------- | ----------------------------- | -------------------------- |
+| \`from="id"\`         | \`textContent\` The element's | \`from="my-phone"\`        |
+| \`from="id\[attr\]"\` | The named attribute           | \`from="my-link\[href\]"\` |
+| \`from="id.prop"\`    | The named property            | \`from="my-input.value"\`  |
 
 ```html
 <div class="wa-stack">
@@ -129,7 +129,12 @@ By default `from` copies the target's [`textContent`](https://developer.mozilla.
 
   <!-- Copies the input's "value" property -->
   <div class="wa-cluster wa-align-items-center wa-gap-2xs">
-    <wa-input id="my-input" type="text" value="User input" style="max-width: 300px;"></wa-input>
+    <wa-input
+      id="my-input"
+      type="text"
+      value="User input"
+      style="max-width: 300px;"
+    ></wa-input>
     <wa-copy-button from="my-input.value"></wa-copy-button>
   </div>
 
@@ -206,24 +211,36 @@ A copy fails when `value` is empty, when `from` points to an id that doesn't exi
 After a copy, the tooltip briefly shows the success or error label. Set the `feedback-duration` attribute (in milliseconds) to control how long it stays visible.
 
 ```html
-<wa-copy-button value="Web Awesome rocks!" feedback-duration="250"></wa-copy-button>
+<wa-copy-button
+  value="Web Awesome rocks!"
+  feedback-duration="250"
+></wa-copy-button>
 ```
 
 ### Tooltip Mode
 
 The `tooltip` attribute controls when the built-in tooltip appears, on both the default and custom triggers.
 
-| Value | Behavior |
-| --- | --- |
-| \`full\` default | Shows on hover and focus, and reused for copy feedback |
-| \`copy\` | Stays silent on hover and focus; appears only to confirm a copy |
-| \`none\` | Never shown |
+| Value            | Behavior                                                        |
+| ---------------- | --------------------------------------------------------------- |
+| \`full\` default | Shows on hover and focus, and reused for copy feedback          |
+| \`copy\`         | Stays silent on hover and focus; appears only to confirm a copy |
+| \`none\`         | Never shown                                                     |
 
 ```html
 <div class="wa-cluster">
-  <wa-copy-button value="npm install @awesome.me/webawesome" tooltip="full"></wa-copy-button>
-  <wa-copy-button value="npm install @awesome.me/webawesome" tooltip="copy"></wa-copy-button>
-  <wa-copy-button value="npm install @awesome.me/webawesome" tooltip="none"></wa-copy-button>
+  <wa-copy-button
+    value="npm install @awesome.me/webawesome"
+    tooltip="full"
+  ></wa-copy-button>
+  <wa-copy-button
+    value="npm install @awesome.me/webawesome"
+    tooltip="copy"
+  ></wa-copy-button>
+  <wa-copy-button
+    value="npm install @awesome.me/webawesome"
+    tooltip="none"
+  ></wa-copy-button>
 </div>
 ```
 

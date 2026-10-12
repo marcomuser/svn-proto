@@ -25,7 +25,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tag/tag.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/tag/tag.js";
 ```
 
 \*\*npm\*\*
@@ -33,7 +33,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/tag/tag.js';
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/tag/tag.js';
+import "@awesome.me/webawesome/dist/components/tag/tag.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -41,7 +41,7 @@ import '@awesome.me/webawesome/dist/components/tag/tag.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/tag/tag.js';
+import "./webawesome/dist/components/tag/tag.js";
 ```
 
 \*\*React\*\*
@@ -49,47 +49,47 @@ import './webawesome/dist/components/tag/tag.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaTag from '@awesome.me/webawesome/dist/react/tag/index.js';
+import WaTag from "@awesome.me/webawesome/dist/react/tag/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
+| Name      | Description        |
+| --------- | ------------------ |
 | (default) | The tag's content. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'accent' \\| 'filled' \\| 'outlined' \\| 'filled-outlined'\` The tag's visual appearance. Type Default 'filled-outlined' | |
-| \`pill\` pill | \`boolean\` Draws a pill-style tag with rounded edges. Type Default false | |
-| \`size\` size | \`'xs' \\| 's' \\| 'm' \\| 'l' \\| 'xl' \\| 'small' \\| 'medium' \\| 'large'\` The tag's size. Type Default 'm' | |
-| \`variant\` variant | \`neutral\` The tag's theme variant. Defaults to if not within another element with a variant. Type 'brand' \\| 'neutral' \\| 'success' \\| 'warning' \\| 'danger' Default 'neutral' | |
-| \`withRemove\` with-remove | \`boolean\` Makes the tag removable and shows a remove button. Type Default false | |
+| Name                       | Description                                                                                                    | Reflects     |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------ |
+| \`appearance\` appearance  | \`'accent' \\                                                                                                  | 'filled' \\  | 'outlined' \\ | 'filled-outlined'\` The tag's visual appearance. Type Default 'filled-outlined' |                            |
+| \`pill\` pill              | \`boolean\` Draws a pill-style tag with rounded edges. Type Default false                                      |              |
+| \`size\` size              | \`'xs' \\                                                                                                      | 's' \\       | 'm' \\        | 'l' \\                                                                          | 'xl' \\                    | 'small' \\ | 'medium' \\ | 'large'\` The tag's size. Type Default 'm' |     |
+| \`variant\` variant        | \`neutral\` The tag's theme variant. Defaults to if not within another element with a variant. Type 'brand' \\ | 'neutral' \\ | 'success' \\  | 'warning' \\                                                                    | 'danger' Default 'neutral' |            |
+| \`withRemove\` with-remove | \`boolean\` Makes the tag removable and shows a remove button. Type Default false                              |              |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name          | Description                                  |
+| ------------- | -------------------------------------------- |
 | \`wa-remove\` | Emitted when the remove button is activated. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`content\` | The tag's content. | \`::part(content)\` |
-| \`remove-button\` | \`\` The tag's remove button, a . | \`::part(remove-button)\` |
+| Name                      | Description                                 | CSS selector                      |
+| ------------------------- | ------------------------------------------- | --------------------------------- |
+| \`content\`               | The tag's content.                          | \`::part(content)\`               |
+| \`remove-button\`         | \`\` The tag's remove button, a .           | \`::part(remove-button)\`         |
 | \`remove-button\_\_base\` | \`base\` The remove button's exported part. | \`::part(remove-button\_\_base)\` |
-| \`base\` | Deprecated. Style the host element instead. | \`::part(base)\` |
+| \`base\`                  | Deprecated. Style the host element instead. | \`::part(base)\`                  |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
+- [`<wa-button>`](https://webawesome.com/docs/components/button)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
 
 ## Examples
 
@@ -113,31 +113,41 @@ Use the `appearance` attribute to change the tag's visual style. The default is 
 <div class="wa-stack">
   <p>
     <wa-tag variant="brand" appearance="accent">Accent</wa-tag>
-    <wa-tag variant="brand" appearance="filled-outlined">Filled-Outlined</wa-tag>
+    <wa-tag variant="brand" appearance="filled-outlined"
+      >Filled-Outlined</wa-tag
+    >
     <wa-tag variant="brand" appearance="filled">Filled</wa-tag>
     <wa-tag variant="brand" appearance="outlined">Outlined</wa-tag>
   </p>
   <p>
     <wa-tag variant="success" appearance="accent">Accent</wa-tag>
-    <wa-tag variant="success" appearance="filled-outlined">Filled-Outlined</wa-tag>
+    <wa-tag variant="success" appearance="filled-outlined"
+      >Filled-Outlined</wa-tag
+    >
     <wa-tag variant="success" appearance="filled">Filled</wa-tag>
     <wa-tag variant="success" appearance="outlined">Outlined</wa-tag>
   </p>
   <p>
     <wa-tag variant="neutral" appearance="accent">Accent</wa-tag>
-    <wa-tag variant="neutral" appearance="filled-outlined">Filled-Outlined</wa-tag>
+    <wa-tag variant="neutral" appearance="filled-outlined"
+      >Filled-Outlined</wa-tag
+    >
     <wa-tag variant="neutral" appearance="filled">Filled</wa-tag>
     <wa-tag variant="neutral" appearance="outlined">Outlined</wa-tag>
   </p>
   <p>
     <wa-tag variant="warning" appearance="accent">Accent</wa-tag>
-    <wa-tag variant="warning" appearance="filled-outlined">Filled-Outlined</wa-tag>
+    <wa-tag variant="warning" appearance="filled-outlined"
+      >Filled-Outlined</wa-tag
+    >
     <wa-tag variant="warning" appearance="filled">Filled</wa-tag>
     <wa-tag variant="warning" appearance="outlined">Outlined</wa-tag>
   </p>
   <p>
     <wa-tag variant="danger" appearance="accent">Accent</wa-tag>
-    <wa-tag variant="danger" appearance="filled-outlined">Filled-Outlined</wa-tag>
+    <wa-tag variant="danger" appearance="filled-outlined"
+      >Filled-Outlined</wa-tag
+    >
     <wa-tag variant="danger" appearance="filled">Filled</wa-tag>
     <wa-tag variant="danger" appearance="outlined">Outlined</wa-tag>
   </p>
@@ -182,12 +192,12 @@ Use the `with-remove` attribute to add a remove button to the tag. The button ca
 </div>
 
 <script>
-  const div = document.querySelector('.tags-removable');
+  const div = document.querySelector(".tags-removable");
 
-  div.addEventListener('wa-remove', event => {
+  div.addEventListener("wa-remove", (event) => {
     const tag = event.target;
-    tag.style.opacity = '0';
-    setTimeout(() => (tag.style.opacity = '1'), 2000);
+    tag.style.opacity = "0";
+    setTimeout(() => (tag.style.opacity = "1"), 2000);
   });
 </script>
 

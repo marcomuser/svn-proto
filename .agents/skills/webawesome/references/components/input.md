@@ -11,7 +11,12 @@ Inputs collect single-line data from the user, such as text, numbers, email addr
 ```
 
 ```html
-<wa-input type="password" label="Password" hint="Must be at least 8 characters." value="correcthorse">
+<wa-input
+  type="password"
+  label="Password"
+  hint="Must be at least 8 characters."
+  value="correcthorse"
+>
   <wa-icon slot="start" name="lock"></wa-icon>
 </wa-input>
 ```
@@ -29,7 +34,7 @@ If you're using the autoloader or a hosted project, components load on demand �
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/input/input.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/input/input.js";
 ```
 
 \*\*npm\*\*
@@ -37,7 +42,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/input/input.js'
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/input/input.js';
+import "@awesome.me/webawesome/dist/components/input/input.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -45,7 +50,7 @@ import '@awesome.me/webawesome/dist/components/input/input.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/input/input.js';
+import "./webawesome/dist/components/input/input.js";
 ```
 
 \*\*React\*\*
@@ -53,29 +58,29 @@ import './webawesome/dist/components/input/input.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaInput from '@awesome.me/webawesome/dist/react/input/index.js';
+import WaInput from "@awesome.me/webawesome/dist/react/input/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`clear-icon\` | An icon to use in lieu of the default clear icon. |
-| \`end\` | \`\` An element, such as , placed at the start of the input control. |
+| Name           | Description                                                          |
+| -------------- | -------------------------------------------------------------------- |
+| \`clear-icon\` | An icon to use in lieu of the default clear icon.                    |
+| \`end\`        | \`\` An element, such as , placed at the start of the input control. |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'filled' \\| 'outlined' \\| 'filled-outlined'\` The input's visual appearance. Type Default 'outlined' | |
-| \`autocapitalize\` autocapitalize | \`'off' \\| 'none' \\| 'on' \\| 'sentences' \\| 'words' \\| 'characters'\` Controls whether and how text input is automatically capitalized as it is entered by the user. Type | |
-| \`autocomplete\` autocomplete | \`string\` Specifies what permission the browser has to provide assistance in filling out form field values. Refer to this page on MDN for available values. Type | |
-| \`autocorrect\` autocorrect | \`"off"\` Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use or "on". When set as a property, use true or false. Type boolean | |
-| \`autofocus\` autofocus | \`boolean\` Indicates that the input should receive focus on page load. Type | |
-| \`defaultValue\` value | \`string \\| null\` The default value of the form control. Primarily used for resetting the form control. Type | |
-| \`disabled\` disabled | \`boolean\` Disables the form control. Type Default false | |
-| \`enterkeyhint\` enterkeyhint | \`'enter' \\| 'done' \\| 'go' \\| 'next' \\| 'previous' \\| 'search' \\| 'send'\` Used to customize the label or icon of the Enter key on virtual keyboards. Type | |
-| \`form\` | \`
+| Name                              | Description                                                                                                                                                                | Reflects                                                                                          |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| \`appearance\` appearance         | \`'filled' \\                                                                                                                                                              | 'outlined' \\                                                                                     | 'filled-outlined'\` The input's visual appearance. Type Default 'outlined' |                |
+| \`autocapitalize\` autocapitalize | \`'off' \\                                                                                                                                                                 | 'none' \\                                                                                         | 'on' \\                                                                    | 'sentences' \\ | 'words' \\    | 'characters'\` Controls whether and how text input is automatically capitalized as it is entered by the user. Type |                                                                                          |
+| \`autocomplete\` autocomplete     | \`string\` Specifies what permission the browser has to provide assistance in filling out form field values. Refer to this page on MDN for available values. Type          |                                                                                                   |
+| \`autocorrect\` autocorrect       | \`"off"\` Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use or "on". When set as a property, use true or false. Type boolean |                                                                                                   |
+| \`autofocus\` autofocus           | \`boolean\` Indicates that the input should receive focus on page load. Type                                                                                               |                                                                                                   |
+| \`defaultValue\` value            | \`string \\                                                                                                                                                                | null\` The default value of the form control. Primarily used for resetting the form control. Type |                                                                            |
+| \`disabled\` disabled             | \`boolean\` Disables the form control. Type Default false                                                                                                                  |                                                                                                   |
+| \`enterkeyhint\` enterkeyhint     | \`'enter' \\                                                                                                                                                               | 'done' \\                                                                                         | 'go' \\                                                                    | 'next' \\      | 'previous' \\ | 'search' \\                                                                                                        | 'send'\` Used to customize the label or icon of the Enter key on virtual keyboards. Type |     |
+| \`form\`                          | \`                                                                                                                                                                         |
 
 \` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | |
 | \`hint\` hint | \`hint\` The input's . If you need to display HTML, use the hint slot instead. Type string Default '' | |
@@ -107,57 +112,57 @@ import WaInput from '@awesome.me/webawesome/dist/react/input/index.js';
 
 ### Methods
 
-| Name | Description | Arguments |
-| --- | --- | --- |
-| \`blur()\` | Removes focus from the input. | |
-| \`focus()\` | Sets focus on the input. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`select()\` | Selects all the text in the input. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`setRangeText()\` | Replaces a range of text with a new string. | \`replacement: string, start: number, end: number, selectMode: 'select' \\| 'start' \\| 'end' \\| 'preserve'\` |
-| \`setSelectionRange()\` | Sets the start and end positions of the text selection (0-based). | \`selectionStart: number, selectionEnd: number, selectionDirection: 'forward' \\| 'backward' \\| 'none'\` |
-| \`showPicker()\` | Displays the browser picker for an input element (only works if the browser supports it for the input type). | |
-| \`stepDown()\` | Decrements the value of a numeric input type by the value of the step attribute. | |
-| \`stepUp()\` | Increments the value of a numeric input type by the value of the step attribute. | |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                       | Arguments                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| \`blur()\`                     | Removes focus from the input.                                                                                                                                                                                                                                                                                                                     |                                                                                  |
+| \`focus()\`                    | Sets focus on the input.                                                                                                                                                                                                                                                                                                                          | \`options: FocusOptions\`                                                        |
+| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\                                                               | File \\       | FormData \\ | null, reason: 'autocomplete' \\ | 'restore'\` |
+| \`resetValidity()\`            | Reset validity is a way of removing manual custom errors and native validation.                                                                                                                                                                                                                                                                   |                                                                                  |
+| \`select()\`                   | Selects all the text in the input.                                                                                                                                                                                                                                                                                                                |                                                                                  |
+| \`setCustomValidity()\`        | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.                                                                                                                                                          | \`message: string\`                                                              |
+| \`setRangeText()\`             | Replaces a range of text with a new string.                                                                                                                                                                                                                                                                                                       | \`replacement: string, start: number, end: number, selectMode: 'select' \\       | 'start' \\    | 'end' \\    | 'preserve'\`                    |
+| \`setSelectionRange()\`        | Sets the start and end positions of the text selection (0-based).                                                                                                                                                                                                                                                                                 | \`selectionStart: number, selectionEnd: number, selectionDirection: 'forward' \\ | 'backward' \\ | 'none'\`    |
+| \`showPicker()\`               | Displays the browser picker for an input element (only works if the browser supports it for the input type).                                                                                                                                                                                                                                      |                                                                                  |
+| \`stepDown()\`                 | Decrements the value of a numeric input type by the value of the step attribute.                                                                                                                                                                                                                                                                  |                                                                                  |
+| \`stepUp()\`                   | Increments the value of a numeric input type by the value of the step attribute.                                                                                                                                                                                                                                                                  |                                                                                  |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when an alteration to the control's value is committed by the user. |
-| \`focus\` | Emitted when the control gains focus. |
-| \`input\` | Emitted when the control receives input. |
-| \`wa-clear\` | Emitted when the clear button is activated. |
+| Name           | Description                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------- |
+| \`blur\`       | Emitted when the control loses focus.                                                             |
+| \`change\`     | Emitted when an alteration to the control's value is committed by the user.                       |
+| \`focus\`      | Emitted when the control gains focus.                                                             |
+| \`input\`      | Emitted when the control receives input.                                                          |
+| \`wa-clear\`   | Emitted when the clear button is activated.                                                       |
 | \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
 
 ### Custom States
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name      | Description         | CSS selector      |
+| --------- | ------------------- | ----------------- |
 | \`blank\` | The input is empty. | \`:state(blank)\` |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`clear-button\` | The clear button. | \`::part(clear-button)\` |
-| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
-| \`form-control-label\` | The label. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`input\` | \`\` The internal control. | \`::part(input)\` |
-| \`input-wrapper\` | The component's outer wrapper. | \`::part(input-wrapper)\` |
-| \`password-toggle-button\` | The password toggle button. | \`::part(password-toggle-button)\` |
-| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
-| \`base\` | \`input-wrapper\` Deprecated. Use the part instead. | \`::part(base)\` |
-| \`label\` | \`form-control-label\` Deprecated. Use the part instead. | \`::part(label)\` |
+| Name                       | Description                                              | CSS selector                       |
+| -------------------------- | -------------------------------------------------------- | ---------------------------------- |
+| \`clear-button\`           | The clear button.                                        | \`::part(clear-button)\`           |
+| \`end\`                    | \`end\` The container that wraps the slot.               | \`::part(end)\`                    |
+| \`form-control-label\`     | The label.                                               | \`::part(form-control-label)\`     |
+| \`hint\`                   | The hint's wrapper.                                      | \`::part(hint)\`                   |
+| \`input\`                  | \`\` The internal control.                               | \`::part(input)\`                  |
+| \`input-wrapper\`          | The component's outer wrapper.                           | \`::part(input-wrapper)\`          |
+| \`password-toggle-button\` | The password toggle button.                              | \`::part(password-toggle-button)\` |
+| \`start\`                  | \`start\` The container that wraps the slot.             | \`::part(start)\`                  |
+| \`base\`                   | \`input-wrapper\` Deprecated. Use the part instead.      | \`::part(base)\`                   |
+| \`label\`                  | \`form-control-label\` Deprecated. Use the part instead. | \`::part(label)\`                  |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 
@@ -174,7 +179,10 @@ Use the `label` attribute to give the input an accessible label. For labels that
 Add descriptive hint to an input with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
-<wa-input label="Nickname" hint="What would you like people to call you?"></wa-input>
+<wa-input
+  label="Nickname"
+  hint="What would you like people to call you?"
+></wa-input>
 ```
 
 ### Placeholder
@@ -198,7 +206,11 @@ Add the `with-clear` attribute to add a clear button when the input has content.
 Add the `password-toggle` attribute to add a toggle button that will show the password when activated.
 
 ```html
-<wa-input type="password" placeholder="Password Toggle" password-toggle></wa-input>
+<wa-input
+  type="password"
+  placeholder="Password Toggle"
+  password-toggle
+></wa-input>
 ```
 
 ### Appearance
@@ -209,7 +221,10 @@ Use the `appearance` attribute to change the input's visual appearance.
 <div class="wa-stack">
   <wa-input appearance="outlined" placeholder="outlined"></wa-input>
   <wa-input appearance="filled" placeholder="filled"></wa-input>
-  <wa-input appearance="filled-outlined" placeholder="filled-outlined"></wa-input>
+  <wa-input
+    appearance="filled-outlined"
+    placeholder="filled-outlined"
+  ></wa-input>
 </div>
 ```
 
@@ -288,8 +303,15 @@ Use [CSS parts](#css-parts) to customize the way form controls are drawn. This e
 ```html
 <div class="label-on-left">
   <wa-input label="Name" hint="Enter your name"></wa-input>
-  <wa-input label="Email address" type="email" hint="Enter your email"></wa-input>
-  <wa-textarea label="Bio" hint="Tell us something about yourself"></wa-textarea>
+  <wa-input
+    label="Email address"
+    type="email"
+    hint="Enter your email"
+  ></wa-input>
+  <wa-textarea
+    label="Bio"
+    hint="Tell us something about yourself"
+  ></wa-textarea>
 </div>
 
 <style>

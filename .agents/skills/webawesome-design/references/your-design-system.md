@@ -62,8 +62,8 @@ color is set in three places, it is effectively set in none, because the next ch
    .wa-light,
    .wa-dark,
    .wa-invert {
-     --wa-font-family-body: 'Inter', system-ui, sans-serif;
-     --wa-font-family-heading: 'Inter', system-ui, sans-serif;
+     --wa-font-family-body: "Inter", system-ui, sans-serif;
+     --wa-font-family-heading: "Inter", system-ui, sans-serif;
      --wa-border-radius-scale: 1.25;
    }
 

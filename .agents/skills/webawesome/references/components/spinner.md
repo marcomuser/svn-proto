@@ -21,7 +21,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/spinner/spinner.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/spinner/spinner.js";
 ```
 
 \*\*npm\*\*
@@ -29,7 +29,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/spinner/spinner
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/spinner/spinner.js';
+import "@awesome.me/webawesome/dist/components/spinner/spinner.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -37,7 +37,7 @@ import '@awesome.me/webawesome/dist/components/spinner/spinner.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/spinner/spinner.js';
+import "./webawesome/dist/components/spinner/spinner.js";
 ```
 
 \*\*React\*\*
@@ -45,24 +45,24 @@ import './webawesome/dist/components/spinner/spinner.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaSpinner from '@awesome.me/webawesome/dist/react/spinner/index.js';
+import WaSpinner from "@awesome.me/webawesome/dist/react/spinner/index.js";
 ```
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--indicator-color\` | The color of the spinner's indicator. |
-| \`--speed\` | The time it takes for the spinner to complete one animation cycle. |
-| \`--track-color\` | The color of the track. |
-| \`--track-width\` | The width of the track. |
+| Name                  | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| \`--indicator-color\` | The color of the spinner's indicator.                              |
+| \`--speed\`           | The time it takes for the spinner to complete one animation cycle. |
+| \`--track-color\`     | The color of the track.                                            |
+| \`--track-width\`     | The width of the track.                                            |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`spinner\` | The component's outer wrapper. | \`::part(spinner)\` |
-| \`base\` | \`spinner\` Deprecated. Use the part instead. | \`::part(base)\` |
+| Name        | Description                                   | CSS selector        |
+| ----------- | --------------------------------------------- | ------------------- |
+| \`spinner\` | The component's outer wrapper.                | \`::part(spinner)\` |
+| \`base\`    | \`spinner\` Deprecated. Use the part instead. | \`::part(base)\`    |
 
 ## Examples
 
@@ -89,7 +89,9 @@ Use the `--track-width` custom property to change the thickness of the spinner's
 Use the `--track-color` and `--indicator-color` custom properties to recolor the spinner.
 
 ```html
-<wa-spinner style="font-size: 3rem; --indicator-color: var(--wa-color-success-fill-loud); --track-color: var(--wa-color-success-fill-quiet);"></wa-spinner>
+<wa-spinner
+  style="font-size: 3rem; --indicator-color: var(--wa-color-success-fill-loud); --track-color: var(--wa-color-success-fill-quiet);"
+></wa-spinner>
 ```
 
 ### Speed

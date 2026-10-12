@@ -65,7 +65,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/skeleton/skeleton.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/skeleton/skeleton.js";
 ```
 
 \*\*npm\*\*
@@ -73,7 +73,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/skeleton/skelet
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/skeleton/skeleton.js';
+import "@awesome.me/webawesome/dist/components/skeleton/skeleton.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -81,7 +81,7 @@ import '@awesome.me/webawesome/dist/components/skeleton/skeleton.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/skeleton/skeleton.js';
+import "./webawesome/dist/components/skeleton/skeleton.js";
 ```
 
 \*\*React\*\*
@@ -89,26 +89,26 @@ import './webawesome/dist/components/skeleton/skeleton.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaSkeleton from '@awesome.me/webawesome/dist/react/skeleton/index.js';
+import WaSkeleton from "@awesome.me/webawesome/dist/react/skeleton/index.js";
 ```
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`effect\` effect | \`'pulse' \\| 'sheen' \\| 'none'\` Determines which effect the skeleton will use. Type Default 'none' | |
+| Name              | Description  | Reflects   |
+| ----------------- | ------------ | ---------- |
+| \`effect\` effect | \`'pulse' \\ | 'sheen' \\ | 'none'\` Determines which effect the skeleton will use. Type Default 'none' |     |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| \`--color\` | The color of the skeleton. |
+| Name              | Description                                                |
+| ----------------- | ---------------------------------------------------------- |
+| \`--color\`       | The color of the skeleton.                                 |
 | \`--sheen-color\` | The sheen color when the skeleton is in its loading state. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
+| Name          | Description                                                                | CSS selector          |
+| ------------- | -------------------------------------------------------------------------- | --------------------- |
 | \`indicator\` | The skeleton's indicator which is responsible for its color and animation. | \`::part(indicator)\` |
 
 ## Examples
@@ -117,11 +117,11 @@ import WaSkeleton from '@awesome.me/webawesome/dist/react/skeleton/index.js';
 
 Set the `effect` attribute to choose how the skeleton animates while content loads. Effects are intentionally subtle, since motion across many skeletons at once can distract.
 
-| Effect | Behavior | Best for |
-| --- | --- | --- |
-| \`none\` default | Static, non-animated placeholder | Dense layouts where motion would be noisy |
-| \`sheen\` | A light sweeps across the indicator | Signaling that content is actively loading |
-| \`pulse\` | The indicator fades in and out | \`sheen\` A calmer alternative to |
+| Effect           | Behavior                            | Best for                                   |
+| ---------------- | ----------------------------------- | ------------------------------------------ |
+| \`none\` default | Static, non-animated placeholder    | Dense layouts where motion would be noisy  |
+| \`sheen\`        | A light sweeps across the indicator | Signaling that content is actively loading |
+| \`pulse\`        | The indicator fades in and out      | \`sheen\` A calmer alternative to          |
 
 ```html
 <div class="skeleton-effects">
@@ -260,7 +260,15 @@ Set a `border-radius` on the `indicator` part to make circles, squares, and rect
 
   .skeleton-shapes .comment::part(indicator) {
     border-radius: 0;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 75%,
+      75% 100%,
+      50% 75%,
+      0% 75%
+    );
   }
 
   .skeleton-shapes wa-skeleton:not(:last-child) {
@@ -274,5 +282,8 @@ Set a `border-radius` on the `indicator` part to make circles, squares, and rect
 Set the `--color` and `--sheen-color` custom properties to tune the skeleton to your surface. `--sheen-color` is the highlight that sweeps across when `effect="sheen"`.
 
 ```html
-<wa-skeleton effect="sheen" style="--color: var(--wa-color-brand-fill-loud); --sheen-color: var(--wa-color-brand-fill-quiet);"></wa-skeleton>
+<wa-skeleton
+  effect="sheen"
+  style="--color: var(--wa-color-brand-fill-loud); --sheen-color: var(--wa-color-brand-fill-quiet);"
+></wa-skeleton>
 ```

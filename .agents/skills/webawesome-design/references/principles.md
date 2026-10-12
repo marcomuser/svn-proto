@@ -418,7 +418,8 @@ presence for the cost of one rule. Inactive items stay plain; the active one ear
 
 ```css
 .featured-card {
-  border-block-start: var(--wa-border-width-l) solid var(--wa-color-brand-fill-loud);
+  border-block-start: var(--wa-border-width-l) solid
+    var(--wa-color-brand-fill-loud);
 }
 ```
 
@@ -428,7 +429,10 @@ hand-rolled positioning required:
 
 ```html
 <wa-page>
-  <div slot="banner" style="background: var(--wa-color-brand-fill-loud); block-size: var(--wa-space-2xs);"></div>
+  <div
+    slot="banner"
+    style="background: var(--wa-color-brand-fill-loud); block-size: var(--wa-space-2xs);"
+  ></div>
   …
 </wa-page>
 ```
@@ -477,7 +481,8 @@ checkmark in the brand color). Use them instead of native `<input type="checkbox
 
 ```css
 blockquote {
-  border-inline-start: var(--wa-border-width-l) solid var(--wa-color-brand-fill-loud);
+  border-inline-start: var(--wa-border-width-l) solid
+    var(--wa-color-brand-fill-loud);
   padding-inline-start: var(--wa-space-m);
   color: var(--wa-color-text-quiet);
 }
@@ -548,7 +553,9 @@ controls just communicate "this thing is broken."
 <div class="wa-stack wa-gap-l wa-align-items-center wa-text-center empty-state">
   <wa-icon class="empty-state-glyph" name="inbox"></wa-icon>
   <h2 class="wa-heading-l">No invoices yet</h2>
-  <p class="wa-color-text-quiet">Once you send your first invoice, you'll see it here.</p>
+  <p class="wa-color-text-quiet">
+    Once you send your first invoice, you'll see it here.
+  </p>
   <wa-button variant="brand">Create invoice</wa-button>
 </div>
 

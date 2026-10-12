@@ -23,7 +23,7 @@ If you're using the autoloader or a hosted project, components load on demand â€
 Import this component directly from the CDN:
 
 ```js
-import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/avatar/avatar.js';
+import "https://ka-f.webawesome.com/webawesome@3.14.0/components/avatar/avatar.js";
 ```
 
 \*\*npm\*\*
@@ -31,7 +31,7 @@ import 'https://ka-f.webawesome.com/webawesome@3.14.0/components/avatar/avatar.j
 After installing Web Awesome via npm, import this component:
 
 ```js
-import '@awesome.me/webawesome/dist/components/avatar/avatar.js';
+import "@awesome.me/webawesome/dist/components/avatar/avatar.js";
 ```
 
 \*\*Self-Hosted\*\*
@@ -39,7 +39,7 @@ import '@awesome.me/webawesome/dist/components/avatar/avatar.js';
 If you're self-hosting Web Awesome, import this component from your server:
 
 ```js
-import './webawesome/dist/components/avatar/avatar.js';
+import "./webawesome/dist/components/avatar/avatar.js";
 ```
 
 \*\*React\*\*
@@ -47,50 +47,50 @@ import './webawesome/dist/components/avatar/avatar.js';
 To import this component for React 18 or below, use the following code:
 
 ```js
-import WaAvatar from '@awesome.me/webawesome/dist/react/avatar/index.js';
+import WaAvatar from "@awesome.me/webawesome/dist/react/avatar/index.js";
 ```
 
 ### Slots
 
-| Name | Description |
-| --- | --- |
-| \`icon\` | \`
+| Name     | Description |
+| -------- | ----------- |
+| \`icon\` | \`          |
 
 ### Attributes & Properties
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`image\` image | \`string\` The image source to use for the avatar. Type Default '' | |
-| \`initials\` initials | \`string\` Initials to use as a fallback when no image is available (1-2 characters max recommended). Type Default '' | |
-| \`label\` label | \`string\` A label to use to describe the avatar to assistive devices. Type Default '' | |
-| \`loading\` loading | \`'eager' \\| 'lazy'\` Indicates how the browser should load the image. Type Default 'eager' | |
-| \`shape\` shape | \`'circle' \\| 'square' \\| 'rounded'\` The shape of the avatar. Type Default 'circle' | |
+| Name                  | Description                                                                                                           | Reflects                                                                       |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| \`image\` image       | \`string\` The image source to use for the avatar. Type Default ''                                                    |                                                                                |
+| \`initials\` initials | \`string\` Initials to use as a fallback when no image is available (1-2 characters max recommended). Type Default '' |                                                                                |
+| \`label\` label       | \`string\` A label to use to describe the avatar to assistive devices. Type Default ''                                |                                                                                |
+| \`loading\` loading   | \`'eager' \\                                                                                                          | 'lazy'\` Indicates how the browser should load the image. Type Default 'eager' |                                                            |
+| \`shape\` shape       | \`'circle' \\                                                                                                         | 'square' \\                                                                    | 'rounded'\` The shape of the avatar. Type Default 'circle' |     |
 
 ### Events
 
-| Name | Description |
-| --- | --- |
+| Name         | Description                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | \`wa-error\` | The image could not be loaded. This may because of an invalid URL, a temporary network condition, or some unknown cause. |
 
 ### CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name       | Description             |
+| ---------- | ----------------------- |
 | \`--size\` | The size of the avatar. |
 
 ### CSS Parts
 
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`icon\` | The container that wraps the avatar's icon. | \`::part(icon)\` |
-| \`image\` | \`image\` The avatar . Only shown when the image attribute is set. | \`::part(image)\` |
-| \`initials\` | The container that wraps the avatar's initials. | \`::part(initials)\` |
+| Name         | Description                                                        | CSS selector         |
+| ------------ | ------------------------------------------------------------------ | -------------------- |
+| \`icon\`     | The container that wraps the avatar's icon.                        | \`::part(icon)\`     |
+| \`image\`    | \`image\` The avatar . Only shown when the image attribute is set. | \`::part(image)\`    |
+| \`initials\` | The container that wraps the avatar's initials.                    | \`::part(initials)\` |
 
 ### Dependencies
 
 This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
 
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+- [`<wa-icon>`](https://webawesome.com/docs/components/icon)
 
 ## Examples
 

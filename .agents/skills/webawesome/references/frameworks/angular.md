@@ -41,10 +41,10 @@ npm install @awesome.me/webawesome
 Apply the custom elements schema so Angular allows Web Awesome's `wa-*` tags:
 
 ```js
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [AppComponent],
