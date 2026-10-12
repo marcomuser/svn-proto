@@ -10,8 +10,11 @@ import type { EditErrors } from './pages/users/EditUserPage.js'
 import { UserDetailPage } from './pages/users/UserDetailPage.js'
 import { UserNotFoundPage } from './pages/users/UserNotFoundPage.js'
 import { UsersPage } from './pages/users/UsersPage.js'
+import { webawesomeImports } from './webawesomeImports.js'
 
 const app = new Hono()
+
+app.use(webawesomeImports)
 
 app.get('/webawesome/*', serveStatic({
   root: `${process.cwd()}/node_modules/@awesome.me/webawesome/dist-cdn`,

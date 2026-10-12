@@ -8,14 +8,13 @@ const speculationRules = JSON.stringify({ prefetch: [{ where: { href_matches: ['
 export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
   <>
     {raw('<!doctype html>')}
-    <html lang="en" class="wa-theme-default wa-palette-default wa-light wa-cloak">
+    <html lang="en" class="wa-theme-default wa-palette-default wa-light" data-webawesome="/webawesome">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title} · User management</title>
         <link rel="stylesheet" href="/webawesome/styles/webawesome.css" />
         <link rel="stylesheet" href="/styles.css" />
-        <script type="module" src="/webawesome/webawesome.loader.js"></script>
         <script type="speculationrules" dangerouslySetInnerHTML={{ __html: speculationRules }}></script>
       </head>
       <body>
