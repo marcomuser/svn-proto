@@ -36,7 +36,8 @@ export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
       </head>
       <body>
         <wa-page>
-          <style>{`
+          {/* Keep static CSS verbatim: HTML escaping breaks media-query operators. */}
+          <style>{raw(`
             @scope {
               :scope { --menu-width: 30ch; }
               @media (width < 768px) { :scope { --menu-width: auto; } }
@@ -48,7 +49,7 @@ export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
               .app-main { width: min(100%, 110ch); margin-inline: auto; padding: var(--wa-space-xl); box-sizing: border-box; }
               @media (max-width: 40em) { .app-main { padding: var(--wa-space-l); } }
             }
-          `}</style>
+          `)}</style>
           <header
             slot="header"
             class="app-header wa-split wa-align-items-center"
