@@ -39,7 +39,7 @@ export const Layout: FC<LayoutProps> = ({ title, active, children }) => (
           <style>{`
             @scope {
               :scope { --menu-width: 30ch; }
-              :scope[view=mobile] { --menu-width: auto; }
+              @media (width < 768px) { :scope { --menu-width: auto; } }
               .brand { font-weight: var(--wa-font-weight-bold); font-size: var(--wa-font-size-l); }
               .app-header { padding-inline: var(--wa-space-l); }
               .app-nav { padding: var(--wa-space-l); }
